@@ -1,0 +1,112 @@
+<html>
+<head>
+</head>
+<body>
+<h3>Super Hero Story</h3>
+<style>
+td {
+  padding:10px;
+  width:50px;
+  height:50px;
+}
+</style>
+<table border=1>
+  <tr>
+    <td id='GoodGuy' bgcolor='#0000ff'  onclick=goGoodGuy();>Good Guy</td>
+  </tr>
+</table>
+
+<table border=1>
+<tr>
+  <td id='1' bgcolor='#000000'>THIS</td>
+  <td id='2' bgcolor='#000000'>THIS</td>
+  <td id='3' bgcolor='#000000'>THIS</td>
+</tr>
+<tr>
+<td id='4' class='good' bgcolor='#000000'>THIS</td><td id='5' bgcolor='#000000'>THIS</td><td id='6' bgcolor='#000000'>THIS</td>
+</tr>
+<tr>
+<td id='7' bgcolor='#000000'>THIS</td><td id='8' bgcolor='#000000'>THIS</td><td id='9' bgcolor='#000000'>THIS</td>
+</tr>
+</table>
+<table border=1>
+  <tr>
+    <td id='BadGuy' bgcolor='#ff0000' onclick=goBadGuy();>Bad Guy</td>
+  </tr>
+</table>
+<p>
+<!--
+<input type=button value="Do It!"  onclick="doit();">
+-->
+</p>
+<script>
+  function allFull(){
+    for(var i=1; i<10; i++){
+      var box = document.getElementById(i);
+      if(!((box.className == "Good")||(box.className == "Bad"))) return false;
+    }
+    return true;
+  }
+
+  function getRandom(){
+    r = Math.floor((Math.random() * 9) + 1);
+    return r;
+  }
+
+  var goodGuyNum = 0;
+  var badGuyNum = 10;
+
+  var goodGuyScore = 0;
+  var badGuyScore = 0;
+
+  function checkWin(player, score){
+      if(score > 18 || allFull()){
+        alert(player + " (a total dope) won! {" + goodGuyScore + " to " + badGuyScore + "}");
+      }
+  }
+
+  function calcScore(word, oldClass, newClass){
+      //alert("Word: " + word + ",Color: " + color + ",Match: " + match + ", Class: " + oldClass + "," + newClass);
+      if(oldClass == newClass){
+        return -1;
+      }
+      if((oldClass !== "") && (oldClass !== newClass)){
+        return 3;
+      }
+      if (word == "THIS"){
+        return 1;
+      }
+      if (word == "THAT"){
+        return 1;
+      }
+      return 2;
+  }
+
+  function setBox(box, color, guy){
+    box.innerHTML == "THIS" ? box.innerHTML = "THAT": box.innerHTML = "THIS";
+    box.style.backgroundColor = color;
+    box.className = guy;
+  }
+
+  function goGoodGuy(){
+    goodGuyNum = getRandom();
+    var box = document.getElementById(goodGuyNum);
+    goodGuyScore += calcScore(box.innerHTML, box.className, "Good");
+    setBox(box, "#0000ff", "Good");
+    alert("Good Guy: " + goodGuyScore + ", Bad Guy: " + badGuyScore);
+    checkWin("Good Guy", goodGuyScore);
+  }
+
+  function goBadGuy(){
+    badGuyNum = getRandom();
+    var box = document.getElementById(badGuyNum);
+    badGuyScore += calcScore(box.innerHTML, box.className, "Bad");
+    setBox(box, "#ff0000", "Bad");
+    alert("Good Guy: " + goodGuyScore + ", Bad Guy: " + badGuyScore);
+    checkWin("Bad Guy", badGuyScore);
+  }
+
+</script>
+
+</body>
+</html>

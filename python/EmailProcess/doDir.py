@@ -10,12 +10,12 @@ import re
 #		.html                                #
 #	3) opens and prints those files to terminal  #
 ######################################################
-d = glob.glob("*")
+d = glob.glob("*.txt")
 for d2 in d:
 	e = glob.glob(d2 + "/*")
 	print("Directory: " + d2)
 	for e2 in e:
-		if e2.find("html") > -1:
+		#if e2.find("html") > -1:
 			print ("\t File '" + e2 + "' ==>" )
 			fl = open(e2, 'r')
 			num = 1

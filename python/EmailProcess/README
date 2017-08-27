@@ -1,0 +1,30 @@
+
+doDir2.py: the python file to process the emails
+
+www.efraimkrug.site/General/send.html		web page (form)
+
+	This web page presents a form. When the user
+	fills the form and presses "submit" his/her 
+	email engine comes up, ready to sent the email
+	in question to ekrug@foxboroughrcs.org
+
+	Once the email is sent, someone goes to the
+	email inbox, reads the email, right clicks
+	on the emails and saves it as a text file
+	in the correct directory.
+
+	~/FRCS2017/Cracking/python/EmailProcess/?.txt
+
+	Then, I go to that directory, and kick off:
+	python3 doDir2.py
+
+	This program runs, identifying all the .txt files
+	in our directory, and extracting the necessary
+	information. We then print out the info.
+
+	(python3 doDir2.py > out) also works... I'm just
+	saying!
+
+	Note - the file is organized user X user, but there
+	is not other organization to the folder!
+	

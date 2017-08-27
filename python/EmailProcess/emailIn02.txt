@@ -1,0 +1,16 @@
+
+Subject:
+Form Post from Firefox
+From:
+efraim <efraimmkrug@gmail.com>
+Date:
+07/19/2017 10:04 PM
+To:
+ekrug@foxboroughrcs.org
+
+name=Standing Crazy In the Middle
+email=Consternation@yahoo.com
+cmmnt=This is the first and last crazy comment in the crazy century, you know?
+age=55
+style=Nuthing
+

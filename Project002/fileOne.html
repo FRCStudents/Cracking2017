@@ -1,0 +1,54 @@
+<!DOCTYPE html>
+<html>
+<!--
+  Do you think you can put comments in html?
+-->
+<head>
+<title>
+Lots of stuff
+</title>
+<!--
+    Heads up - this is javascript language... not html
+-->
+<link rel="stylesheet" type="text/css" href="css/fileOne.css">
+<script src="js/fileOne.js"></script>
+<!--
+  and now we can finish the html
+-->
+
+</head>
+
+<body onload="init();">
+
+<table>
+  <tr>
+    <td id="cell1" class="cell">First: <input type="text" name="lname" id="lname"></td>
+    <td id="cell2" class="cell">Last: <input type="text" name="fname" id="fname"></td>
+  </tr>
+  <tr>
+    <td id="cell5" class="cell">
+      <hr>
+      <input type="radio" name="radio@" id="r*" value="*" onchange="doit3()">*
+      <input type="radio" name="radio@" id="r&" value="&" onchange="doit3()">&
+      <input type="radio" name="radio@" id="r@" value="@" onchange="doit3()">@
+      <input type="radio" name="radio@" id="r#" value="#" onchange="doit3()">#
+      <input type="radio" name="radio@" id="r~" value="~" onchange="doit3()">~<br>
+      <hr>
+      Separator: <input type="text" name="sep" id="sep"></td></td>
+    <td id="cell6" class="cell"></td>
+  </tr>
+</table>
+</style>
+
+
+<input type="button" name="button" id="button" value=" * " onclick="doit('*');">
+<input type="button" name="button" id="button" value=" & " onclick="doit('&');">
+<input type="button" name="button" id="button" value=" @ " onclick="doit('@');">
+<input type="button" name="button" id="button" value=" # " onclick="doit('#');">
+<input type="button" name="button" id="button" value=" ~ " onclick="doit('~');">
+<input type="button" name="button" id="button" value="With Text" onclick="doit2();">
+
+<div id="list" class="lst"></div>
+
+</body>
+</html>

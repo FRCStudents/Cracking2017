@@ -1,0 +1,53 @@
+<!--
+  Assignemt:
+    1) copy this code to your computer
+    2) run it, and figure out what it is doing
+    3) get rid of the 'stupid' alert boxes
+    4) put in console logs instead
+    5) find the message that gets written to the HTML page
+
+    6) create an alert box that shows the PREVIOUS message written to the HTML page
+
+      e.g.  User presses a button, and the message: "One Thing: I think." shows up.
+            User presses ANOTHER button, and the message:
+                "One Thing: I think." shows in an alert box, but the
+                message: "Another Thing: I speak." shows up on the HTML page.
+
+      Good Luck!
+-->
+<html>
+<head>
+<title>Coding Assignment 1</title>
+</head>
+<body>
+<h1>variables and function</h1>>
+<p>I love this stuff!</p>
+<!-- your html goes here -->
+<br><button type=button onclick="doit(1);">do it - 1</button>
+<br><button type=button onclick="doit(2);">do it - 1</button>
+<br><button type=button onclick="doit();">do it - 2</button>
+<br><br><div id=out></div>
+<script>
+/* your javascript goes here */
+
+function doit(x){
+  var divElement = document.getElementById("out");
+  console.log("Entering function 'doit': " + x);
+  if(x == 1){
+    divElement.innerHTML = "One Thing: I think.";
+    alert("This is ONE thing");
+  } else {
+    if(x == 2){
+      divElement.innerHTML = "Another Thing: I speak.";
+      alert("This is the TWO thing");
+      }
+    else {
+      divElement.innerHTML = "Also a Thing: I walk.";
+      alert("This ain't NOTHING");
+    }
+  }
+}
+
+</script>
+</body>
+</html>

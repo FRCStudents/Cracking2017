@@ -29,23 +29,35 @@
 <br><br><div id=out></div>
 <script>
 /* your javascript goes here */
-
+var y = 0
 function doit(x){
-  var divElement = document.getElementById("out");
-  console.log("Entering function 'doit': " + x);
-  if(x == 1){
-    divElement.innerHTML = "One Thing: I think.";
-    alert("This is ONE thing");
-  } else {
-    if(x == 2){
-      divElement.innerHTML = "Another Thing: I speak.";
-      alert("This is the TWO thing");
-      }
-    else {
-      divElement.innerHTML = "Also a Thing: I walk.";
-      alert("This ain't NOTHING");
-    }
-  }
+	if(y == 1){
+	alert("One Thing: I think.");
+	}
+	if(y == 2){
+	alert("Another Thing: I speak.");
+	}
+	if(y == 3){
+	alert("Also a Thing: I walk.");
+	}
+	var divElement = document.getElementById("out");
+	console.log("Entering function 'doit': " + x);
+	if(x == 1){
+	divElement.innerHTML = "One Thing: I think.";
+  	console.log("This is ONE thing");
+	y = 1;
+		} else {
+		if(x == 2){
+		divElement.innerHTML = "Another Thing: I speak.";
+      		console.log("This is the TWO thing");
+		y = 2;
+      		}
+    		else {
+      		divElement.innerHTML = "Also a Thing: I walk.";
+      		console.log("This ain't NOTHING");
+		y = 3;
+    		}
+  	}
 }
 
 </script>

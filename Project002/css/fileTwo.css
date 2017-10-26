@@ -1,0 +1,27 @@
+.cell {
+  color: blue;
+  background-color: yellow;
+  border: 1px dashed blue;
+  padding: 25px;
+  height: 125px;
+  width: 249px;
+}
+
+#cell6 {
+  color: white;
+  background-color: black;
+}
+
+table {
+  border: 2px solid red;
+  padding: 10px;
+}
+
+#button {
+    position: absolute;
+    left: 520px;
+}
+
+#word {
+    backgroud-color: red;
+}

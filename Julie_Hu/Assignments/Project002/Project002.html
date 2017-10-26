@@ -1,0 +1,48 @@
+<html>
+<head>
+<title>Coding Assignment 1</title>
+</head>
+<body>
+<h1>variables and function</h1>
+<p>I love this stuff!</p>
+
+<br><button type=button onclick="doit(1);">do it - 1</button>
+<br><button type=button onclick="doit(2);">do it - 1</button>
+<br><button type=button onclick="doit();">do it - 2</button>
+<br><br><div id=out></div>
+<script>
+
+var y = 0;
+function doit(x){
+	if (y==1){
+	alert("One Thing: I think.");
+}
+	if (y==2){
+	alert("Another Thing: I speak.")
+}
+	if (y==3){
+	alert("Also a Thing: I walk.")
+}
+  var divElement = document.getElementById("out");
+  console.log("Entering function 'doit': " + x);
+  if(x == 1){
+    divElement.innerHTML = "One Thing: I think.";
+    console.log("This is ONE thing");
+	y=1;
+  } else {
+    if(x == 2){
+      divElement.innerHTML = "Another Thing: I speak.";
+      console.log("This is the TWO thing");
+	y=2;
+      }
+    else {
+      divElement.innerHTML = "Also a Thing: I walk.";
+      console.log("This ain't NOTHING");
+	y=3;
+    }
+  }
+}
+
+</script>
+</body>
+</html>

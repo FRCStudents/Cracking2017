@@ -24,8 +24,12 @@ function doit(sep){
 }
 
 function doit2(){
+  var stuff = document.getElementById("cell1");
   var fname = document.getElementById("fname");
   var lname = document.getElementById("lname");
+  alert(lname.value);
+  stuff.innerHTML = "OOPS!";
+  alert(lname.value);
   var answer = document.getElementById("cell6");
   var sep = document.getElementById("sep");
 

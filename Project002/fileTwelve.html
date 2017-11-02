@@ -1,0 +1,60 @@
+<!DOCTYPE html>
+<html>
+<!--
+  Calling functions...
+-->
+<head>
+<title>
+Lots of stuff
+</title>
+</head>
+
+<body>
+<input type=text id="firstNum">
+<input type=text id="secondNum">
+
+<input type="button" name="button" id="button" value="+" onclick="function1(1);">
+<input type="button" name="button" id="button" value="-" onclick="function1(2);">
+<input type="button" name="button" id="button" value="*" onclick="function1(3);">
+<input type="button" name="button" id="button" value="/" onclick="function1(4);">
+<input type="button" name="button" id="button" value="%" onclick="function1(5);">
+
+<div id="answer"></div>
+<script>
+function addEm(x,y){
+  return parseInt(x) + parseInt(y);
+}
+
+function subEm(x, y){
+  return x - y;
+}
+
+function multEm(x, y){
+  return x * y;
+}
+
+function divEm(x, y){
+  return x / y;
+}
+
+function modEm(x, y){
+  return x % y;
+}
+
+function switchOff(x, first, second){
+  if(x == 1) return addEm(first, second);
+  if(x == 2) return subEm(first, second);
+  if(x == 3) return multEm(first, second);
+  if(x == 4) return divEm(first, second);
+  if(x == 5) return modEm(first, second);
+  return 0;
+}
+
+function function1(x){
+  var firstNum = document.getElementById("firstNum");
+  var secondNum = document.getElementById("secondNum");
+  var answer = document.getElementById("answer");
+  answer.innerHTML= "The answer is: " + switchOff(x,firstNum.value, secondNum.value);
+}
+</script>
+</html>

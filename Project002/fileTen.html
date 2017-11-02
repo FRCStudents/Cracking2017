@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<html>
+<!--
+  Calling functions...
+-->
+<head>
+<title>
+Lots of stuff
+</title>
+</head>
+
+<body>
+<input type="button" name="button" id="button" value="Click" onclick="doit();">
+<div id="list" class="lst"></div>
+<script>
+var answer;
+var v = 6;
+var w = 7;
+
+function showBox(msg){
+  console.log("showBox(" + msg + ")");
+  alert("This is the answer: " + msg);
+}
+
+function add(x,y){
+  console.log("add(" + x + "," + y + ")")
+    answer = x + y;
+}
+
+function swap(){
+  console.log("swap");
+  var h = v;
+  v = w;
+  w = h;
+}
+
+function doit(){
+  console.log("doit");
+  // declaring variable numbers or integers
+  add(v,w);
+  showBox(v + " + " + w + " = " + answer);
+  swap();
+  showBox(v + " + " + w + " = " + answer);
+}
+</script>
+</html>

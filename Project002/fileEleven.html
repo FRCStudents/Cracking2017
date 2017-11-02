@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html>
+<!--
+  Calling functions...
+-->
+<head>
+<title>
+Lots of stuff
+</title>
+</head>
+
+<body>
+<input type="button" name="button" id="button" value="Click" onclick="function1(4);">
+<div id="list" class="lst"></div>
+<script>
+var answer;
+var v = 6;
+var w = 7;
+
+function function5(x){
+  console.log("function5: " + x);
+}
+
+function function4(x){
+  console.log("function4: " + x);
+  function5(x + 1);
+}
+
+function function3(x){
+  console.log("function3: " + x);
+  function4(x + 1);
+}
+
+function function2(x){
+  console.log("function2: " + x);
+  function3(x + 1);
+}
+
+function function1(x){
+  console.log("function1: " + x);
+  function2(x + 1);
+}
+</script>
+</html>

@@ -1,0 +1,51 @@
+<!DOCTYPE html>
+<html>
+<!--
+  Calling functions...
+-->
+<head>
+<title>
+Lots of stuff
+</title>
+</head>
+
+<body>
+<input type=text id="firstNum">
+<input type=text id="secondNum">
+
+<input type="button" name="button" id="button" value="Max" onclick="function1(1);">
+<input type="button" name="button" id="button" value="Min" onclick="function1(2);">
+<input type="button" name="button" id="button" value="Eq" onclick="function1(3);">
+
+<div id="answer"></div>
+<script>
+function getMax(x,y){
+  if(x > y) return x;
+  return y;
+}
+
+function getMin(x,y){
+  if(x > y) return y;
+  return x;
+}
+
+function getEq(x,y){
+  if(x == y) return "Equal";
+  return "Not so equal";
+}
+
+function switchOff(x, first, second){
+  if(x == 1) return getMax(first, second);
+  if(x == 2) return getMin(first, second);
+  if(x == 3) return getEq(first, second);
+  return 0;
+}
+
+function function1(x){
+  var firstNum = document.getElementById("firstNum");
+  var secondNum = document.getElementById("secondNum");
+  var answer = document.getElementById("answer");
+  answer.innerHTML= "The answer is: " + switchOff(x,firstNum.value, secondNum.value);
+}
+</script>
+</html>

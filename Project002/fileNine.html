@@ -1,0 +1,34 @@
+<!DOCTYPE html>
+<html>
+<!--
+  Calling functions...
+-->
+<head>
+<title>
+Lots of stuff
+</title>
+</head>
+
+<body>
+<input type="button" name="button" id="button" value="Click" onclick="doit();">
+<div id="list" class="lst"></div>
+<script>
+var answer;
+var v = 6;
+var w = 7;
+
+function showBox(msg){
+  alert("This is the answer: " + msg);
+}
+
+function add(x,y){
+    answer = x + y;
+}
+
+function doit(){
+  // declaring variable numbers or integers
+  add(v,w);
+  showBox(v + " + " + w + " = " + answer);
+}
+</script>
+</html>

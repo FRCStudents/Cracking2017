@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html>
+<!--
+  Two variables... swapping values with a third...
+-->
+<head>
+<title>
+Lots of stuff
+</title>
+</head>
+
+<body>
+<input type="button" name="button" id="button" value="Click" onclick="doit();">
+<div id="list" class="lst"></div>
+
+</body>
+<script>
+function doit(){
+  // declaring variable v and assigning an initial value
+  var v = "This is the first variable";
+  var w = "This is the second variable";
+  var y = "";
+
+  alert("v: " + v + " & w: " + w);
+  y = v;
+  v = w;
+  w = y;
+  // notice - we are concatenating variables with the operator +
+  alert("Swapped v: " + v + " & w: " + w);
+
+}
+</script>
+</html>

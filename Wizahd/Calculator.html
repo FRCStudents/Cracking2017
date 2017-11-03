@@ -1,0 +1,156 @@
+<table>
+	<tr>
+		<td> <input id="end"> </td>
+<table>
+	<tr>
+		<td> <button onclick=doit7();> 7 </button> </td>
+		<td> <button onclick=doit8();> 8 </button> </td>
+		<td> <button onclick=doit9();> 9 </button> </td>
+		<td> <button onclick=doit11();> - </button> </td>
+		<td> <button onclick=doit12();> / </button> </td>
+	<tr>
+		<td> <button onclick=doit4();> 4 </button> </td>
+		<td> <button onclick=doit5();> 5 </button> </td>
+		<td> <button onclick=doit6();> 6 </button> </td>
+		<td> <button onclick=doit13();> + </button> </td>
+		<td> <button onclick=doit14();> * </button> </td>
+	<tr>
+		<td> <button onclick=doit1();> 1 </button> </td>
+		<td> <button onclick=doit2();> 2 </button> </td>
+		<td> <button onclick=doit3();> 3 </button> </td>
+		<td> <button onclick=doit15();> Enter </button> </td>
+	<tr>
+		<td> </td>
+		<td> <button onclick=doit10();> 0 </button> </td>
+</table>
+
+<script>
+var a = 0;
+var z = 0;
+var x = 0;
+var c = 0;
+var answer = document.getElementById("end");
+function doit7(){
+	console.log("7");
+	a ++;
+	if(a == 1){
+		z = 7;
+	}
+	if(a == 2){
+		x = 7;
+	}
+}
+function doit8(){
+	console.log("8");
+	a ++;
+	if(a == 1){
+		z = 8;
+	}
+	if(a == 2){
+		x = 8;
+	}
+}
+function doit9(){
+	console.log("9");
+	a ++;
+	if(a == 1){
+		z = 9;
+	}
+	if(a == 2){
+		x = 9;
+	}
+}
+function doit4(){
+	console.log("4");
+	a ++;
+	if(a == 1){
+		z = 4;
+	}
+	if(a == 2){
+		x = 4;
+	}
+}
+function doit5(){
+	console.log("5");
+	a ++;
+	if(a == 1){
+		z = 5;
+	}
+	if(a == 2){
+		x = 5;
+	}
+}
+function doit6(){
+	console.log("6");
+	a ++;
+	if(a == 1){
+		z = 6;
+	}
+	if(a == 2){
+		x = 6;
+	}
+}
+function doit1(){
+	console.log("1");
+	a ++;
+	if(a == 1){
+		z = 1;
+	}
+	if(a == 2){
+		x = 1;
+	}
+}
+function doit2(){
+	console.log("2");
+	a ++;
+	if(a == 1){
+		z = 2;
+	}
+	if(a == 2){
+		x = 2;
+	}
+}
+function doit3(){
+	console.log("3");
+	a ++;
+	if(a == 1){
+		z = 3;
+	}
+	if(a == 2){
+		x = 3;
+	}
+}
+function doit10(){
+	console.log("0");
+	a ++;
+	if(a == 1){
+		z = 0;
+	}
+	if(a == 2){
+		x = 0;
+	}
+}
+function doit11(){
+	console.log("-");
+	c = "-";
+}
+function doit12(){
+	console.log("/");
+	c = "/";
+}
+function doit13(){
+	console.log("+");
+	c = "+";
+}
+function doit14(){
+	console.log("*");
+	c = "*";
+}
+function doit15(){
+	console.log("Enter");
+	answer.innerHTML = z.value + " " + x.value;
+	console.log(answer);
+}
+//	("The answer is:" + " " + z + c + x "=" )
+
+</script>

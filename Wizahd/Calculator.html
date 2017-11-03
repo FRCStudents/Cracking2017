@@ -3,7 +3,7 @@
 <body>
 <table>
 	<tr>
-		<td> <input id="end"> </td>
+		<td id="end"> </td>
 </table>
 <table>
 	<tr>
@@ -33,7 +33,7 @@ var a = 0;
 var z = 0;
 var x = 0;
 var c = 0;
-var answer = document.getElementById("end");
+var answer = 0;
 function doit7(){
 	console.log("7");
 	a ++;
@@ -165,6 +165,7 @@ function doit15(){
 	add();
 	}
 	console.log(answer);
+	document.getElementById("end").innerHTML = answer;
 }
 function multiply(){
 	answer = z*x;

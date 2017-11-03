@@ -36,10 +36,6 @@ var c = 0;
 var answer = document.getElementById("end");
 function doit7(){
 	console.log("7");
-	var yada = "7";
-	var x = parseInt(yada);
-	x++;
-	alert(x);
 	a ++;
 	if(a == 1){
 		z = 7;
@@ -156,7 +152,40 @@ function doit14(){
 }
 function doit15(){
 	console.log("Enter");
-	answer.innerHTML = z.value + " " + x.value;
+	if(c == "*"){
+	multiply();
+	}
+	if(c == "/"){
+	divide();
+	}
+	if(c == "-"){
+	subtract();
+	}
+	if(c == "+"){
+	add();
+	}
+	console.log(answer);
+}
+function multiply(){
+	answer = z*x;
+}
+function divide(){
+	answer = z/x;
+}
+function subtract(){
+	answer = z-x;
+}
+function add(){
+	answer = z+x;
+}
+function doit16(){
+	console.log("Enter");
+	console.log(c);
+	var yada = c;
+	var v = parseInt(yada);
+	console.log(v);
+	answer = z + v + x;
+//	answer.innerHTML = z.value + " " + x.value;
 	console.log(answer);
 }
 //	("The answer is:" + " " + z + c + x "=" answer)

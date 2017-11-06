@@ -1,8 +1,6 @@
 <title>Calculator</title>
 </head>
 <body>
-<button onclick=Yes();> Yes </button>
-<button onclick=No();> No </button>
 <table>
 	<tr>
 		<td id="end"> </td>
@@ -42,12 +40,8 @@ var c = 0;
 //Determining when to switch to the second number
 var b = 0;
 var answer = 0;
-function Yes(){
-	console.log(z);
-}
-function Yes(){
-	console.log(x);
-}
+var  m = 0;
+var  n = 0;
 function doit7(){
 	console.log("7");
 	if(a == 0){
@@ -282,6 +276,8 @@ function doit14(){
 }
 function doit15(){
 	console.log("Enter");
+	m = parseInt(x);
+	n = parseInt(z);
 	if(c == "*"){
 	multiply();
 	}
@@ -298,16 +294,16 @@ function doit15(){
 	document.getElementById("end").innerHTML = answer;
 }
 function multiply(){
-	answer = z*x;
+	answer = n*m;
 }
 function divide(){
-	answer = z/x;
+	answer = n/m;
 }
 function subtract(){
-	answer = z-x;
+	answer = n-m;
 }
 function add(){
-	answer = z+x;
+	answer = n+m;
 }
 
 </script>

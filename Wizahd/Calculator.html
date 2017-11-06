@@ -3,7 +3,7 @@
 <body>
 <table>
 	<tr>
-		<td id="end"> </td>
+		<td class="c" id="end"> </td>
 </table>
 <table>
 	<tr>
@@ -22,10 +22,11 @@
 		<td> <button onclick=doit1();> 1 </button> </td>
 		<td> <button onclick=doit2();> 2 </button> </td>
 		<td> <button onclick=doit3();> 3 </button> </td>
-		<td> <button onclick=doit15();> Enter </button> </td>
+		<td> <button onclick=doit15();> E </button> </td>
 	<tr>
 		<td> </td>
 		<td> <button onclick=doit10();> 0 </button> </td>
+		<td> <button onclick=doit16();> C </button> </td>
 </table>
 
 <script>
@@ -305,5 +306,15 @@ function subtract(){
 function add(){
 	answer = n+m;
 }
-
+function doit16() {
+    location.reload();
+}
 </script>
+<style>
+.c {
+	border: 1px solid black;
+	border-collapse: collapse;
+	width: 180px;
+	height: 30px;
+}
+</style>

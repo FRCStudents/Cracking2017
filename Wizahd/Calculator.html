@@ -1,11 +1,9 @@
 <title>Calculator</title>
 </head>
 <body>
-<button onclick=Yes();> Yes </button>
-<button onclick=No();> No </button>
 <table>
 	<tr>
-		<td id="end"> </td>
+		<td class="c" id="end"> </td>
 </table>
 <table>
 	<tr>
@@ -24,10 +22,11 @@
 		<td> <button onclick=doit1();> 1 </button> </td>
 		<td> <button onclick=doit2();> 2 </button> </td>
 		<td> <button onclick=doit3();> 3 </button> </td>
-		<td> <button onclick=doit15();> Enter </button> </td>
+		<td> <button onclick=doit15();> E </button> </td>
 	<tr>
 		<td> </td>
 		<td> <button onclick=doit10();> 0 </button> </td>
+		<td> <button onclick=doit16();> C </button> </td>
 </table>
 
 <script>
@@ -42,17 +41,13 @@ var c = 0;
 //Determining when to switch to the second number
 var b = 0;
 var answer = 0;
-function Yes(){
-	console.log(z);
-}
-function Yes(){
-	console.log(x);
-}
+var  m = 0;
+var  n = 0;
 function doit7(){
 	console.log("7");
 	if(a == 0){
 		if(b == 1){
-		z = "7" + z;
+		z = z + "7";
 		}
 		if(b == 0){
 		z = "7";
@@ -61,7 +56,7 @@ function doit7(){
 	}
 	if(a == 1){
 		if(b == 2){
-		x = "7" + x;
+		x = x + "7";
 		}
 		if(b == 1){
 		x = "7";
@@ -74,7 +69,7 @@ function doit8(){
 	console.log("8");
 	if(a == 0){
 		if(b == 1){
-		z = "8" + z;
+		z = z + "8";
 		}
 		if(b == 0){
 		z = "8";
@@ -83,7 +78,7 @@ function doit8(){
 	}
 	if(a == 1){
 		if(b == 2){
-		x = "8" + x;
+		x = x + "8";
 		}
 		if(b == 1){
 		x = "8";
@@ -95,7 +90,7 @@ function doit9(){
 	console.log("9");
 	if(a == 0){
 		if(b == 1){
-		z = "9" + z;
+		z = z + "9";
 		}
 		if(b == 0){
 		z = "9";
@@ -104,7 +99,7 @@ function doit9(){
 	}
 	if(a == 1){
 		if(b == 2){
-		x = "9" + x;
+		x = x + "9";
 		}
 		if(b == 1){
 		x = "9";
@@ -117,7 +112,7 @@ function doit4(){
 	console.log("4");
 	if(a == 0){
 		if(b == 1){
-		z = "4" + z;
+		z = z + "4";
 		}
 		if(b == 0){
 		z = "4";
@@ -126,18 +121,19 @@ function doit4(){
 	}
 	if(a == 1){
 		if(b == 2){
-		x = "4" + z;
+		x = x + "4";
 		}
 		if(b == 1){
 		x = "4";
 		b++;
 		}
+	}
 }
 function doit5(){
 	console.log("5");
 	if(a == 0){
 		if(b == 1){
-		z = "5" + z;
+		z = z + "5";
 		}
 		if(b == 0){
 		z = "5";
@@ -146,18 +142,19 @@ function doit5(){
 	}
 	if(a == 1){
 		if(b == 2){
-		x = "5" + x;
+		x = x + "5";
 		}
 		if(b == 1){
 		x = "5";
 		b++;
 		}
+	}
 }
 function doit6(){
 	console.log("6");
 	if(a == 0){
 		if(b == 2){
-		z = "6" + z;
+		z = z + "6";
 		}
 		if(b == 1){
 		z = "6";
@@ -166,7 +163,7 @@ function doit6(){
 	}
 	if(a == 1){
 		if(b == 2){
-		x = "6" + x;
+		x = x + "6";
 		}
 		if(b == 1){
 		x = "6";
@@ -179,7 +176,7 @@ function doit1(){
 	console.log("1");
 	if(a == 0){
 		if(b == 1){
-		z = "1" + z;
+		z = z + "1";
 		}
 		if(b == 0){
 		z = "1";
@@ -188,7 +185,7 @@ function doit1(){
 	}
 	if(a == 1){
 		if(b == 2){
-		x = "1" + x;
+		x = x + "1";
 		}
 		if(b == 1){
 		x = "1";
@@ -200,7 +197,7 @@ function doit2(){
 	console.log("2");
 	if(a == 0){
 		if(b == 1){
-		z = "2" + z;
+		z = z + "2";
 		}
 		if(b == 0){
 		z = "2";
@@ -209,7 +206,7 @@ function doit2(){
 	}
 	if(a == 1){
 		if(b == 2){
-		x = "2" + x;
+		x = x + "2";
 		}
 		if(b == 1){
 		x = "2";
@@ -221,7 +218,7 @@ function doit3(){
 	console.log("3");
 	if(a == 0){
 		if(b == 1){
-		z = "3" + z;
+		z = z + "3";
 		}
 		if(b == 0){
 		z = "3";
@@ -230,7 +227,7 @@ function doit3(){
 	}
 	if(a == 1){
 		if(b == 2){
-		x = "3" + x;
+		x = x + "3";
 		}
 		if(b == 1){
 		x = "3";
@@ -242,7 +239,7 @@ function doit10(){
 	console.log("0");
 	if(a == 0){
 		if(b == 1){
-		z = "0" + z;
+		z = z + "0";
 		}
 		if(b == 0){
 		z = "0";
@@ -251,7 +248,7 @@ function doit10(){
 	}
 	if(a == 1){
 		if(b == 2){
-		x = "0" + x;
+		x = x + "0";
 		}
 		if(b == 1){
 		x = "0";
@@ -281,6 +278,8 @@ function doit14(){
 }
 function doit15(){
 	console.log("Enter");
+	m = parseInt(x);
+	n = parseInt(z);
 	if(c == "*"){
 	multiply();
 	}
@@ -298,15 +297,26 @@ function doit15(){
 }
 
 function multiply(){
-	answer = z*x;
+	answer = n*m;
 }
 function divide(){
-	answer = z/x;
+	answer = n/m;
 }
 function subtract(){
-	answer = z-x;
+	answer = n-m;
 }
 function add(){
-	answer = z+x;
+	answer = n+m;
+}
+function doit16() {
+    location.reload();
 }
 </script>
+<style>
+.c {
+	border: 1px solid black;
+	border-collapse: collapse;
+	width: 180px;
+	height: 30px;
+}
+</style>

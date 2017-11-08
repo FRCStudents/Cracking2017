@@ -1,0 +1,20 @@
+
+Assignment: Mix/Max...
+
+1) Create a web page with 2 text entry fields, and 3 buttons, and one
+div for a return string.
+
+2) Each entry field will accept a number - and convert it to an integer.
+
+3) The first button is called Max. It will access a function called "max(x,y)"
+This function will accept 2 parameters and return the maximum int value. For
+example - if one wrote and executed: var y = max(5,3); then the var y would
+have the value of 5. On the other hand, if one executed: var y = min(5,3); then
+the value y would have the value of 3.
+
+If one executes var y = equals(4,5); then y would have the string value "No equal".
+If, on the other hand, one executes var y = equals(4,4); then y would have
+the string value "equal".
+
+Good Luck!
+~Mr Krug

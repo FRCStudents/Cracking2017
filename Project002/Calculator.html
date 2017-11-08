@@ -1,0 +1,125 @@
+<!DOCTYPE html>
+<html>
+<!--
+  Calling functions...
+-->
+<head>
+<title>
+Calculator
+</title>
+</head>
+
+<body>
+<style>
+.calcButton {
+  padding:10px;
+  margin: 5px;
+  background-color:lightblue;
+}
+</style>
+<div id=displayComplete>&nbsp;</div>
+<input type=text id=entryBox size=8px>
+<table height=200px bgcolor=lightblue>
+<tr>
+<td><span type=button class=calcButton id="b1" onclick="loadNum(1);">1</span></td>
+<td><span type=button class=calcButton id="b2" onclick="loadNum(2);">2</span></td>
+<td><span type=button class=calcButton id="b3" onclick="loadNum(3);">3</span></td>
+<td><span type=button class=calcButton id="b7"  onclick="func('*');">*</span></td>
+</tr>
+<tr>
+<td><span type=button class=calcButton id="b4" onclick="loadNum(4);">4</span></td>
+<td><span type=button class=calcButton id="b5" onclick="loadNum(5);">5</span></td>
+<td><span type=button class=calcButton id="b6" onclick="loadNum(6);">6</span></td>
+<td><span type=button class=calcButton id="b8"  onclick="func('/');">/</span></td>
+</tr>
+<tr>
+<td><span type=button class=calcButton id="b7" onclick="loadNum(7);">7</span></td>
+<td><span type=button class=calcButton id="b8" onclick="loadNum(8);">8</span></td>
+<td><span type=button class=calcButton id="b9" onclick="loadNum(9);">9</span></td>
+<td><span type=button class=calcButton id="b9"  onclick="func('%');">%</span></td>
+</tr>
+<tr>
+<td><span type=button class=calcButton id="b7" onclick="func('+');">+</span></td>
+<td><span type=button class=calcButton id="b8" onclick="loadNum(0);">0</span></td>
+<td><span type=button class=calcButton id="b9" onclick="func('-');">-&nbsp;</span></td>
+<td><span type=button class=calcButton id="enter" onclick="enter();">=</span></td>
+</tr>
+<tr>
+</tr>
+</table>
+<button type=button id="clear" onclick="clearAll();">Clear</button>
+<div id="list" class="lst"></div>
+<script>
+var firstNumber = null;
+var secondNumber = null;
+var displayNumber = "";
+var funcSign = "";
+
+displayComplete = document.getElementById("displayComplete");
+display = document.getElementById("entryBox");
+display.value = "";
+
+function clearAll(){
+    firstNumber = null;
+    secondNumber = null;
+    displayNumber = "";
+    display.value = "";
+    displayComplete.innerHTML = "&nbsp;";
+}
+
+
+function func(sign){
+    funcSign = sign;
+    enter();
+}
+
+function loadNum(x){
+    displayNumber += "" + x;
+    display.value = displayNumber;
+}
+
+function enter(){
+    if(firstNumber == null){
+      firstNumber = parseInt(displayNumber);
+      displayComplete.innerHTML = display.value + " " + funcSign;
+      displayNumber = "";
+      display.value = "";
+    } else {
+      if(secondNumber == null){
+        secondNumber = parseInt(displayNumber);
+        displayComplete.innerHTML +=  " " + display.value;
+        displayNumber = "";
+        display.value = "";
+        doMath();
+      } else {
+        alert("Numbers have been entered...");
+      }
+    }
+}
+
+function doMath(){
+  var answer = 0;
+  if(funcSign == "+"){
+    answer = firstNumber + secondNumber;
+    displayComplete.innerHTML += " = " + answer;
+  }
+  if(funcSign == "-"){
+    answer = firstNumber - secondNumber;
+    displayComplete.innerHTML += " = " + answer;
+  }
+  if(funcSign == "*"){
+    answer = firstNumber * secondNumber;
+    displayComplete.innerHTML += " = " + answer;
+  }
+  if(funcSign == "/"){
+    answer = firstNumber / secondNumber;
+    displayComplete.innerHTML += " = " + answer;
+  }
+  if(funcSign == "%"){
+    answer = firstNumber % secondNumber;
+    displayComplete.innerHTML += " = " + answer;
+  }
+
+}
+</script>
+</html>

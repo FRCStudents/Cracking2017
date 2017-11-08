@@ -22,17 +22,37 @@ var v = 0;
 var w = 0;
 var x = 0;
 var y = 0;
-function add(x,y){
-  x = parseInt(v);
-  y = parseInt(w);
-  return(x+y);
+function add(){
+	v = document.getElementById("lname").value;
+	w = document.getElementById("fname").value;
+	x = parseInt(v);
+	y = parseInt(w);
+	answer = x+y;
+	alert(answer);
 }
-function doit(x,y){
-  answer = x+y;
-  add(x,y);
-  alert(answer);
-  answer=document.getElementById("list").innerHTML;
-  answer.innerHTML= "The answer is: " + x+y +"v";
+function subtract(){
+	v = document.getElementById("lname").value;
+	w = document.getElementById("fname").value;
+	x = parseInt(v);
+	y = parseInt(w);
+	answer = x-y;
+	alert(answer);
+}
+function divide(){
+	v = document.getElementById("lname").value;
+	w = document.getElementById("fname").value;
+	x = parseInt(v);
+	y = parseInt(w);
+	answer = x/y;
+	alert(answer);
+}
+function multiply(){
+	v = document.getElementById("lname").value;
+	w = document.getElementById("fname").value;
+	x = parseInt(v);
+	y = parseInt(w);
+	answer = x*y;
+	alert(answer);
 }	
 </script>
 </html>

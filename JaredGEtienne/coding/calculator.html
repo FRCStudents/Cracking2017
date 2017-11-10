@@ -1,4 +1,3 @@
-
 <html>
 <head>
 <title>
@@ -14,20 +13,16 @@ WHY ARE U NOT WORKING (calculator)
 <input type="button" name="button" id="button" value="add" onclick="doit();"></input>
 <div id="list" class="a"></div>
 <script>
-var answer;
 var v = document.getElementById("lname").value;
 var w = document.getElementById("fname").value;
-function add(x,y){
-  var x = parseInt(v);
-  var y = parseInt(w);
-  add(x+y);
-}
-function doit(x,y){
-  var answer = x+y;
-  add(x,y);
-  alert(answer);
+var x = parseInt(v);
+var y = parseInt(w);
+function doit(){
+  var answer=x+y;
+  a=parseInt(answer);
+  alert(a);
   answer=document.getElementById("list").innerHTML;
-  answer.innerHTML= "The answer is: " + x+y +"v";
+//  answer.innerHTML= "The answer is: " + answer +"v";
 }
 </script>
 </html>

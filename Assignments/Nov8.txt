@@ -1,0 +1,95 @@
+Cracking the code
+
+Coding – Fall 2017
+
+functions in JavaScript
+
+Functions have three main parts in the definition – a name, a set of parameters, and a return. This is like a black box – with a name – you dump some stuff in, something happens, and something comes out.
+
+And functions allow you to code something one time, and then call it whenever you need to do it…
+
+For example, I am writing code to model a car. One of the things I need to model is checking air in the tires. And I do that every 20 miles. So I write:
+
+function checkAir(tireNum){
+
+hold hose next to valve;
+
+take off top from valve;
+
+connect hose to valve;
+
+while (not full){
+
+press hose towards valve;
+
+}
+
+}
+
+Then I can write a loop to fill my tires:
+
+//remember – check the spare tire
+
+function checkAllTires(){
+
+for (int i=0; i<5; i++){
+
+checkAir(i);
+
+}
+
+}
+
+Or, if there was a flopping noise coming from one place I could simply write:
+
+checkAir(3);
+
+Now, whenever you are someplace where you need to check the air in your tires, you can simply call the functions checkAllTires() - and presto! Done!
+
+Try it.
+
+Try writing a function for the following scenarios:
+
+1) Washing dishes: maybe you end up with a statement like –
+
+stateOfDishes = washDishes(plates, cups)
+
+in other words, a return!
+
+2) Cooking scrambled eggs
+
+3) juggling 3 balls
+
+4) calculating any positive integer power of any positive integer.
+
+Now lets take the time to write some real functions – write them and run them and get them to work.
+
+1) Please write an HTML page with:
+
+all necessary tags
+
+a button
+
+a div
+
+that kicks off a function
+
+That function kicks off another function. This second function comes from this list following:
+
+* To find the power of a number:
+
+- 2 parameters
+
+* To determine which variable of 2 is the highest numeric value
+
+* To fire an alert box. But make sure you can determine the value in the box at the time of the function call (rather at the time of the function execution.
+
+* To find the average of 5 different numbers. (parameters)
+
+* To determine of some variable is positive or negative
+
+* To write “This is oh so very cool” in a div.
+
+* To change the color of the div
+
+* To change the text in the div 

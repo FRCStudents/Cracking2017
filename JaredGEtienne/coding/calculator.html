@@ -1,0 +1,70 @@
+<!--
+	I changed your code a little bit..
+	Take a look at the add button - calls "doit"
+-->
+
+<html>
+<head>
+<title>
+WHY ARE U NOT WORKING (calculator)
+</title>
+</head>
+
+<body>
+  <table>
+<tr>
+<td id="cell1" >First: <input type="text" name="lname" id="lname"></input></td>
+<td id="cell2" >Last: <input type="text" name="fname" id="fname"></input></td>
+</tr>
+</table>
+<table>
+<tr>
+<td> <input type="button" name="button" id="button" value="add" onclick="add();"></input>
+<td> <input type="button" name="button" id="button" value="subtract" onclick="subtract();"></input>
+<td> <input type="button" name="button" id="button" value="multiply" onclick="multiply();"></input>
+<td> <input type="button" name="button" id="button" value="divide" onclick="divide();"></input>
+</tr>
+</table>
+
+<div id="list" class="a"></div>
+
+<script>
+function add(){
+  var a = parseInt(document.getElementById("lname").value);
+  var b = parseInt(document.getElementById("fname").value);
+
+  var answer=a + b;
+  alert(answer);
+  document.getElementById("list").innerHTML = answer;
+}
+function subtract(){
+  var a = parseInt(document.getElementById("lname").value);
+  var b = parseInt(document.getElementById("fname").value);
+
+  var answer=a - b;
+  alert(answer);
+  document.getElementById("list").innerHTML = answer;
+}
+function multiply(){
+  var a = parseInt(document.getElementById("lname").value);
+  var b = parseInt(document.getElementById("fname").value);
+
+  var answer=a * b;
+  alert(answer);
+  document.getElementById("list").innerHTML = answer;
+}
+function divide(){
+  var a = parseInt(document.getElementById("lname").value);
+  var b = parseInt(document.getElementById("fname").value);
+
+  var answer=a / b;
+  alert(answer);
+  document.getElementById("list").innerHTML = answer;
+}
+add();
+</script>
+<style>
+.a{
+font-size: 20px;}
+</style>
+</html>

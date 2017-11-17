@@ -1,9 +1,10 @@
-<title>calculator</title>
+<title>Calculator</title>
 </head>
 <body>
 <table>
 	<tr>
-		<td> <input id="end"> </td>
+		<td class="c" id="end"> </td>
+</table>
 <table>
 	<tr>
 		<td> <button onclick=doit7();> 7 </button> </td>
@@ -21,20 +22,30 @@
 		<td> <button onclick=doit1();> 1 </button> </td>
 		<td> <button onclick=doit2();> 2 </button> </td>
 		<td> <button onclick=doit3();> 3 </button> </td>
-		<td> <button onclick=doit15();> Enter </button> </td>
+		<td> <button onclick=doit15();> E </button> </td>
 	<tr>
 		<td> </td>
 		<td> <button onclick=doit10();> 0 </button> </td>
+		<td> <button onclick=doit16();> C </button> </td>
 </table>
 
 <script>
+//Determines the first and second number
 var a = 0;
+//The first number
 var z = 0;
+//The second number
 var x = 0;
+//The operator (+,-,*,/)
 var c = 0;
-var answer = document.getElementById("end");
+//Determining when to switch to the second number
+var b = 0;
+var answer = 0;
+var  m = 0;
+var  n = 0;
 function doit7(){
 	console.log("7");
+<<<<<<< HEAD
 	var yada = "7";
 	//var x = parseInt(yada);
 	//x++;
@@ -44,122 +55,280 @@ function doit7(){
 	a ++;
 	if(a == 1){
 		z = 7;
+=======
+	if(a == 0){
+		if(b == 1){
+		z = z + "7";
+		}
+		if(b == 0){
+		z = "7";
+		b++;
+		}
+>>>>>>> 80979ecce694e72702147c4de123b346e542479a
 	}
-	if(a == 2){
-		x = 7;
+	if(a == 1){
+		if(b == 2){
+		x = x + "7";
+		}
+		if(b == 1){
+		x = "7";
+		b++;
+		}
 	}
 }
+//	a ++;	if(a == 1){ z = 7;}	if(a == 2){		x = 7;	}
 function doit8(){
 	console.log("8");
-	a ++;
-	if(a == 1){
-		z = 8;
+	if(a == 0){
+		if(b == 1){
+		z = z + "8";
+		}
+		if(b == 0){
+		z = "8";
+		b++;
+		}
 	}
-	if(a == 2){
-		x = 8;
+	if(a == 1){
+		if(b == 2){
+		x = x + "8";
+		}
+		if(b == 1){
+		x = "8";
+		b++;
+		}
 	}
 }
 function doit9(){
 	console.log("9");
-	a ++;
+	if(a == 0){
+		if(b == 1){
+		z = z + "9";
+		}
+		if(b == 0){
+		z = "9";
+		b++;
+		}
+	}
 	if(a == 1){
-		z = 9;
+		if(b == 2){
+		x = x + "9";
+		}
+		if(b == 1){
+		x = "9";
+		b++;
+		}
 	}
-	if(a == 2){
-		x = 9;
-	}
+
 }
 function doit4(){
 	console.log("4");
-	a ++;
-	if(a == 1){
-		z = 4;
+	if(a == 0){
+		if(b == 1){
+		z = z + "4";
+		}
+		if(b == 0){
+		z = "4";
+		b++;
+		}
 	}
-	if(a == 2){
-		x = 4;
+	if(a == 1){
+		if(b == 2){
+		x = x + "4";
+		}
+		if(b == 1){
+		x = "4";
+		b++;
+		}
 	}
 }
 function doit5(){
 	console.log("5");
-	a ++;
-	if(a == 1){
-		z = 5;
+	if(a == 0){
+		if(b == 1){
+		z = z + "5";
+		}
+		if(b == 0){
+		z = "5";
+		b++;
+		}
 	}
-	if(a == 2){
-		x = 5;
+	if(a == 1){
+		if(b == 2){
+		x = x + "5";
+		}
+		if(b == 1){
+		x = "5";
+		b++;
+		}
 	}
 }
 function doit6(){
 	console.log("6");
-	a ++;
-	if(a == 1){
-		z = 6;
+	if(a == 0){
+		if(b == 2){
+		z = z + "6";
+		}
+		if(b == 1){
+		z = "6";
+		b++;
+		}
 	}
-	if(a == 2){
-		x = 6;
+	if(a == 1){
+		if(b == 2){
+		x = x + "6";
+		}
+		if(b == 1){
+		x = "6";
+		b++;
+		}
 	}
 }
+
 function doit1(){
 	console.log("1");
-	a ++;
-	if(a == 1){
-		z = 1;
+	if(a == 0){
+		if(b == 1){
+		z = z + "1";
+		}
+		if(b == 0){
+		z = "1";
+		b++;
+		}
 	}
-	if(a == 2){
-		x = 1;
+	if(a == 1){
+		if(b == 2){
+		x = x + "1";
+		}
+		if(b == 1){
+		x = "1";
+		b++;
+		}
 	}
 }
 function doit2(){
 	console.log("2");
-	a ++;
-	if(a == 1){
-		z = 2;
+	if(a == 0){
+		if(b == 1){
+		z = z + "2";
+		}
+		if(b == 0){
+		z = "2";
+		b++;
+		}
 	}
-	if(a == 2){
-		x = 2;
+	if(a == 1){
+		if(b == 2){
+		x = x + "2";
+		}
+		if(b == 1){
+		x = "2";
+		b++;
+		}
 	}
 }
 function doit3(){
 	console.log("3");
-	a ++;
-	if(a == 1){
-		z = 3;
+	if(a == 0){
+		if(b == 1){
+		z = z + "3";
+		}
+		if(b == 0){
+		z = "3";
+		b++;
+		}
 	}
-	if(a == 2){
-		x = 3;
+	if(a == 1){
+		if(b == 2){
+		x = x + "3";
+		}
+		if(b == 1){
+		x = "3";
+		b++;
+		}
 	}
 }
 function doit10(){
 	console.log("0");
-	a ++;
-	if(a == 1){
-		z = 0;
+	if(a == 0){
+		if(b == 1){
+		z = z + "0";
+		}
+		if(b == 0){
+		z = "0";
+		b++;
+		}
 	}
-	if(a == 2){
-		x = 0;
+	if(a == 1){
+		if(b == 2){
+		x = x + "0";
+		}
+		if(b == 1){
+		x = "0";
+		b++;
+		}
 	}
 }
 function doit11(){
 	console.log("-");
 	c = "-";
+	a++;
 }
 function doit12(){
 	console.log("/");
 	c = "/";
+	a++;
 }
 function doit13(){
 	console.log("+");
 	c = "+";
+	a++;
 }
 function doit14(){
 	console.log("*");
 	c = "*";
+	a++;
 }
 function doit15(){
 	console.log("Enter");
-	answer.innerHTML = z.value + " " + x.value;
+	m = parseInt(x);
+	n = parseInt(z);
+	if(c == "*"){
+	multiply();
+	}
+	if(c == "/"){
+	divide();
+	}
+	if(c == "-"){
+	subtract();
+	}
+	if(c == "+"){
+	add();
+	}
 	console.log(answer);
+	document.getElementById("end").innerHTML = answer;
 }
-//	("The answer is:" + " " + z + c + x "=" )
 
+function multiply(){
+	answer = n*m;
+}
+function divide(){
+	answer = n/m;
+}
+function subtract(){
+	answer = n-m;
+}
+function add(){
+	answer = n+m;
+}
+function doit16() {
+    location.reload();
+}
 </script>
+<style>
+.c {
+	border: 1px solid black;
+	border-collapse: collapse;
+	width: 180px;
+	height: 30px;
+}
+</style>

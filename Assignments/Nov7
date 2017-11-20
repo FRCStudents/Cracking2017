@@ -1,0 +1,18 @@
+Coding:
+We tried to write calculator. We are trying to understand functions – parameters being passed, and how functions work. And with all that, we are trying to get some idea of how to design a program. 
+
+It’s not easy. Like every other design process – I recommend that you start by grabbing a drink and laying down somewhere you can watch the clouds… and imagine. And let your mind drift. That is the beginning of many good designs.
+
+Now we are going to try writing some simple functions – grab an HTML file with a button that fires off a javascript function:
+
+Now write:
+
+1) a function that takes one parameter and displays it in the console (and then alert box)
+2) a function that takes two parameters and adds them together
+3) a function that takes two parameters and concatenates them
+4) a function that takes three parameters (as the sides of a cube) and determines the volume
+5) a function that takes one parameter and returns True if the parameter is even
+6) write a function that uses the function in question 5 above.
+
+
+

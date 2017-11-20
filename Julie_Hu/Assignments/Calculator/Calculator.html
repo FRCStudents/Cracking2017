@@ -1,0 +1,91 @@
+<html>
+<head>
+<title>Calculator</title>
+</head>
+<body>
+<table>
+  <tr>
+    <td id="cell1" class="cell"> First Number:<input type="text" name="fnum" id="fnum"></td>
+    <td id="cell2" class="cell"> Last Number:<input type="text" name="lnum" id="lnum"></td>
+  </tr>
+  <tr>
+    <td id="cell5" class="cell">
+      <hr>Operations:
+      <input type="button" name="button" id="r+" value="+" onclick="doit();">
+      <input type="button" name="button" id="r-" value="-" onclick="doit1();">
+      <input type="button" name="button" id="r*" value="*" onclick="doit2();">
+      <input type="button" name="button" id="r/" value="/" onclick="doit3();">
+      <input type="button" name="button" id="r%" value="%" onclick="doit4();"><br>
+      <hr>
+    <div id="cell6" class="cell"></div>
+  </tr>
+</table>
+<div id="list" class="lst"></div>
+</body>
+</html>
+<script>
+function doit(){
+var a = parseInt (document.getElementById("fnum").value);
+var b = parseInt (document.getElementById("lnum").value);
+
+var answerspot = document.getElementById("cell6");
+function add(a,b){
+	answer= a + b;
+	answerspot.innerHTML = answer;
+}
+
+	add(a,b);
+}
+
+function doit1(){
+var a = parseInt (document.getElementById("fnum").value);
+var b = parseInt (document.getElementById("lnum").value);
+
+var answerspot = document.getElementById("cell6");
+
+function subtract(a,b){
+	answer= a-b;
+	answerspot.innerHTML = answer;
+}
+	subtract(a,b);
+}
+function doit2(){
+var a = parseInt (document.getElementById("fnum").value);
+var b = parseInt (document.getElementById("lnum").value);
+
+var answerspot = document.getElementById("cell6");
+
+function multiply(a,b){
+	answer= a*b;
+	answerspot.innerHTML = answer;
+}
+	multiply(a,b);
+}
+function doit3(){
+var a = parseInt (document.getElementById("fnum").value);
+var b = parseInt (document.getElementById("lnum").value);
+
+var answerspot = document.getElementById("cell6");
+
+function divide(a,b){
+	answer= a/b;
+	answerspot.innerHTML = answer;
+}
+	divide(a,b);
+}
+function doit4(){
+var a = parseInt (document.getElementById("fnum").value);
+var b = parseInt (document.getElementById("lnum").value);
+
+var answerspot = document.getElementById("cell6");
+
+function mod(a,b){
+	answer= a%b;
+	answerspot.innerHTML = answer;
+}
+	mod(a,b);
+}
+
+</script>
+	
+

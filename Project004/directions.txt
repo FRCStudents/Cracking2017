@@ -1,0 +1,16 @@
+
+Assignment: swap...
+
+1) Create a web page with 2 text entry fields, and 1 button.
+
+2) Each entry field will accept a string.
+
+3) The button is called "Swap". When one clicks the button,
+the values in the 2 entry fields are exchanged. For example:
+If I enter "This" in the first text field, and "That" in the
+second field - if I press the Swap button, the values are
+exchanged so that the first text field now has "That" and the
+second text field has "This".
+
+Good Luck!
+~Mr Krug

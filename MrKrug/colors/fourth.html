@@ -1,0 +1,59 @@
+
+<html>
+<head>
+<title>Exploring Colors</title>
+</head>
+<body>
+<table>
+<tr>
+	<td bgcolor="FF0000">FF0000</td>
+	<td bgcolor="DD0000">DD0000</td>
+	<td bgcolor="BB0000">BB0000</td>
+	<td bgcolor="990000">990000</td>
+	<td bgcolor="770000"><font color=white>770000</font></td>
+	<td bgcolor="550000"><font color=white>550000</font></td>
+	<td bgcolor="330000"><font color=white>330000</font></td>
+	<td bgcolor="110000"><font color=white>110000</font></td>
+</tr>
+<tr>
+        <td bgcolor="FF2200">FF2200</td>
+        <td bgcolor="DD2200">DD2200</td>
+        <td bgcolor="BB2200">BB2200</td>
+        <td bgcolor="992200">992200</td>
+        <td bgcolor="772200"><font color=white>772200</font></td>
+        <td bgcolor="552200"><font color=white>552200</font></td>
+        <td bgcolor="332200"><font color=white>332200</font></td>
+        <td bgcolor="112200"><font color=white>112200</font></td>
+</tr>
+<tr>
+        <td bgcolor="FFFFFF">FFFFFF</td>
+        <td bgcolor="DDFFDD">DDFFDD</td>
+        <td bgcolor="BBFFBB">BBFFBB</td>
+        <td bgcolor="99FF99">99FF99</td>
+        <td bgcolor="77FF77">777FF77</td>
+        <td bgcolor="55FF55">55FF55</td>
+        <td bgcolor="33FF33">33FF33</td>
+        <td bgcolor="11FF11">11FF11</td>
+</tr>
+
+</table>
+</body>
+<script>
+var x = 0;
+var y = 0;
+var a, b;
+
+for(var i=0; i < 8; i++){
+	x += 2;
+	y += 2;
+	a = x;
+	if(x == 10) a = "A";
+	if(x == 12) a = "C";
+	if(x == 14) a = "E";
+	if(x > 14) a = "F";
+	b = a;
+	z = a + "" + b;
+	console.log(z);
+}
+</script>
+</html> 

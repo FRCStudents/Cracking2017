@@ -1,37 +1,79 @@
 <html>
 
+
+<input id = "box1">
+<input id = "box2">
+	
+
 <BUTTON ONCLICK = "add('x, y')";> + </BUTTON>
+
 
 <BUTTON ONCLICK = "subtract('x, y')";> - </BUTTON>
 
+
 <BUTTON ONCLICK = "multiply('x, y')";> * </BUTTON>
+
 
 <BUTTON ONCLICK = "divide('x, y')";> / </BUTTON>
 
-</html>
+
 
 <script>
 
+
 function add (x , y)
+	
 	{
-	return x + y;
+	
+	var a = parseInt(document.getElementById("box1").value);
+	var b = parseInt(document.getElementById("box2").value);
+	var answer = a + b;
+	
+	alert(answer);
+
 	}
+
 
 function subtract (x , y)
+	
 	{
-	return x - y;
+	var a = parseInt(document.getElementById("box1").value);
+	var b = parseInt(document.getElementById("box2").value);
+	var answer = a - b;
+	
+	alert(answer);
+
 	}
+
 
 function multiply (x , y)
+	
 	{
-	return x * y;
+
+
+	var a = parseInt(document.getElementById("box1").value);
+	var b = parseInt(document.getElementById("box2").value);
+	var answer = a * b;
+	
+	alert(answer);
+
 	}
 
+
 function divide (x , y)
+	
 	{
-	divide x / y;
+	
+	var a = parseInt(document.getElementById("box1").value);
+	var b = parseInt(document.getElementById("box2").value);
+	var answer = a / b;
+	
+	alert(answer);
+
 	}
+
 
 
 
 </script>
+</HTML>

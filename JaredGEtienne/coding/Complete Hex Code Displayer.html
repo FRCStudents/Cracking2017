@@ -1,0 +1,43 @@
+<html>
+<table>
+  <tr>
+    <td id= "color">hello</td>
+<td id= "0">hello</td>
+<td id= "colorE">hello</td>
+<td id= "colorD">hello</td>
+<td id= "colorC">hello</td>
+<td id= "colorB">hello</td>
+<td id= "colorA">hello</td>
+<td id= "color9">hello</td>
+<td id= "color8">hello</td>
+<td id= "color7">hello</td>
+<td id= "color6">hello</td>
+<td id= "color5">hello</td>
+<td id= "color4">hello</td>
+<td id= "color3">hello</td>
+<td id= "color2">hello</td>
+<td id= "color1">hello</td>
+  </tr>
+  <tr id= "myRow"></td>
+</table>
+<script>
+console.log(b);
+for(var i=0; i<46;){
+  var b = 0;
+  console.log(i);
+  i = i +22;
+  var a = "#"+"AA"+i+"00";
+  document.getElementById(b).setAttribute("bgcolor", a);
+  b = b + 1;
+  console.log(i);
+  var row = document.getElementById("myRow");
+  var x = row.insertCell(0);
+  x.innerHTML = a;
+  x.id = b;
+
+}
+
+
+
+</script>
+</html>

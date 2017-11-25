@@ -1,8 +1,8 @@
 <html>
-<table id= table>
+<table id= table border= 1>
   <tr>
-  
-<td id= "0">hello</td>
+
+<td id= "colorF">hello</td>
 <td id= "colorE">hello</td>
 <td id= "colorD">hello</td>
 <td id= "colorC">hello</td>
@@ -21,22 +21,40 @@
   <tr id= "myRow"></tr>
 </table>
 <script>
-console.log(b);
-for(var i=0; i<46;){
-  var b = 0;
-  console.log(i);
-  i = i +22;
-  var a = "#"+"AA"+i+"00";
-  document.getElementById(b).setAttribute("bgcolor", a);
-  b = b + 1;
-  console.log(i);
-  var row = document.getElementById("table");
-  var x = table.insertRow(0);
-  x.innerHTML = a;
-  x.id = b;
+//var loop = document.getElementById('colorF');
+
+//for(var i=0; i<46;){
+  //var b = 0;
+  //i = i +22;
+  //var a = "#"+"AA"+i+"00";
+//b = b + 1;
+//var table = document.getElementById("colorF");
+//var row = loop.insertRow(b);
+//row.innerHTML = a;
+//x.id = b;
+//row.setAttribute("bgcolor", a);
+var elt = document.getElementById("color");
+elt.innerHTML = "HELLO";
+elt.setAttribute("bgcolor", "#FF0000");
+//myFunction();
+
+function myFunction() {
+  var table = document.getElementById("myTable");
+
+ for(var j=0; j < 3; j++){
+  var row = table.insertRow(j);
+for(var i=0; i < 5; i++){
+  var cell = row.insertCell(i);
+  cell.innerHTML = i;
+  cell.setAttribute("bgcolor", "#FF0000");
+  }
+ }
+  //var cell1 = row.insertCell(0);
+  //var cell2 = row.insertCell(1);
+  //cell1.innerHTML = "NEW CELL1";
+  //cell1.setAttribute("bgcolor", "#FF0000");
+  //cell2.innerHTML = "NEW CELL2";
 }
-
-
 
 </script>
 </html>

@@ -1,0 +1,35 @@
+<html>
+<body>
+<input type=button onclick=myFunction()>Push</input>
+<table id=myTable>
+<tr>
+<td id=color>hello</td>
+</tr>
+</table>
+<script>
+  var elt = document.getElementById("color");
+  elt.innerHTML = "HELLO";
+  elt.setAttribute("bgcolor", "#FF0000");
+  //myFunction();
+
+function myFunction() {
+    var table = document.getElementById("myTable");
+
+   for(var j=0; j < 3; j++){ 
+    var row = table.insertRow(j);
+	for(var i=0; i < 5; i++){
+		var cell = row.insertCell(i);
+		cell.innerHTML = i;
+		cell.setAttribute("bgcolor", "#FF0000");
+		}
+   }
+    //var cell1 = row.insertCell(0);
+    //var cell2 = row.insertCell(1);
+    //cell1.innerHTML = "NEW CELL1";
+    //cell1.setAttribute("bgcolor", "#FF0000");
+    //cell2.innerHTML = "NEW CELL2";
+}
+
+</script>
+</body>
+</html>

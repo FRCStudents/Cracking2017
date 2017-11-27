@@ -1,43 +1,190 @@
 <html>
-<table>
-  <tr>
-    <td id= "color">hello</td>
-<td id= "0">hello</td>
-<td id= "colorE">hello</td>
-<td id= "colorD">hello</td>
-<td id= "colorC">hello</td>
-<td id= "colorB">hello</td>
-<td id= "colorA">hello</td>
-<td id= "color9">hello</td>
-<td id= "color8">hello</td>
-<td id= "color7">hello</td>
-<td id= "color6">hello</td>
-<td id= "color5">hello</td>
-<td id= "color4">hello</td>
-<td id= "color3">hello</td>
-<td id= "color2">hello</td>
-<td id= "color1">hello</td>
-  </tr>
-  <tr id= "myRow"></td>
+<!-- I first created all my rows which were going to be affected by the code -->
+<table><tr>
+<tr id= "colorF"></tr>
+<tr id= "colorE"></tr>
+<tr id= "colorD"></tr>
+<tr id= "colorC"></tr>
+<tr id= "colorB"></tr>
+<tr id= "colorA"></tr>
+<tr id= "color8"></tr>
+<tr id= "color6"></tr>
+<tr id= "color4"></tr>
+<tr id= "color2"></tr>
+<tr id= "color0"></tr>
 </table>
+
 <script>
-console.log(b);
-for(var i=0; i<46;){
-  var b = 0;
-  console.log(i);
-  i = i +22;
-  var a = "#"+"AA"+i+"00";
-  document.getElementById(b).setAttribute("bgcolor", a);
-  b = b + 1;
-  console.log(i);
-  var row = document.getElementById("myRow");
-  var x = row.insertCell(0);
-  x.innerHTML = a;
-  x.id = b;
-
+//I create a function to work on the rows
+function colorF() {
+  var b= "#"+ "FF"+"00"+"00"
+  var elt = document.getElementById("colorF");
+  elt.innerHTML = b;
+  elt.setAttribute("bgcolor", b);
+  // var B affects the very first color block in a row
+  //this sets the color of the block and puts in a hex code
+ for(var j=22; j < 90; j = j + 22){
+  var a = "#"+"FF"+j+"00";
+  var table = document.getElementById("colorF");
+  var row = table.insertCell(a);
+  // var A creates a hex code which increases everytime it loops
+  // this also creates a cell each loop
+  row.innerHTML = a;
+  row.setAttribute("bgcolor", a);
+  //this sets the color and puts in the hexcode acting on it
 }
+ }
+ function colorE() {
+   var b= "#"+ "EE"+"00"+"00"
+   var elt = document.getElementById("colorE");
+   elt.innerHTML = b;
+   elt.setAttribute("bgcolor", b);
+  for(var j=22; j < 90; j = j + 22){
+   var a = "#"+"EE"+j+"00";
+   var table = document.getElementById("colorE");
+   var row = table.insertCell(a);
+   console.log(a);
+   row.innerHTML = a;
+   row.setAttribute("bgcolor", a);
+   }
+  }
+  function colorD() {
+    var b= "#"+ "DD"+"00"+"00"
+    var elt = document.getElementById("colorD");
+    elt.innerHTML = b;
+    elt.setAttribute("bgcolor", b);
+   for(var j=22; j < 90; j = j + 22){
+    var a = "#"+"DD"+j+"00";
+    var table = document.getElementById("colorD");
+    var row = table.insertCell(a);
+    console.log(a);
+    row.innerHTML = a;
+    row.setAttribute("bgcolor", a);
+    }
+   }
+   function colorC() {
+     var b= "#"+ "CC"+"00"+"00"
+     var elt = document.getElementById("colorC");
+     elt.innerHTML = b;
+     elt.setAttribute("bgcolor", b);
+    for(var j=22; j < 90; j = j + 22){
+     var a = "#"+"CC"+j+"00";
+     var table = document.getElementById("colorC");
+     var row = table.insertCell(a);
+     console.log(a);
+     row.innerHTML = a;
+     row.setAttribute("bgcolor", a);
+     }
+    }
+    function colorB() {
+      var b= "#"+ "BB"+"00"+"00"
+      var elt = document.getElementById("colorB");
+      elt.innerHTML = b;
+      elt.setAttribute("bgcolor", b);
+     for(var j=22; j < 90; j = j + 22){
+      var a = "#"+"BB"+j+"00";
+      var table = document.getElementById("colorB");
+      var row = table.insertCell(a);
+      console.log(a);
+      row.innerHTML = a;
+      row.setAttribute("bgcolor", a);
+      }
+     }
+     function colorA() {
+       var b= "#"+ "AA"+"00"+"00"
+       var elt = document.getElementById("colorA");
+       elt.innerHTML = b;
+       elt.setAttribute("bgcolor", b);
+      for(var j=22; j < 90; j = j + 22){
+       var a = "#"+"AA"+j+"00";
+       var table = document.getElementById("colorA");
+       var row = table.insertCell(a);
+       console.log(a);
+       row.innerHTML = a;
+       row.setAttribute("bgcolor", a);
+       }
+      }
+      function color8() {
+        var b= "#"+"88"+"00"+"00"
+        var elt = document.getElementById("color8");
+        elt.innerHTML = b;
+        elt.setAttribute("bgcolor", b);
+       for(var j=22; j < 90; j = j + 22){
+        var a = "#"+"88"+j+"00";
+        var table = document.getElementById("color8");
+        var row = table.insertCell(a);
+        console.log(a);
+        row.innerHTML = a;
+        row.setAttribute("bgcolor", a);
+        }
+       }
+       function color6() {
+         var b= "#"+ "66"+"00"+"00"
+         var elt = document.getElementById("color6");
+         elt.innerHTML = b;
+         elt.setAttribute("bgcolor", b);
+        for(var j=22; j < 90; j = j + 22){
+         var a = "#"+"66"+j+"00";
+         var table = document.getElementById("color6");
+         var row = table.insertCell(a);
+         console.log(a);
+         row.innerHTML = a;
+         row.setAttribute("bgcolor", a);
+         }
+        }
+        function color4() {
+          var b= "#"+ "44"+"00"+"00"
+          var elt = document.getElementById("color4");
+          elt.innerHTML = b;
+          elt.setAttribute("bgcolor", b);
+         for(var j=22; j < 90; j = j + 22){
+          var a = "#"+"44"+j+"00";
+          var table = document.getElementById("color4");
+          var row = table.insertCell(a);
+          console.log(a);
+          row.innerHTML = a;
+          row.setAttribute("bgcolor", a);
+          }
+         }
+         function color2() {
+           var b= "#"+ "22"+"00"+"00"
+           var elt = document.getElementById("color2");
+           elt.innerHTML = b;
+           elt.setAttribute("bgcolor", b);
+          for(var j=22; j < 90; j = j + 22){
+           var a = "#"+"22"+j+"00";
+           var table = document.getElementById("color2");
+           var row = table.insertCell(a);
+           console.log(a);
+           row.innerHTML = a;
+           row.setAttribute("bgcolor", a);
+           }
+          }
+          function color0() {
+            var b= "#"+ "00"+"00"+"00"
+            var elt = document.getElementById("color0");
+            elt.innerHTML = b;
+            elt.setAttribute("bgcolor", b);
+           for(var j=22; j < 90; j = j + 22){
+            var a = "#"+"00"+j+"00";
+            var table = document.getElementById("color0");
+            var row = table.insertCell(a);
+            console.log(a);
+            row.innerHTML = a;
+            row.setAttribute("bgcolor", a);
+            }
+           }
 
-
-
+colorF();
+colorE();
+colorD();
+colorC();
+colorB();
+colorA();
+color8();
+color6();
+color4();
+color2();
+color0();
 </script>
 </html>

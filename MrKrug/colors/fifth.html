@@ -1,0 +1,92 @@
+
+<html>
+<head>
+<title>Exploring Colors</title>
+</head>
+<body>
+<table id=table>
+</table>
+</body>
+<script>
+function buildTable(){
+	var c1 = 0;
+	var c2 = 0;
+	var c3 = 0;
+
+	for(var i=0; i<512; i++){
+		addRow(c1, c2, c3);
+		c3 = increaseByTwo(c3);
+		if(c3 > 14){
+			c2 = increaseByTwo(c2); 
+		}
+		if(c2 > 14){
+			c1 = increaseByTwo(c1);
+		}
+	}
+}
+
+function addRow(c1, c2, c3){
+   var tbl = document.getElementById("table");
+	var row = tbl.insertRow(tbl.rows.length - 1);
+	for(var j=0; j < 6; j++){
+		var cell = row.insertCell(j);
+		cell.innerHTML = functionArray[j](c1, c2, c3);
+		cell.setAttribute("bgcolor", functionArray[j](c1, c2, c3));
+		if(c1 < 8 && c2 < 8 && c3 < 8) cell.setAttribute("style", "color: white;");
+	}
+}
+
+var functionArray = [ 
+function(c1, c2, c3){
+	return buildColor(c1, c3, c2);
+	},
+
+function(c1, c2, c3){
+	return buildColor(c1, c2, c3);
+	},
+
+function(c1, c2, c3){
+	return buildColor(c3, c2, c1);
+	},
+
+function(c1, c2, c3){
+	return buildColor(c3, c1, c2);
+	},
+
+function(c1, c2, c3){
+	return buildColor(c2, c1, c3);
+	},
+
+function(c1, c2, c3){
+	return buildColor(c2, c3, c1);
+	}
+];
+
+function buildColor(c1, c2, c3){
+	return "#" +
+		convertToHex(c1) +
+		convertToHex(c1) +
+		convertToHex(c2) +
+		convertToHex(c2) +
+		convertToHex(c3) +
+		convertToHex(c3);
+}
+
+function convertToHex(x){
+   	if(x < 10) return x;
+	if(x == 10) return "A";
+	if(x == 11) return "B";
+	if(x == 12) return "C";
+	if(x == 13) return "D";
+	if(x == 14) return "E";
+	return "F";
+}
+
+function increaseByTwo(x){
+	if(x < 15) return x + 2;
+	return 0;
+}
+
+buildTable();
+</script>
+</html> 

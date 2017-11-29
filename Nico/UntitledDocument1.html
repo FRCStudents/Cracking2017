@@ -1,16 +1,15 @@
-
-<title>Calculator</title>
 <html>
-
+<title>Calculator</title>
+<body></body>
 <table>
 
 </tr>
 <form>
   <br>
-  <input type="text" name="firstname">
+  <input id="1" type="text" name="firstname">
 <form>
   <br>
-  <input type="text" name="firstname">
+  <input id="2" type="text" name="firstname">
   <br>
 
 </form>
@@ -29,18 +28,29 @@
 
  </tr>
  <script>
-
-function add(x,y){
-	var a=parselnt(x);
-	var b=parselnt(y);
-	return a+b;
+var x = 0;
+var y = 0;
+var answer = 0;
+var a = document.getElementById("1").value;
+var b = document.getElementById("2").value;
+function doit4(){
+	x=parseInt(a);
+	y=parseInt(b);
+	answer = x+y;
+	alert(answer);
 }
-
-
-var a="1";
-var b="2";
-var nick = add(1,2);
-	alert("Stuff");
+var x = 1;
+var y = 2;
+var answer = 3;
+var a = document.getElementById("1").value
+var b = document.getElementById("2").value
+function doit4(){
+	x=parseInt(a);
+	y=parseInt(b)
+	answer = x+y;
+	alert(answer);
+}
 </script>
+</html>
                
 

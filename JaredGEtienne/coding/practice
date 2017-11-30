@@ -1,0 +1,13 @@
+<table id = table> </table>
+<script>
+function addRow(){
+var a= document.getElementById("table");
+var row= a.insertRow(0);
+var cell= row.insertCell(0);
+cell.innnerHTML= "yobaby";
+var a= document.getElementById("table");
+var row= a.insertRow(0);
+var cell= row.insertCell(0);
+cell.innnerHTML= "yobaby";
+}
+addRow();

@@ -1,0 +1,28 @@
+1) for(var i = 1; i < 51; i++){
+	var s = ""
+	s += i
+
+}
+	alert(s);
+
+2) for(var i = 1; i < 26; i++){
+	var s = ""
+	s += (i * 2);
+	alert(i);
+}
+
+3) for(var i = 25; i > 0; i--){
+	var s = ""
+	s += (i * 2);
+	alert(i);
+}
+
+4) function doit(x){
+	var s = ""
+	s += x * 3;
+	return s;
+}
+
+5) for(var i = 0; i < 11; i++){
+	alert(doit(i));
+}

@@ -15,17 +15,19 @@ Lots of stuff
 <input type="button" name="button" id="button" value="add" onclick="doit();">
 <div id="list" class="a"></div>
 <script>
+
 var answer;
-var v = d.getElementById("cell1").value;
-var w = d.getElementById("cell2").value;
+var v = 6;
+var w = 7;
+
 
 function showBox(msg){
   alert("This is the answer: " + msg);
 }
 
-function add(x, y){
+function add(x,y){
     answer = x + y;
-    return = parceInt(v) + parceInt(w);
+
 }
 
 function doit(){
@@ -34,6 +36,7 @@ function doit(){
   showBox("the answer is" + v + " + " + w + " = " + answer);
   alert(answer);
   document.getElementById("list").innerHTML = answer;
+
 }
 </script>
 </html>

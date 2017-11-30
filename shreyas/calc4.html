@@ -1,0 +1,67 @@
+Calculator!
+
+<html>
+<head>
+<title>
+
+</title>
+</head>
+
+<body>
+<table>
+<tr>
+<td id="cell1" >insert here: <input type="text" name="cool" id="cool"></input></td>
+<td id="cell2" >insert here: <input type="text" name="happy" id="happy"></input></td>
+</tr>
+</table>
+<table>
+<tr>
+<td> <input type="button" name="button" id="button" value="add" onclick="add();"></input>
+<td> <input type="button" name="button" id="button" value="subtract" onclick="subtract();"></input>
+<td> <input type="button" name="button" id="button" value="multiply" onclick="multiply();"></input>
+<td> <input type="button" name="button" id="button" value="divide" onclick="divide();"></input>
+</tr>
+</table>
+
+<div id="list" class="a"></div>
+
+<script>
+function add(){
+  var a = parseInt(document.getElementById("cool").value);
+  var b = parseInt(document.getElementById("happy").value);
+
+  var answer=a + b;
+  alert(answer);
+  document.getElementById("hello").innerHTML = answer;
+}
+function subtract(){
+  var a = parseInt(document.getElementById("cool").value);
+  var b = parseInt(document.getElementById("happy").value);
+
+  var answer=a - b;
+  alert(answer);
+  document.getElementById("hello").innerHTML = answer;
+}
+function multiply(){
+  var a = parseInt(document.getElementById("cool").value);
+  var b = parseInt(document.getElementById("happy").value);
+
+  var answer=a * b;
+  alert(answer);
+  document.getElementById("hello").innerHTML = answer;
+}
+function divide(){
+  var a = parseInt(document.getElementById("cool").value);
+  var b = parseInt(document.getElementById("happy").value);
+
+  var answer=a / b;
+  alert(answer);
+  document.getElementById("hello").innerHTML = answer;
+}
+add();
+</script>
+<style>
+.a{
+
+</style>
+</html>

@@ -4,14 +4,15 @@
 
 </html>
 <script>
+var c=0;
 function Randomize(x) {
     var x = Math.floor((Math.random() * 6) + 1);
-    var c=0;
+    c=0;
     console.log(x);
     dice(x);
   }
-function dice(x){}
-    if(x<2 & x>0){
+function dice(x){
+    if(x<2 && x>0){
     var b = document.createElement("img");
     b.setAttribute("src", "https://upload.wikimedia.org/wikipedia/commons/1/1b/Dice-1-b.svg");
     b.setAttribute("width", "110");
@@ -20,7 +21,7 @@ function dice(x){}
     b.setAttribute("id",c);
     c++;
     document.body.appendChild(b);
-console.log("a"+c);
+    console.log("a"+c);
     }
       if(x<3 && x>1){
         var b = document.createElement("img");
@@ -77,5 +78,5 @@ console.log("a"+c);
                 document.body.appendChild(b);
               console.log("a"+c);
               }
-
+}
 </script>

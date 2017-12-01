@@ -22,7 +22,7 @@
 <script>
 function process (x){
 	if (x == 1){
-		return add(document.getElementById('box1').value, document.getElementById('box2').value);
+		alert(add(document.getElementById('box1').value, document.getElementById('box2').value));
 		}
 	if (x == 2){
 		return subtract(document.getElementById('box1').value, document.getElementById('box2').value);
@@ -34,11 +34,12 @@ function add (x , y)
 	
 	{
 	
+	alert("In add: " + x + ";" + y);	
 	//var a = parseInt(document.getElementById("box1").value);
 	//var b = parseInt(document.getElementById("box2").value);
 	//var answer = a + b;
 	var answer = parseInt(x) + parseInt(y);	
-	alert(answer);
+	return answer;
 
 	}
 
@@ -59,7 +60,7 @@ function multiply (x , y)
 	
 	{
 
-
+	alert("in multiply: " + x + ";" + y);
 	var a = parseInt(document.getElementById("box1").value);
 	var b = parseInt(document.getElementById("box2").value);
 	var answer = a * b;

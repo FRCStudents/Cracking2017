@@ -1,7 +1,7 @@
 <html>
 <input type="button" onclick="Randomize()" value = "diceSelect">
 <br>
-<body>
+<body bgcolor ="red">
 
 </html>
 <script>
@@ -14,8 +14,8 @@ function dicePicture(x){
     var b = document.createElement("img");
     v = varPicture(x);
     b.setAttribute("src", v);
-    b.setAttribute("width", "110");
-    b.setAttribute("height", "110");
+    b.setAttribute("width", "310");
+    b.setAttribute("height", "310");
     b.setAttribute("alt", "The Pulpit Rock");
     b.setAttribute("id",x);
     document.body.appendChild(b);
@@ -23,24 +23,8 @@ function dicePicture(x){
 
 function varPicture(x){
   var p;
-  if(x==1){
-    p="C:/Users/redja/Pictures/dice 1.png"
-  }
-  if(x==2){
-    p="C:/Users/redja/Pictures/dice 2.png"
-  }
-  if(x==3){
-    p="C:/Users/redja/Pictures/dice 3.png"
-  }
-  if(x==4){
-    p="https://upload.wikimedia.org/wikipedia/commons/thumb/1/16/Dice-4.svg/557px-Dice-4.svg.png"
-  }
-  if(x==5){
-    p="https://upload.wikimedia.org/wikipedia/commons/thumb/d/dc/Dice-5.svg/600px-Dice-5.svg.png"
-  }
-  if(x==6){
-    p="  https://vignette.wikia.nocookie.net/vsbattles/images/6/6a/Dice.jpg/revision/latest?cb=20171118192121"
-  }
+  var d=x;
+    p="C:/Users/redja/Pictures/dice " + d + ".png"
   return p;
   }
 

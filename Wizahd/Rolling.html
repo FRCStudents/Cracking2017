@@ -19,42 +19,9 @@
 function Yahtzee(){
 	for(var i = 0; i < 6; i++){
 		var d = Math.floor((Math.random() * 6) + 1);
-		if(d == 1){
-			var c = document.createElement("img");
-			c.setAttribute("src", "file:///C:/Users/david/Desktop/Dice_faces/Die_side_1.png");
-			document.body.appendChild(c);
-			console.log("1");
-		}
-		if(d == 2){
-			var c = document.createElement("img");
-			c.setAttribute("src", "file:///C:/Users/david/Desktop/Dice_faces/Die_side_2.png");
-			document.body.appendChild(c);
-			console.log("2");
-		}
-		if(d == 3){
-			var c = document.createElement("img");
-			c.setAttribute("src", "file:///C:/Users/david/Desktop/Dice_faces/Die_side_3.png");
-			document.body.appendChild(c);
-			console.log("3");
-		}
-		if(d == 4){
-			var c = document.createElement("img");
-			c.setAttribute("src", "file:///C:/Users/david/Desktop/Dice_faces/Die_side_4.png");
-			document.body.appendChild(c);
-			console.log("4");
-		}
-		if(d == 5){
-			var c = document.createElement("img");
-			c.setAttribute("src", "file:///C:/Users/david/Desktop/Dice_faces/Die_side_5.png");
-			document.body.appendChild(c);
-			console.log("5");
-		}
-		if(d == 6){
-			var c = document.createElement("img");
-			c.setAttribute("src", "file:///C:/Users/david/Desktop/Dice_faces/Die_side_6.png");
-			document.body.appendChild(c);
-			console.log("6");
-		}
+		var c = document.createElement("img");
+		c.setAttribute("src", "file:///C:/Users/david/Desktop/Coding/Cracking2017/Wizahd/Dice_pictures/Dice_faces/Die_side_" + d + ".png");
+		document.body.appendChild(c);
 	}
 }
 </script>

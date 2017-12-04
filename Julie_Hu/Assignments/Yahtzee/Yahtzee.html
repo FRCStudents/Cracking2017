@@ -1,0 +1,58 @@
+<html>
+<title> Yahtzee!</title>
+<body> <center><font face="URW Chancery L"> <font size="7"> <font color= "#483D8B"> <h1> <b>Welcome to Yahtzee!</b> </h1> 	</font> </center> </body>
+<style>
+table, th, td {
+    border: 1px solid black;
+    border-collapse: collapse;
+    font-size:25
+}
+th, td {
+    padding: 15px;
+}
+</style>
+<table border = 2>
+<table border = 1>
+	<tr><th id = us> Upper Section</th></tr>
+	<tr><td id = aces> Aces:</td> 
+		<td id=ScoreA> <button onclick="ScoreasA()"> Score As Ace </button></td></tr>
+	<tr><td id = twos> Twos:</td>
+		<td id=ScoreB> <button onclick="Scoreas2()"> Score As Twos </button></td></tr>
+	<tr><td id = threes> Threes:</td>
+		<td id=ScoreC> <button onclick="Scoreas3()"> Score As Threes </button></td></tr>
+	<tr><td id = fours> Fours:</td>
+		<td id=ScoreD> <button onclick="Scoreas4()"> Score As Fours </button></td></tr>
+	<tr><td id = fives> Fives:</td>
+		<td id=ScoreE> <button onclick="Scoreas5()"> Score As Fives </button></td></tr>
+	<tr><td id = sixes> Sixes:</td>
+		<td id=ScoreF> <button onclick="Scoreas6()"> Score As Sixes </button></td></tr>
+	<tr><th id = usts> Upper Section Total Score:</th>
+		<td id=ScoreG> <button onclick="Addupper()"> Add Upper Section Score </button></td></tr>
+	<tr><td></td></tr>
+</table>
+<table border = 1>
+	<tr><th id = ls>Lower Section</th></tr>
+	<tr><td id = 3oak>Three of a Kind:</td>
+		<td id=ScoreH> <button onclick="Scoreasthreeok()"> Score As Three of a Kind </button></td></tr>
+	<tr><td id = 4oak>Four of a Kind:</td>
+		<td id=ScoreI> <button onclick="Scoreasfourok()"> Score As Four of a Kind </button></td></tr>
+	<tr><td id = fh> Full House:</td>
+		<td id=ScoreJ> <button onclick="Scoreasfull()"> Score As a Full House </button></td></tr>
+	<tr><td id = sms> Small Straight:</td>
+		<td id=ScoreK> <button onclick="Scoreassmall()"> Score As a Small Straight </button></td></tr>
+        <tr><td id = lgs> Large Straight:</td>
+		<td id=ScoreL> <button onclick="Scoreaslarge()"> Score As a Large Straight </button></td></tr>
+	<tr><td id = 5oak> Yahtzee: </td>
+		<td id=ScoreM> <button onclick="Scoreasyahtzee()"> Score As Yahtzee</button></td></tr>
+	<tr><td id = chance> Chance:</td>
+		<td id=ScoreN> <button onclick="Scoreaschance()"> Score As Chance</button></td></tr>
+	<tr><th id = lsts> Lower Section Total Score:</th>	
+		<td id=ScoreO> <button onclick="Addlower()"> Add Lower Section Score </button></td></tr>
+</table>
+
+</table>
+</html>
+<script>
+
+</script>
+

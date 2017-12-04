@@ -1,0 +1,33 @@
+<html>
+<head>
+<title> Colors </title>
+<style>
+	table, td {
+    	border: 1px solid black;
+}
+</style>
+</head>
+<body>
+<table id="ColorChart">
+	<tr>
+		<td>Color Code</td>
+	</tr>
+</table>
+<br>
+
+<button onclick="addrow()">Add a Row</button>
+
+<script>
+function addrow() {
+    var table = document.getElementById("ColorChart");
+    var row = table.insertRow(0);
+    var cell1 = row.insertCell(0);
+    cell1.innerHTML = "Next color";
+}
+
+</script>
+
+</body>
+</html>
+
+ 

@@ -1,11 +1,27 @@
-<input type = "text" id = "number"></input>
-<button onclick="roll();"> Roll! </button>
+<html>
+<title>Yahtzee!</title>
+<body></body>
+<!-- <input type = "text" id = "number"></input> -->
+<button onclick="Yahtzee();"> Roll! </button> <br>
+</html>	
 <script>
-function roll(){
-	var x = document.getElementById("number");
-	for(var i = 0; i < x.value; i++){
-		var dice = Math.floor((Math.random() * 6) + 1);
-		alert(dice);
+// function roll(){	
+// 	var x = document.getElementById("number");
+// 	for(var i = 0; i < x.value; i++){
+// 		var dice = Math.floor((Math.random() * 6) + 1);
+// 		alert(dice);
+// 		if(x == 6){
+// 			alert("Welcome to Yahtzee!");
+// 			Yahtzee();
+// 		}
+// 	}
+// }
+function Yahtzee(){
+	for(var i = 0; i < 6; i++){
+		var d = Math.floor((Math.random() * 6) + 1);
+		var c = document.createElement("img");
+		c.setAttribute("src", "./Dice_pictures/Dice_faces/Die_side_" + d + ".png");
+		document.body.appendChild(c);
 	}
 }
 </script>

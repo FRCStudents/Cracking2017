@@ -32,6 +32,24 @@ function colorF() {
   row.innerHTML = a;
   row.setAttribute("bgcolor", a);
   //this sets the color and puts in the hexcode acting on it
+  if(j>88)
+  var j= 0;
+  var e = "#"+"FF"+"00"+j;
+  var nrow = document.getElementById("colorF");
+  var ncell = nrow.insertCell(e);
+  ncell.innerHTML = e;
+  ncell.setAttribute("bgcolor", e);
+
+  var w= "#"+"FF"+j+"FF";
+  var wrow = document.getElementById("colorF");
+  var wcell = nrow.insertCell(w);
+     wcell.innerHTML = w;
+     wcell.setAttribute("bgcolor", w);
+ var w= "#"+"FF"+"FF"+j;
+ var wrow = document.getElementById("colorF");
+ var wcell = nrow.insertCell(w);
+ wcell.innerHTML = w;
+ wcell.setAttribute("bgcolor", w);
 }
  }
  function colorE() {
@@ -42,10 +60,31 @@ function colorF() {
   for(var j=22; j < 90; j = j + 22){
    var a = "#"+"EE"+j+"00";
    var table = document.getElementById("colorE");
-   var row = table.insertCell(a);
+   var cell = table.insertCell(a);
    console.log(a);
-   row.innerHTML = a;
-   row.setAttribute("bgcolor", a);
+   cell.innerHTML = a;
+   cell.setAttribute("bgcolor", a);
+
+   if(elt == "#EE0000") cell.setAttribute("style", "color: white;");
+   if(j>88)
+   var j= 0;
+   var e = "#"+"EE"+"00"+j;
+   var nrow = document.getElementById("colorE");
+   var ncell = nrow.insertCell(e);
+   ncell.innerHTML = e;
+   ncell.setAttribute("bgcolor", e);
+   var w= "#"+"EE"+j+"FF";
+   var wrow = document.getElementById("colorE");
+   var wcell = nrow.insertCell(w);
+      wcell.innerHTML = w;
+      wcell.setAttribute("bgcolor", w);
+  var w= "#"+"EE"+"FF"+j;
+  var wrow = document.getElementById("colorE");
+  var wcell = nrow.insertCell(w);
+  wcell.innerHTML = w;
+  wcell.setAttribute("bgcolor", w);
+
+
    }
   }
   function colorD() {
@@ -60,6 +99,23 @@ function colorF() {
     console.log(a);
     row.innerHTML = a;
     row.setAttribute("bgcolor", a);
+    if(j>88)
+    var j= 0;
+    var e = "#"+"DD"+"00"+j;
+    var nrow = document.getElementById("colorD");
+    var ncell = nrow.insertCell(e);
+    ncell.innerHTML = e;
+    ncell.setAttribute("bgcolor", e);
+    var w= "#"+"DD"+j+"FF";
+    var wrow = document.getElementById("colorD");
+    var wcell = nrow.insertCell(w);
+       wcell.innerHTML = w;
+       wcell.setAttribute("bgcolor", w);
+   var w= "#"+"DD"+"FF"+j;
+   var wrow = document.getElementById("colorD");
+   var wcell = nrow.insertCell(w);
+   wcell.innerHTML = w;
+   wcell.setAttribute("bgcolor", w);
     }
    }
    function colorC() {
@@ -74,6 +130,13 @@ function colorF() {
      console.log(a);
      row.innerHTML = a;
      row.setAttribute("bgcolor", a);
+     if(j>88)
+     var j= 0;
+     var e = "#"+"CC"+"00"+j;
+     var nrow = document.getElementById("colorC");
+     var ncell = nrow.insertCell(e);
+     ncell.innerHTML = e;
+     ncell.setAttribute("bgcolor", e);
      }
     }
     function colorB() {
@@ -88,6 +151,13 @@ function colorF() {
       console.log(a);
       row.innerHTML = a;
       row.setAttribute("bgcolor", a);
+      if(j>88)
+      var j= 0;
+      var e = "#"+"BB"+"00"+j;
+      var nrow = document.getElementById("colorB");
+      var ncell = nrow.insertCell(e);
+      ncell.innerHTML = e;
+      ncell.setAttribute("bgcolor", e);
       }
      }
      function colorA() {
@@ -102,6 +172,13 @@ function colorF() {
        console.log(a);
        row.innerHTML = a;
        row.setAttribute("bgcolor", a);
+       if(j>88)
+       var j= 0;
+       var e = "#"+"AA"+"00"+j;
+       var nrow = document.getElementById("colorA");
+       var ncell = nrow.insertCell(e);
+       ncell.innerHTML = e;
+       ncell.setAttribute("bgcolor", e);
        }
       }
       function color8() {
@@ -116,6 +193,13 @@ function colorF() {
         console.log(a);
         row.innerHTML = a;
         row.setAttribute("bgcolor", a);
+        if(j>88)
+        var j= 0;
+        var e = "#"+"88"+"00"+j;
+        var nrow = document.getElementById("color8");
+        var ncell = nrow.insertCell(e);
+        ncell.innerHTML = e;
+        ncell.setAttribute("bgcolor", e);
         }
        }
        function color6() {
@@ -130,6 +214,13 @@ function colorF() {
          console.log(a);
          row.innerHTML = a;
          row.setAttribute("bgcolor", a);
+         if(j>88)
+         var j= 0;
+         var e = "#"+"66"+"00"+j;
+         var nrow = document.getElementById("color6");
+         var ncell = nrow.insertCell(e);
+         ncell.innerHTML = e;
+         ncell.setAttribute("bgcolor", e);
          }
         }
         function color4() {
@@ -144,6 +235,14 @@ function colorF() {
           console.log(a);
           row.innerHTML = a;
           row.setAttribute("bgcolor", a);
+          if(j>88)
+          var j= 0;
+          var e = "#"+"44"+"00"+j;
+          var nrow = document.getElementById("color4");
+          var ncell = nrow.insertCell(e);
+          ncell.innerHTML = e;
+          ncell.setAttribute("bgcolor", e);
+
           }
          }
          function color2() {
@@ -158,6 +257,14 @@ function colorF() {
            console.log(a);
            row.innerHTML = a;
            row.setAttribute("bgcolor", a);
+           if(j>88)
+           var j= 0;
+           var e = "#"+"22"+"00"+j;
+           var nrow = document.getElementById("color2");
+           var ncell = nrow.insertCell(e);
+           ncell.innerHTML = e;
+           ncell.setAttribute("bgcolor", e);
+              table.setAttribute("style", "color: white;");
            }
           }
           function color0() {
@@ -172,6 +279,14 @@ function colorF() {
             console.log(a);
             row.innerHTML = a;
             row.setAttribute("bgcolor", a);
+            if(j>88)
+            var j= 0;
+            var e = "#"+"00"+"00"+j;
+            var nrow = document.getElementById("color0");
+            var ncell = nrow.insertCell(e);
+            ncell.innerHTML = e;
+            ncell.setAttribute("bgcolor", e);
+               table.setAttribute("style", "color: white;");
             }
            }
 

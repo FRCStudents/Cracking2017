@@ -1,0 +1,46 @@
+<html>
+<input type="button" onclick="Randomize()">
+<body>
+
+</html>
+<script>
+function Randomize() {
+    var x = Math.floor((Math.random() * 6) + 1);
+    console.log(x);
+    dicePicture(x);
+  }
+function dicePicture(x){
+    var b = document.createElement("img");
+    v = varPicture(x);
+    b.setAttribute("src", v);
+    b.setAttribute("width", "110");
+    b.setAttribute("height", "110");
+    b.setAttribute("alt", "The Pulpit Rock");
+    b.setAttribute("id",x);
+    document.body.appendChild(b);
+    }
+
+function varPicture(x){
+  var p;
+  if(x==1){
+    p="https://upload.wikimedia.org/wikipedia/commons/1/1b/Dice-1-b.svg"
+  }
+  if(x==2){
+    p="https://upload.wikimedia.org/wikipedia/commons/3/34/Dice-2.svg"
+  }
+  if(x==3){
+    p="https://upload.wikimedia.org/wikipedia/commons/thumb/2/28/Dice-3a.svg/557px-Dice-3a.svg.png"
+  }
+  if(x==4){
+    p="https://upload.wikimedia.org/wikipedia/commons/thumb/1/16/Dice-4.svg/557px-Dice-4.svg.png"
+  }
+  if(x==5){
+    p="https://upload.wikimedia.org/wikipedia/commons/thumb/d/dc/Dice-5.svg/600px-Dice-5.svg.png"
+  }
+  if(x==6){
+    p="  https://vignette.wikia.nocookie.net/vsbattles/images/6/6a/Dice.jpg/revision/latest?cb=20171118192121"
+  }
+  return p;
+  }
+
+</script>

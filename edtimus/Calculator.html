@@ -1,80 +1,80 @@
-a = firstElement:value;
-b = secondElement:value;
-answer = add (a,b);
-
-read ("blah");
-function read (x) {
-alert (x);
-
-return;
-{
-
-var y = parseInt(x);
 <html>
 
-<input id = "box1">	
+
+<input id = "box1">
 <input id = "box2">
 	
-<BUTTON ONCLICK = "add('x, y')";> + </BUTTON>
 
-<BUTTON ONCLICK = "subtract('x, y')";> - </BUTTON>
+<BUTTON ONCLICK = "process(1);"> + </BUTTON>
 
-<BUTTON ONCLICK = "multiply('x, y')";> * </BUTTON>
 
-<BUTTON ONCLICK = "divide('x, y')";> / </BUTTON>
+<BUTTON ONCLICK = "process(2)";> - </BUTTON>
 
-</html>
+
+<BUTTON ONCLICK = "process(3)";> * </BUTTON>
+
+
+<BUTTON ONCLICK = "process(4)";> / </BUTTON>
+
+
 
 <script>
+function process (z){
+	if (z == 1){
+		return add(document.getElementById('box1'), document.getElementById('box2'));}
+	if (z == 2){
+		return subtract(document.getElementById('box1'), document.getElementById('box2'));}
+	if (z == 3){
+		return multiply(document.getElementById('box1'), document.getElementById('box2'));}
+	if (z == 4){
+		return divide(document.getElementById('box1'), document.getElementById('box2'));}
+		
 
 function add (x , y)
+	
 	{
-	document.getElementById("box1")
-	document.getElementById("box2")	
-	var a = box1:value;
-	var b = box2:value;
-	var x = parseInt(a);
-	var y = parseInt(b);
-	var z = return x + y;
-	alert(z)
+	
+	var answer = parseInt(x) + parseInt(y);
+	
+	alert(answer);
+
 	}
+
 
 function subtract (x , y)
-	{document.getElementById("box1")
-	document.getElementById("box2")	
-	var a = box1:value;
-	var b = box2:value;
-	var x = parseInt(a);
-	var y = parseInt(b);
-	var z = return x - y;
-	alert(z);
+	
+	{
+	var answer = parseInt(x) - parseInt(y);
+	
+	alert(answer);
+
 	}
+
 
 function multiply (x , y)
+	
 	{
-	document.getElementById("box1")
-	document.getElementById("box2")	
-	var a = box1:value;
-	var b = box2:value;
-	var x = parseInt(a);
-	var y = parseInt(b);
-	var z = return x * y;
-	alert(z)
-	;
+
+
+	var answer = parseInt(x) * parseInt(y);
+	
+	alert(answer);
+
 	}
 
+
 function divide (x , y)
+	
 	{
-	document.getElementById("box1")
-	document.getElementById("box2")	
-	var a = box1:value;
-	var b = box2:value;
-	var x = parseInt(a);
-	var y = parseInt(b);
-	var z = return x / y;
-	alert(z);
+	
+	var answer = parseInt(x) / parseInt(y);
+	
+	alert(answer);
+
 	}
+
 
 
 
 </script>
+</HTML>

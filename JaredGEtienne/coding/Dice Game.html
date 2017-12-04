@@ -4,35 +4,43 @@
 
 </html>
 <script>
-function Randomize(x) {
+function Randomize() {
     var x = Math.floor((Math.random() * 6) + 1);
-    var c=0;
     console.log(x);
-    if(x<2 & x>0){
+    dicePicture(x);
+  }
+function dicePicture(x){
     var b = document.createElement("img");
-    b.setAttribute("src", "https://vignette.wikia.nocookie.net/vsbattles/images/6/6a/Dice.jpg/revision/latest?cb=20171118192121");
-    b.setAttribute("width", "304");
-    b.setAttribute("height", "228");
+    v = varPicture(x);
+    b.setAttribute("src", v);
+    b.setAttribute("width", "110");
+    b.setAttribute("height", "110");
     b.setAttribute("alt", "The Pulpit Rock");
-    b.setAttribute("id",c);
-    c ++;
+    b.setAttribute("id",x);
     document.body.appendChild(b);
-console.log("a"+c);
     }
-      if(x<3 & x>1){
 
-      }
-        if(x<4 & x>2){
+function varPicture(x){
+  var p;
+  if(x==1){
+    p="https://upload.wikimedia.org/wikipedia/commons/1/1b/Dice-1-b.svg"
+  }
+  if(x==2){
+    p="https://upload.wikimedia.org/wikipedia/commons/3/34/Dice-2.svg"
+  }
+  if(x==3){
+    p="https://upload.wikimedia.org/wikipedia/commons/thumb/2/28/Dice-3a.svg/557px-Dice-3a.svg.png"
+  }
+  if(x==4){
+    p="https://upload.wikimedia.org/wikipedia/commons/thumb/1/16/Dice-4.svg/557px-Dice-4.svg.png"
+  }
+  if(x==5){
+    p="https://upload.wikimedia.org/wikipedia/commons/thumb/d/dc/Dice-5.svg/600px-Dice-5.svg.png"
+  }
+  if(x==6){
+    p="  https://vignette.wikia.nocookie.net/vsbattles/images/6/6a/Dice.jpg/revision/latest?cb=20171118192121"
+  }
+  return p;
+  }
 
-        }
-          if(x<5 & x>3){
-
-          }
-          if(x<6 & x>4){
-
-}
-              if(x<7 & x>5){
-
-              }
-}
 </script>

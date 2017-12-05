@@ -1,5 +1,5 @@
 <html>
-<input type="button" onclick="Randomize()" value = "diceSelect">
+<input type="button" onclick="dicePicture()" value = "diceSelect">
 <br>
 <body bgcolor ="red">
 
@@ -7,57 +7,55 @@
 <script>
 var c=0;
 var h=0;
-var myVar;
 
 
-function Randomize() {
-    var x = Math.floor((Math.random() * 6) + 1);
-    console.log(x);
-    showForFiveSeconds(c);
-  }
-  function gifLoop(){
-    for(var i=0; i<5; i++){
-      var b = document.createElement("img");
-      b.setAttribute("src", "./pictures/dice_gif.gif");
-      b.setAttribute("width", "210");
-      b.setAttribute("height", "210");
-      b.setAttribute("id","a"+c);
-      document.body.appendChild(b);
-      c++;
-    }
-  }
+// function Randomize() {
+//     var x = Math.floor((Math.random() * 6) + 1);
+//     console.log(x);
+//     showForFiveSeconds(c);
+//   }
+//   function gifLoop(){
+//     for(var i=0; i<5; i++){
+//       var b = document.createElement("img");
+//       b.setAttribute("src", "./pictures/dice_gif.gif");
+//       b.setAttribute("width", "210");
+//       b.setAttribute("height", "210");
+//       b.setAttribute("id","a"+c);
+//       document.body.appendChild(b);
+//       c++;
+//     }
+//   }
 
-  function showForFiveSeconds(c,x){
-    var start=gifLoop();
-    var end= start + 1500;
-    if(start > end) clearInterval(timer);
-  var myVar = setInterval(function(){ dicePicture() }, 5000);
-}
+//   function showForFiveSeconds(c,x){
+//     var start=gifLoop();
+//     var end= start + 1500;
+//     if(start > end) clearInterval(timer);
+//     myVar = setInterval(function(){ dicePicture() }, 5000);
+// }
 
-function replace(p,c){
-  var replace= document.getElementById("a"+c);
-  replace.src = (p);
-  c++;
-}
-startDicePicture();
-function startDicePicture(){
-      myVar = setTimeout(dicePicture, 1000);
-}
-dicePicture();
-function dicePicture(x){
+// function replace(p,c){
+//   var replace= document.getElementById("a"+c);
+//   replace.src = (p);
+//   c++;
+// }
+// startDicePicture();
+// function startDicePicture(){
+//       myVar = setTimeout(dicePicture, 1000);
+// }
+// dicePicture();
+function dicePicture(){
+    var x = Math.floor((Math.random() * 5) + 1);
     var b = document.createElement("img");
-    v = varPicture(x);
-    b.setAttribute("src", v);
+    b.setAttribute("src", "./pictures/dice" + x + ".png");
     b.setAttribute("width", "210");
     b.setAttribute("height", "210");
-    b.setAttribute("id",x);
     document.body.appendChild(b);
     }
 
-function varPicture(x){
-  var p;
-    p="./pictures/dice" + d + ".png"
-  return p;
-  }
+// function varPicture(x){
+//   var p;
+//     p="./pictures/dice" + d + ".png"
+//   return p;
+//   }
 
 </script>

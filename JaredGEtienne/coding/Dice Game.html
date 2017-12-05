@@ -5,18 +5,44 @@
 
 </html>
 <script>
+var c=0;
+h=0;
+
+
 function Randomize() {
     var x = Math.floor((Math.random() * 6) + 1);
     console.log(x);
-    dicePicture(x);
+    showForFiveSeconds(c);
+
   }
+  function gifLoop(){
+    for(var i=0; i<5; i++){
+      var b = document.createElement("img");
+      b.setAttribute("src", "C:/Users/redja/Pictures/dice_gif.gif");
+      b.setAttribute("width", "210");
+      b.setAttribute("height", "210");
+      b.setAttribute("id","a"+c);
+      document.body.appendChild(b);
+      c++;
+    }
+  }
+  function showForFiveSeconds(c,x){
+    var start=gifLoop();
+    var end= start + 1500;
+    if(start > end) clearInterval(timer);
+  var myVar = setInterval(function(){ dicePicture(x) }, 5000);
+}
+function replace(p,c){
+  var replace= document.getElementById("a"+c);
+  replace.src = (p);
+  c++;
+}
 function dicePicture(x){
     var b = document.createElement("img");
     v = varPicture(x);
     b.setAttribute("src", v);
-    b.setAttribute("width", "310");
-    b.setAttribute("height", "310");
-    b.setAttribute("alt", "The Pulpit Rock");
+    b.setAttribute("width", "210");
+    b.setAttribute("height", "210");
     b.setAttribute("id",x);
     document.body.appendChild(b);
     }

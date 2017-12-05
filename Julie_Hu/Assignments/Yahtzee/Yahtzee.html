@@ -1,6 +1,6 @@
 <html>
 <title> Yahtzee!</title>
-<body> <center><font face="URW Chancery L"> <font size="7"> <font color= "#483D8B"> <h1> <b>Welcome to Yahtzee!</b> </h1> 	</font> </center> </body>
+<body bgcolor= "#F5F5DC"> <center><font face="URW Chancery L"> <font size="7"> <font color= "#2F2F4F"> <h1> <b>Welcome to Yahtzee!</b> </h1> 	</font> </center> </body>
 <style>
 table, th, td {
     border: 1px solid black;
@@ -11,9 +11,12 @@ th, td {
     padding: 15px;
 }
 </style>
+<div align="right"><button onclick="showdice()">Roll!</button></div>
+<table align="right" border = 1>
+	<tr id=dice> Dice Numbers Here</tr>
 <table border = 2>
 <table border = 1>
-	<tr><th id = us> Upper Section</th></tr>
+	<tr><th id = us> Upper Section</th><th>Scores</th></tr>
 	<tr><td id = aces> Aces:</td> 
 		<td id=ScoreA> <button onclick="ScoreasA()"> Score As Ace </button></td></tr>
 	<tr><td id = twos> Twos:</td>
@@ -31,21 +34,21 @@ th, td {
 	<tr><td></td></tr>
 </table>
 <table border = 1>
-	<tr><th id = ls>Lower Section</th></tr>
+	<tr><th id = ls>Lower Section</th><th> Scores</th></tr>
 	<tr><td id = 3oak>Three of a Kind:</td>
-		<td id=ScoreH> <button onclick="Scoreasthreeok()"> Score As Three of a Kind </button></td></tr>
+		<td id=ScoreH> <button onclick="threeok()"> Score As Three of a Kind </button></td></tr>
 	<tr><td id = 4oak>Four of a Kind:</td>
-		<td id=ScoreI> <button onclick="Scoreasfourok()"> Score As Four of a Kind </button></td></tr>
+		<td id=ScoreI> <button onclick="fourok()"> Score As Four of a Kind </button></td></tr>
 	<tr><td id = fh> Full House:</td>
-		<td id=ScoreJ> <button onclick="Scoreasfull()"> Score As a Full House </button></td></tr>
+		<td id=ScoreJ> <button onclick="full()"> Score As a Full House </button></td></tr>
 	<tr><td id = sms> Small Straight:</td>
-		<td id=ScoreK> <button onclick="Scoreassmall()"> Score As a Small Straight </button></td></tr>
+		<td id=ScoreK> <button onclick="small()"> Score As a Small Straight </button></td></tr>
         <tr><td id = lgs> Large Straight:</td>
-		<td id=ScoreL> <button onclick="Scoreaslarge()"> Score As a Large Straight </button></td></tr>
+		<td id=ScoreL> <button onclick="large()"> Score As a Large Straight </button></td></tr>
 	<tr><td id = 5oak> Yahtzee: </td>
-		<td id=ScoreM> <button onclick="Scoreasyahtzee()"> Score As Yahtzee</button></td></tr>
+		<td id=ScoreM> <button onclick="yahtzee()"> Score As Yahtzee</button></td></tr>
 	<tr><td id = chance> Chance:</td>
-		<td id=ScoreN> <button onclick="Scoreaschance()"> Score As Chance</button></td></tr>
+		<td id=ScoreN> <button onclick="chance()"> Score As Chance</button></td></tr>
 	<tr><th id = lsts> Lower Section Total Score:</th>	
 		<td id=ScoreO> <button onclick="Addlower()"> Add Lower Section Score </button></td></tr>
 </table>
@@ -53,6 +56,19 @@ th, td {
 </table>
 </html>
 <script>
+function full(){
+	var x= document.getElementById("ScoreJ");
+		x.innerHTML = "25";}
+function small(){
+	var x= document.getElementById("ScoreK");
+		x.innerHTML = "30";}
+function large(){
+	var x= document.getElementById("ScoreL");
+		x.innerHTML = "40";}
+function yahtzee(){
+	var x= document.getElementById("ScoreM");
+		x.innerHTML = "50";}
+	
 
 </script>
 

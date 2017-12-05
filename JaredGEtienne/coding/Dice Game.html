@@ -13,7 +13,6 @@ function Randomize() {
     var x = Math.floor((Math.random() * 6) + 1);
     console.log(x);
     showForFiveSeconds(c);
-
   }
   function gifLoop(){
     for(var i=0; i<5; i++){
@@ -26,17 +25,20 @@ function Randomize() {
       c++;
     }
   }
+
   function showForFiveSeconds(c,x){
     var start=gifLoop();
     var end= start + 1500;
     if(start > end) clearInterval(timer);
   var myVar = setInterval(function(){ dicePicture(x) }, 5000);
 }
+
 function replace(p,c){
   var replace= document.getElementById("a"+c);
   replace.src = (p);
   c++;
 }
+
 function dicePicture(x){
     var b = document.createElement("img");
     v = varPicture(x);

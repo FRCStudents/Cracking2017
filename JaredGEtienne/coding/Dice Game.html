@@ -6,7 +6,8 @@
 </html>
 <script>
 var c=0;
-h=0;
+var h=0;
+var myVar;
 
 
 function Randomize() {
@@ -17,7 +18,7 @@ function Randomize() {
   function gifLoop(){
     for(var i=0; i<5; i++){
       var b = document.createElement("img");
-      b.setAttribute("src", "C:/Users/redja/Pictures/dice_gif.gif");
+      b.setAttribute("src", "./pictures/dice_gif.gif");
       b.setAttribute("width", "210");
       b.setAttribute("height", "210");
       b.setAttribute("id","a"+c);
@@ -30,7 +31,7 @@ function Randomize() {
     var start=gifLoop();
     var end= start + 1500;
     if(start > end) clearInterval(timer);
-  var myVar = setInterval(function(){ dicePicture(x) }, 5000);
+  var myVar = setInterval(function(){ dicePicture() }, 5000);
 }
 
 function replace(p,c){
@@ -38,7 +39,11 @@ function replace(p,c){
   replace.src = (p);
   c++;
 }
-
+startDicePicture();
+function startDicePicture(){
+      myVar = setTimeout(dicePicture, 1000);
+}
+dicePicture();
 function dicePicture(x){
     var b = document.createElement("img");
     v = varPicture(x);
@@ -51,8 +56,7 @@ function dicePicture(x){
 
 function varPicture(x){
   var p;
-  var d=x;
-    p="C:/Users/redja/Pictures/dice " + d + ".png"
+    p="./pictures/dice" + d + ".png"
   return p;
   }
 

@@ -1,20 +1,43 @@
 <html>
 <title>Yahtzee!</title>
 <body></body>
-<button onclick="Yahtzee();"> Roll! </button> <br>
+<button onclick="Roll();"> Roll! </button> <br>
+<div id = "a"></div> <div id = "b"></div> <div id = "c"></div> <div id = "d"></div> <div id = "e"></div> <div id = "f"></div>
 </html>	
 <script>
 function Removetimer(){
-	document.getElementById("a").removeAttribute("src");
+	var a = document.getElementById("a");
+	a.removeAttribute("src");
+	var b = document.getElementById("b");
+	b.removeAttribute("src");
+	var c = document.getElementById("c");
+	c.removeAttribute("src");
+	var d = document.getElementById("d");
+	d.removeAttribute("src");
+	var e = document.getElementById("e");
+	e.removeAttribute("src");
+	var f = document.getElementById("f");
+	f.removeAttribute("src");
+}
+function Roll(){
+	alert("roll");
+	document.getElementById("a").setAttribute("src", "./Dice_pictures/Dice_faces/Die_side_1.png");
+	document.getElementById("b").setAttribute("src", "./Dice_pictures/Dice_faces/Die_side_2.png");
+	document.getElementById("c").setAttribute("src", "./Dice_pictures/Dice_faces/Die_side_3.png");
+	document.getElementById("d").setAttribute("src", "./Dice_pictures/Dice_faces/Die_side_4.png");
+	document.getElementById("e").setAttribute("src", "./Dice_pictures/Dice_faces/Die_side_5.png");
+	document.getElementById("f").setAttribute("src", "./Dice_pictures/Dice_faces/Die_side_6.png");
+	Yahtzee();
+	alert("end");
 }
 function Yahtzee(){
+	myVar = setTimeout(Removetimer, 100);
 	for(var i = 0; i < 5; i++){
-		var d = Math.floor((Math.random() * 6) + 1);
-		var c = document.createElement("img");
-		c.setAttribute("src", "./Dice_pictures/Dice_faces/Die_side_" + d + ".png");
-		c.setAttribute("id", "a");
+		var x = Math.floor((Math.random() * 6) + 1);
+		var z = document.createElement("img");
+		z.setAttribute("src", "./Dice_pictures/Dice_faces/Die_side_" + x + ".png");
+		z.setAttribute("id", "a");
 		document.body.appendChild(c);
-		myVar = setTimeout(Removetimer, 100);
 	}
 }
 </script>

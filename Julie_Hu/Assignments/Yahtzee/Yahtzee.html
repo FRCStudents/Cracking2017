@@ -11,9 +11,15 @@ th, td {
     padding: 15px;
 }
 </style>
-<div align="right"><button onclick="showdice()">Roll!</button></div>
-<table align="right" border = 1>
-	<tr id=dice> Dice Numbers Here</tr>
+<table border = 2> 
+	<tr>    <td><button onclick="showdice1()">Roll Dice 1!</button></td>
+		<td><button onclick="showdice()">Roll Dice 2!</button></td>
+		<td><button onclick="showdice()">Roll Dice 3!</button></td>
+		<td><button onclick="showdice()">Roll Dice 4!</button></td>
+		<td><button onclick="showdice()">Roll Dice 5!</button></td>
+		</tr>
+	<tr><td id=d1> </td> <td id=d2></td><td id=d3></td><td id=d4></td><td id=d5></td></tr>
+</table>
 <table border = 2>
 <table border = 1>
 	<tr><th id = us> Upper Section</th><th>Scores</th></tr>
@@ -68,6 +74,11 @@ function large(){
 function yahtzee(){
 	var x= document.getElementById("ScoreM");
 		x.innerHTML = "50";}
+function showdice1(){
+	document.getElementById("d1").innerHTML =
+	Math.floor(Math.random() * 6)+1;}
+//copy showdice function and change each to d2, d3...
+	
 	
 
 </script>

@@ -13,7 +13,7 @@ var myVar;
 function Randomize() {
     var x = Math.floor((Math.random() * 6) + 1);
     console.log(x);
-    showForFiveSeconds(c);
+    dicePicture(x);
   }
   function gifLoop(){
     for(var i=0; i<5; i++){
@@ -31,7 +31,7 @@ function Randomize() {
     var start=gifLoop();
     var end= start + 1500;
     if(start > end) clearInterval(timer);
-  var myVar = setInterval(function(){ dicePicture() }, 5000);
+  var myVar = setInterval(function(){ }, 5000);
 }
 
 function replace(p,c){
@@ -41,21 +41,24 @@ function replace(p,c){
 }
 startDicePicture();
 function startDicePicture(){
-      myVar = setTimeout(dicePicture, 1000);
+      myVar = setTimeout(, 1000);
 }
-dicePicture();
+
 function dicePicture(x){
+  alert("hi");
     var b = document.createElement("img");
     v = varPicture(x);
+    alert('hi')
     b.setAttribute("src", v);
     b.setAttribute("width", "210");
     b.setAttribute("height", "210");
-    b.setAttribute("id",x);
+    b.setAttribute("id","a"+c);
     document.body.appendChild(b);
     }
 
 function varPicture(x){
   var p;
+  var d =x;
     p="./pictures/dice" + d + ".png"
   return p;
   }

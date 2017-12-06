@@ -41,14 +41,13 @@ function replace(p,c){
 startDicePicture();
 function startDicePicture(){
   alert("hi");
-      myVar = setTimeout(, 1000);
+      myVar = setTimeout(replace(), 1000);
 }
-
+dicePicture();
 function dicePicture(x){
   alert("hi");
     var b = document.createElement("img");
     v = varPicture(x);
-    alert('hi')
     b.setAttribute("src", v);
     b.setAttribute("width", "210");
     b.setAttribute("height", "210");
@@ -58,8 +57,8 @@ function dicePicture(x){
 
 function varPicture(x){
   var p;
-  var d =x;
-    p="./pictures/dice" + d + ".png"
+  var d == x;
+    p="./pictures/dice" + d + ".png";
   return p;
   }
 

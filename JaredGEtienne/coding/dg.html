@@ -1,5 +1,5 @@
 <html>
-<input type="button" onclick="dicePicture()" value = "diceSelect">
+<input type="button" onclick="dicePicture('1')" value = "diceSelect">
 <br>
 <body bgcolor ="red">
 
@@ -42,17 +42,10 @@ function replace(p,c){
   c++;
 }
 
-// emk comment:
-// remember to remove your tests...
-//startDicePicture();
-
 function startDicePicture(){
   alert("hi");
       myVar = setTimeout(replace(), 1000);
 }
-// emk comment:
-// remember to remove your tests...
-//dicePicture();
 
 function dicePicture(x){
     alert("hi");
@@ -68,16 +61,8 @@ function dicePicture(x){
 function varPicture(x){
   var p;
 
-  // emk comment - 
-  // var d == x; - doesn't do what you probably want it to do... i think you want var d = x;
-  // 
-  // Jared - read the instructor's comments before you ask another question! 
-  // You never know - maybe he got lucky and said the one thing you needed to
-  // know in order to fix this function!!!
-  // you never know!
-  //
-  var d == x;
-    p="./pictures/dice" + d + ".png";
+  var d = x;
+  p="./pictures/dice" + d + ".png";
   return p;
   }
 

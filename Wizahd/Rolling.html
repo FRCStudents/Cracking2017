@@ -2,53 +2,38 @@
 <title>Yahtzee!</title>
 <body></body>
 <button onclick="Roll();"> Roll! </button> <br>
-<div id = "a"></div> <div id = "b"></div> <div id = "c"></div> <div id = "d"></div> <div id = "e"></div> <div id = "f"></div>
 </html>	
 <script>
+var d = 0;
 function Removetimer(){
-	var a = document.getElementById("a");
-	a.removeAttribute("src");
-	var b = document.getElementById("b");
-	b.removeAttribute("src");
-	var c = document.getElementById("c");
-	c.removeAttribute("src");
-	var d = document.getElementById("d");
-	d.removeAttribute("src");
-	var e = document.getElementById("e");
-	e.removeAttribute("src");
-	var f = document.getElementById("f");
-	f.removeAttribute("src");
+	for(var g = 1; g < 7; g++){
+		var a = document.getElementById("p" + g);
+		a.removeAttribute("src");
+	}
+	Yahtzee();
 }
 function Roll(){
-	// emk comment
-	//
-	// last time we used setAttribute like this, I think we added it to a 
-	// td element, did we ever add it to a div? some commands work for
-	// some elements but not others... in other words, it could work for
-	// td, and NOT div
-	//
-	// i would find out by writing a 5 line html file with the setAttribute line in it - so there
-	// is almost NOTHING else that can go wrong... and see if that works.
-	//
-
-	alert("roll");
-	document.getElementById("a").setAttribute("src", "./Dice_pictures/Dice_faces/Die_side_1.png");
-	document.getElementById("b").setAttribute("src", "./Dice_pictures/Dice_faces/Die_side_2.png");
-	document.getElementById("c").setAttribute("src", "./Dice_pictures/Dice_faces/Die_side_3.png");
-	document.getElementById("d").setAttribute("src", "./Dice_pictures/Dice_faces/Die_side_4.png");
-	document.getElementById("e").setAttribute("src", "./Dice_pictures/Dice_faces/Die_side_5.png");
-	document.getElementById("f").setAttribute("src", "./Dice_pictures/Dice_faces/Die_side_6.png");
-	Yahtzee();
-	alert("end");
+	for(var f = 1; f < 7; f++){
+		var v = document.createElement("img");
+		v.setAttribute("src", "./Dice_pictures/Dice_faces/Die_side_" + f + ".png");
+		v.setAttribute("id", "p" + f);
+		document.body.appendChild(v);
+		console.log("end loop");
+	}
+	myVar = setTimeout(Removetimer, 1500);
 }
 function Yahtzee(){
-	myVar = setTimeout(Removetimer, 100);
 	for(var i = 0; i < 5; i++){
 		var x = Math.floor((Math.random() * 6) + 1);
 		var z = document.createElement("img");
 		z.setAttribute("src", "./Dice_pictures/Dice_faces/Die_side_" + x + ".png");
-		z.setAttribute("id", "a");
-		document.body.appendChild(c);
+		document.body.appendChild(z);
 	}
 }
+// x is the number that is rolled for each die
+// z is the variable for the creation of the image
+// v is the variable for the creation of the "rolling" mechanism
+// a removes the dice
+// f and g are used
+// d is to used
 </script>

@@ -13,10 +13,10 @@ th, td {
 </style>
 <table border = 2> 
 	<tr>    <td><button onclick="showdice1()">Roll Dice 1!</button></td>
-		<td><button onclick="showdice()">Roll Dice 2!</button></td>
-		<td><button onclick="showdice()">Roll Dice 3!</button></td>
-		<td><button onclick="showdice()">Roll Dice 4!</button></td>
-		<td><button onclick="showdice()">Roll Dice 5!</button></td>
+		<td><button onclick="showdice2()">Roll Dice 2!</button></td>
+		<td><button onclick="showdice3()">Roll Dice 3!</button></td>
+		<td><button onclick="showdice4()">Roll Dice 4!</button></td>
+		<td><button onclick="showdice5()">Roll Dice 5!</button></td>
 		</tr>
 	<tr><td id=d1> </td> <td id=d2></td><td id=d3></td><td id=d4></td><td id=d5></td></tr>
 </table>
@@ -77,7 +77,20 @@ function yahtzee(){
 function showdice1(){
 	document.getElementById("d1").innerHTML =
 	Math.floor(Math.random() * 6)+1;}
-//copy showdice function and change each to d2, d3...
+function showdice2(){
+	document.getElementById("d2").innerHTML =
+	Math.floor(Math.random() * 6)+1;}
+function showdice3(){
+	document.getElementById("d3").innerHTML =
+	Math.floor(Math.random() * 6)+1;}
+function showdice4(){
+	document.getElementById("d4").innerHTML =
+	Math.floor(Math.random() * 6)+1;}
+function showdice5(){
+	document.getElementById("d5").innerHTML =
+	Math.floor(Math.random() * 6)+1;}
+
+
 	
 	
 

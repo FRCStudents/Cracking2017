@@ -20,6 +20,17 @@ function Removetimer(){
 	f.removeAttribute("src");
 }
 function Roll(){
+	// emk comment
+	//
+	// last time we used setAttribute like this, I think we added it to a 
+	// td element, did we ever add it to a div? some commands work for
+	// some elements but not others... in other words, it could work for
+	// td, and NOT div
+	//
+	// i would find out by writing a 5 line html file with the setAttribute line in it - so there
+	// is almost NOTHING else that can go wrong... and see if that works.
+	//
+
 	alert("roll");
 	document.getElementById("a").setAttribute("src", "./Dice_pictures/Dice_faces/Die_side_1.png");
 	document.getElementById("b").setAttribute("src", "./Dice_pictures/Dice_faces/Die_side_2.png");

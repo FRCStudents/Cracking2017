@@ -27,6 +27,9 @@ function Randomize() {
   }
 
   function showForFiveSeconds(c,x){
+   // emk comment:
+   // gifLoop doesn't return anything! What are you trying to do here?
+
     var start=gifLoop();
     var end= start + 1500;
     if(start > end) clearInterval(timer);
@@ -38,14 +41,21 @@ function replace(p,c){
   replace.src = (p);
   c++;
 }
-startDicePicture();
+
+// emk comment:
+// remember to remove your tests...
+//startDicePicture();
+
 function startDicePicture(){
   alert("hi");
       myVar = setTimeout(replace(), 1000);
 }
-dicePicture();
+// emk comment:
+// remember to remove your tests...
+//dicePicture();
+
 function dicePicture(x){
-  alert("hi");
+    alert("hi");
     var b = document.createElement("img");
     v = varPicture(x);
     b.setAttribute("src", v);
@@ -57,6 +67,11 @@ function dicePicture(x){
 
 function varPicture(x){
   var p;
+
+  // emk comment - 
+  // var d == x; - doesn't do what you probably want it to do... i think you want var d = x;
+  // 
+
   var d == x;
     p="./pictures/dice" + d + ".png";
   return p;

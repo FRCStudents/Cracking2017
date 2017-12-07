@@ -1,0 +1,36 @@
+<html>
+
+<BUTTON ONCLICK = "getRandomizer"> ROLL </BUTTON>
+
+
+<img src = "Dice-1.png" alt = "1">
+
+<img src = "Dice-2.png" alt = "2">
+
+<img src = "Dice-3.png" alt = "3">
+
+<img src = "Dice-4.png" alt = "4">
+
+<img src = "Dice-5.png" alt = "5">
+
+<img src = "Dice-6.png" alt = "6">
+
+</html>
+
+<script>
+var rollDie = Yahtzee(1, 6);
+
+var results = ""
+for ( var i = 0; i<5; i++ ) {
+    results += rollDie() + " ";    
+}
+
+
+function Yahtzee(bottom, top) {
+    return function() {
+        return Math.floor( Math.random() * ( 1 + top - bottom ) ) + bottom;
+    }
+}
+
+
+</script>

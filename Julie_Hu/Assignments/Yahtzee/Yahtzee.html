@@ -1,22 +1,24 @@
 <html>
 <title> Yahtzee!</title>
-<body bgcolor= "#F5F5DC"> <center><font face="URW Chancery L"> <font size="7"> <font color= "#2F2F4F"> <h1> <b>Welcome to Yahtzee!</b> </h1> 	</font> </center> </body>
+<body bgcolor= "#E6E6E6"> <center><font face="Lucida Calligraphy"> <font size="7"> <font color= "#000B7"> <h1> <b>Welcome to Yahtzee!</b> </h1> 	</font> </center> </body>
 <style>
 table, th, td {
     border: 1px solid black;
     border-collapse: collapse;
-    font-size:25
+    font-size:20
 }
 th, td {
-    padding: 15px;
+    padding: 10px;
 }
 </style>
-<table border = 2> 
-	<tr>    <td><button onclick="showdice1()">Roll Dice 1!</button></td>
-		<td><button onclick="showdice2()">Roll Dice 2!</button></td>
-		<td><button onclick="showdice3()">Roll Dice 3!</button></td>
-		<td><button onclick="showdice4()">Roll Dice 4!</button></td>
-		<td><button onclick="showdice5()">Roll Dice 5!</button></td>
+<button onclick= "cleardice()">Clear Dice!</button>
+<table align="right" border = 2> 
+	<tr>    
+		<td><button onclick="showdice('d1')">Roll Dice 1!</button></td>
+		<td><button onclick="showdice('d2')">Roll Dice 2!</button></td>
+		<td><button onclick="showdice('d3')">Roll Dice 3!</button></td>
+		<td><button onclick="showdice('d4')">Roll Dice 4!</button></td>
+		<td><button onclick="showdice('d5')">Roll Dice 5!</button></td>
 		</tr>
 	<tr><td id=d1> </td> <td id=d2></td><td id=d3></td><td id=d4></td><td id=d5></td></tr>
 </table>
@@ -74,25 +76,23 @@ function large(){
 function yahtzee(){
 	var x= document.getElementById("ScoreM");
 		x.innerHTML = "50";}
-function showdice1(){
-	document.getElementById("d1").innerHTML =
+function showdice(x){
+	document.getElementById(x).innerHTML =
 	Math.floor(Math.random() * 6)+1;}
-function showdice2(){
-	document.getElementById("d2").innerHTML =
-	Math.floor(Math.random() * 6)+1;}
-function showdice3(){
-	document.getElementById("d3").innerHTML =
-	Math.floor(Math.random() * 6)+1;}
-function showdice4(){
-	document.getElementById("d4").innerHTML =
-	Math.floor(Math.random() * 6)+1;}
-function showdice5(){
-	document.getElementById("d5").innerHTML =
-	Math.floor(Math.random() * 6)+1;}
+//function cleardice(){
+//	var y= document.getElementById("y");
+//	y.innerHTML = "";}
+//							                         CLEAR DICE FUNCTION DOES NOT WORK YET!
+//function Addlower(){
+//	var a= document.getElementById("ScoreK").value;
+//	var b= document.getElementById("ScoreL").value;
+//	var answerspot = document.getElementById("ScoreO");
+//function add(a,b){
+//	answer= a + b;
+//	answerspot.innerHTML = answer;
+//}
 
-
-	
-	
-
+//	add(a,b);
+//}
 </script>
 

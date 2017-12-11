@@ -1,5 +1,5 @@
 <html>
-<input type="button" onclick="dicePicture()" value = "diceSelect">
+<input type="button" onclick="Randomize()" value = "diceSelect">
 <br>
 <body bgcolor ="red">
 
@@ -50,9 +50,6 @@ function startDicePicture(){
   alert("hi");
       myVar = setTimeout(replace(), 1000);
 }
-// emk comment:
-// remember to remove your tests...
-//dicePicture();
 
 function dicePicture(x){
     alert("hi");
@@ -67,14 +64,8 @@ function dicePicture(x){
 
 function varPicture(x){
   var p;
-
-  // emk comment - 
-  // var d == x; - doesn't do what you probably want it to do... i think you want var d = x;
-  // 
-
   var d = x;
-    p="./pictures/dice" + d + ".png";
-  return p;
+    p="./pictures/dice" + d +".png";
+    return (p);
   }
-
 </script>

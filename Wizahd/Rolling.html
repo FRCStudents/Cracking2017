@@ -18,7 +18,9 @@ function Roll(){
 		v.setAttribute("src", "./Dice_pictures/Dice_faces/Die_side_" + f + ".png");
 		v.setAttribute("id", "p" + f);
 		document.body.appendChild(v);
-		console.log("end loop");
+		var d1 = [];
+		d1[f] = f;
+		console.log(d1);
 	}
 	myVar = setTimeout(Removetimer, 1500);
 }
@@ -28,6 +30,10 @@ function Yahtzee(){
 		var z = document.createElement("img");
 		z.setAttribute("src", "./Dice_pictures/Dice_faces/Die_side_" + x + ".png");
 		document.body.appendChild(z);
+		var d2 = [];
+		d2[d1] = x;
+		alert(x);
+		alert(d2);
 	}
 }
 // x is the number that is rolled for each die

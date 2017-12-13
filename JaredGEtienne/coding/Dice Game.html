@@ -1,5 +1,6 @@
 <html>
-<input type="button" onclick="dicePicture()" value = "diceSelect">
+<input type="button" onclick="Randomize()" value = "diceSelect">
+<input type="button" onclick="replace()" value = "replace">
 <br>
 <body bgcolor ="red">
 
@@ -12,10 +13,12 @@ var h=0;
 function Randomize() {
     var x = Math.floor((Math.random() * 6) + 1);
     console.log(x);
-    dicePicture(x);
+    gifLoop(x,c);
   }
-  function gifLoop(){
+
+  function gifLoop(p,c,x){
     for(var i=0; i<5; i++){
+  console.log("I am"+c)
       var b = document.createElement("img");
       b.setAttribute("src", "./pictures/dice_gif.gif");
       b.setAttribute("width", "210");
@@ -24,49 +27,36 @@ function Randomize() {
       document.body.appendChild(b);
       c++;
     }
+  //  startDicePicture(p,c);
   }
-
-  function showForFiveSeconds(c,x){
-   // emk comment:
-   // gifLoop doesn't return anything! What are you trying to do here?
-
-    var start=gifLoop();
-    var end= start + 1500;
-    if(start > end) clearInterval(timer);
-  var myVar = setInterval(function(){ }, 5000);
-}
 
 function replace(p,c){
   var replace= document.getElementById("a"+c);
-  replace.src = (p);
-  c++;
+  replace.parentNode.removeChild(replace);
+
 }
 
-// emk comment:
-// remember to remove your tests...
-//startDicePicture();
-
-function startDicePicture(){
-  alert("hi");
-      myVar = setTimeout(replace(), 1000);
+function startDicePicture(p,c){
+      myVar = setTimeout(replace(p,c), 5000);
 }
-// emk comment:
-// remember to remove your tests...
-//dicePicture();
 
 function dicePicture(x){
-    alert("hi");
     var b = document.createElement("img");
     v = varPicture(x);
     b.setAttribute("src", v);
     b.setAttribute("width", "210");
     b.setAttribute("height", "210");
-    b.setAttribute("id","a"+c);
+    b.setAttribute("id","a"+b);
     document.body.appendChild(b);
     }
 
 function varPicture(x){
   var p;
+<<<<<<< HEAD
+  var d = x;
+    p="./pictures/dice" + d +".png";
+    return (p);
+=======
 
   // emk comment - 
   // var d == x; - doesn't do what you probably want it to do... i think you want var d = x;
@@ -79,6 +69,6 @@ function varPicture(x){
   var d == x;
     p="./pictures/dice" + d + ".png";
   return p;
+>>>>>>> 4098d39d09514e67170a663b84a9bb0e4df47195
   }
-
 </script>

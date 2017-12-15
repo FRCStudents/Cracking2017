@@ -1,9 +1,13 @@
 <html>
-<input type="button" onclick="Randomize()" value = "diceSelect">
-<input type="button" onclick="replace()" value = "replace">
+<title> Dice Game</title>
+<input type="button" onclick="Randomize(c)" value = "diceSelect">
+<input type="button" onclick="replace(c)" value = "replace">
 <br>
-<body bgcolor ="red">
-
+<body bgcolor ="red"><div> dive</div>
+  <table>
+    <tr> </tr>
+</table>
+</body>
 </html>
 <script>
 var c=0;
@@ -13,12 +17,13 @@ var h=0;
 function Randomize() {
     var x = Math.floor((Math.random() * 6) + 1);
     console.log(x);
-    gifLoop(x,c);
-  }
 
+    dicePicture(x);
+  }
+  alert("hi");
   function gifLoop(p,c,x){
     for(var i=0; i<5; i++){
-  console.log("I am"+c)
+      console.log("I am"+c);
       var b = document.createElement("img");
       b.setAttribute("src", "./pictures/dice_gif.gif");
       b.setAttribute("width", "210");
@@ -27,17 +32,18 @@ function Randomize() {
       document.body.appendChild(b);
       c++;
     }
-  //  startDicePicture(p,c);
+    if(i=5){c=0;}
+    startDicePicture(p,c);
   }
 
-function replace(p,c){
-  var replace= document.getElementById("a"+c);
-  replace.parentNode.removeChild(replace);
-
+function replace(p,c,){
+  var replace= document.getElementById("a"+h);
+  replace.src=0;
+  h++;
 }
 
 function startDicePicture(p,c){
-      myVar = setTimeout(replace(p,c), 5000);
+      myVar = setTimeout(replace, 5000);
 }
 
 function dicePicture(x){
@@ -52,23 +58,10 @@ function dicePicture(x){
 
 function varPicture(x){
   var p;
-<<<<<<< HEAD
+
   var d = x;
     p="./pictures/dice" + d +".png";
     return (p);
-=======
 
-  // emk comment - 
-  // var d == x; - doesn't do what you probably want it to do... i think you want var d = x;
-  // 
-  // Jared - read the instructor's comments before you ask another question! 
-  // You never know - maybe he got lucky and said the one thing you needed to
-  // know in order to fix this function!!!
-  // you never know!
-  //
-  var d == x;
-    p="./pictures/dice" + d + ".png";
-  return p;
->>>>>>> 4098d39d09514e67170a663b84a9bb0e4df47195
   }
 </script>

@@ -1,5 +1,7 @@
 <html>
-<input type="button" onclick="dicePicture()" value = "diceSelect">
+<title> diceGame </title>
+<input type="button" onclick="Randomize()" value = "diceSelect">
+<input type="button" onclick="replace(c)" value = "replace">
 <br>
 <body bgcolor ="red">
 
@@ -12,10 +14,11 @@ var h=0;
 function Randomize() {
     var x = Math.floor((Math.random() * 6) + 1);
     console.log(x);
-    dicePicture(x);
+  gifLoop();
   }
   function gifLoop(){
     for(var i=0; i<5; i++){
+      console.log("I am " + c);
       var b = document.createElement("img");
       b.setAttribute("src", "./pictures/dice_gif.gif");
       b.setAttribute("width", "210");
@@ -26,29 +29,19 @@ function Randomize() {
     }
   }
 
-  function showForFiveSeconds(c,x){
-   // emk comment:
-   // gifLoop doesn't return anything! What are you trying to do here?
-
-    var start=gifLoop();
-    var end= start + 1500;
-    if(start > end) clearInterval(timer);
-  var myVar = setInterval(function(){ }, 5000);
-}
-
-function replace(p,c){
-  var replace= document.getElementById("a"+c);
-  replace.src = (p);
-  c++;
+function replace(p,c,x){
+  var replace= document.getElementById("a"+h);
+  replace.src = ("./pictures/dice" + x + ".png");
+  h++;
 }
 
 // emk comment:
 // remember to remove your tests...
 //startDicePicture();
-
+startDicePicture();
 function startDicePicture(){
   alert("hi");
-      myVar = setTimeout(replace(), 1000);
+      myVar = setTimeout(g(), 1000);
 }
 // emk comment:
 // remember to remove your tests...
@@ -66,14 +59,14 @@ function dicePicture(x){
 c++;
     }
 
-
+dicePicture();
 function varPicture(x){
 
  var p;
 
-  // emk comment - 
+  // emk comment -
   // var d == x; - doesn't do what you probably want it to do... i think you want var d = x;
-  // 
+  //
 
     p="./pictures/dice" + x + ".png";
 alert(p);

@@ -1,0 +1,68 @@
+<html>
+<head>
+<title>Yahtzee!</title>
+</head>
+<body>
+<script>
+var arr = [];
+
+function fillArr(){
+    for(var i=0; i<5; i++){
+	arr[4-i] = i + 1;
+	}
+}
+
+function showArr(){
+    for(var j=0; j<5; j++){
+	console.log(arr[j]);
+	}
+}
+
+function randomizeArray(){
+    for(var i=0; i<5; i++){
+	arr[i] = Math.floor((Math.random() * 6) + 1);
+	}
+}
+
+function countValues(){
+	var vals = [0,0,0,0,0];
+	var counts = [0,0,0,0,0];
+	
+	for(var k=0; k<5; k++){
+		vals[k] = arr[k];
+	}
+
+	for(var i=0; i<5; i++){
+		for(var j=i; j<5; j++){
+			if(vals[j] == vals[i]){
+				counts[i]++;
+			}
+		}
+	}
+	console.log("counts:");
+	for(var j=0; j< 5; j++){
+		console.log(counts[j]);
+	}	
+
+	var largest = 0;
+	var mostRepeated = 0;
+	for(var l=0; l<5; l++){
+		if(counts[l] > largest){
+			largest = l;
+			mostRepeated = vals[l];
+		}
+	}		
+	console.log(largest);
+	console.log(mostRepeated);
+}	
+
+fillArr();
+arr.sort();
+//showArr();
+randomizeArray();
+showArr();
+countValues();
+</script>
+</body>
+</html>
+

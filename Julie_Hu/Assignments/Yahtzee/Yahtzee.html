@@ -1,6 +1,9 @@
 <html>
 <title> Yahtzee!</title>
 <body bgcolor= "#E6E6E6"> <center><font face="Lucida Calligraphy"> <font size="7"> <font color= "#000B7"> <h1> <b>Welcome to Yahtzee!</b> </h1> 	</font> </center> </body>
+<body>
+	<font size= "2">
+<a href = "Yahtzeedir.html"> Yahtzee Directions!</a></body>
 <style>
 table, th, td {
     border: 1px solid black;
@@ -11,7 +14,7 @@ th, td {
     padding: 10px;
 }
 </style>
-<button onclick= "cleardice()">Clear Dice!</button>
+<button onclick= "clearalldice()">Clear Dice!</button>
 <table align="right" border = 2> 
 	<tr>    
 		<td><button onclick="showdice('d1')">Roll Dice 1!</button></td>
@@ -24,75 +27,83 @@ th, td {
 </table>
 <table border = 2>
 <table border = 1>
-	<tr><th id = us> Upper Section</th><th>Scores</th></tr>
-	<tr><td id = aces> Aces:</td> 
-		<td id=ScoreA> <button onclick="ScoreasA()"> Score As Ace </button></td></tr>
+	<tr><th id = us> Upper Section</th><th>Enter Your Scores Here</th><th>Score</th></tr>
+	<tr><td id = aces> Ones:</td> 
+		<td id=ScoreA> <input type=text name= ones id= 1><button onclick="ScoreasA()"> Score As Ace </button></td><td id = s1></td></tr>
 	<tr><td id = twos> Twos:</td>
-		<td id=ScoreB> <button onclick="Scoreas2()"> Score As Twos </button></td></tr>
+		<td id=ScoreB> <input type=text name= twos id= 2><button onclick= "Scoreas2()">Score as Twos</button></td><td id = s2></td></tr>
 	<tr><td id = threes> Threes:</td>
-		<td id=ScoreC> <button onclick="Scoreas3()"> Score As Threes </button></td></tr>
+		<td id=ScoreC> <input type=text name= threes id= 3><button onclick="Scoreas3()"> Score As Threes </button></td><td id = s3></td></tr>
 	<tr><td id = fours> Fours:</td>
-		<td id=ScoreD> <button onclick="Scoreas4()"> Score As Fours </button></td></tr>
+		<td id=ScoreD> <input type=text name= fours id= 4><button onclick="Scoreas4()"> Score As Fours </button></td><td id = s4></td></tr>
 	<tr><td id = fives> Fives:</td>
-		<td id=ScoreE> <button onclick="Scoreas5()"> Score As Fives </button></td></tr>
+		<td id=ScoreE> <input type=text name= fives id= 5><button onclick="Scoreas5()"> Score As Fives </button></td><td id = s5></td></tr>
 	<tr><td id = sixes> Sixes:</td>
-		<td id=ScoreF> <button onclick="Scoreas6()"> Score As Sixes </button></td></tr>
+		<td id=ScoreF> <input type=text name= sixes id= 6><button onclick="Scoreas6()"> Score As Sixes </button></td><td id = s6></td></tr>
 	<tr><th id = usts> Upper Section Total Score:</th>
-		<td id=ScoreG> <button onclick="Addupper()"> Add Upper Section Score </button></td></tr>
+		<td id=ScoreG> <button onclick="Addupper()"> Add Upper Section Score </button></td><td id = tus></td></tr>
 	<tr><td></td></tr>
 </table>
 <table border = 1>
-	<tr><th id = ls>Lower Section</th><th> Scores</th></tr>
+	<tr><th id = ls>Lower Section</th><th> Enter Your Scores Here</th><th> Scores</th></tr>
 	<tr><td id = 3oak>Three of a Kind:</td>
-		<td id=ScoreH> <button onclick="threeok()"> Score As Three of a Kind </button></td></tr>
+		<td id=ScoreH> <input type=text name= threeofkind id= threeofakind><button onclick="threeok()"> Score As Three of a Kind </button></td><td id = a></td></tr>
 	<tr><td id = 4oak>Four of a Kind:</td>
-		<td id=ScoreI> <button onclick="fourok()"> Score As Four of a Kind </button></td></tr>
+		<td id=ScoreI> <input type=text name= fourofkind id= fourofakind><button onclick="fourok()"> Score As Four of a Kind </button></td><td id = b></td></tr>
 	<tr><td id = fh> Full House:</td>
-		<td id=ScoreJ> <button onclick="full()"> Score As a Full House </button></td></tr>
+		<td id=ScoreJ> <button onclick="full();"> Score As a Full House </button></td><td id = c></td></tr>
 	<tr><td id = sms> Small Straight:</td>
-		<td id=ScoreK> <button onclick="small()"> Score As a Small Straight </button></td></tr>
+		<td id=ScoreK> <button onclick="small();"> Score As a Small Straight </button></td><td id = d></td></tr>
         <tr><td id = lgs> Large Straight:</td>
-		<td id=ScoreL> <button onclick="large()"> Score As a Large Straight </button></td></tr>
+		<td id=ScoreL> <button onclick="large();"> Score As a Large Straight </button></td><td id = e></td></tr>
 	<tr><td id = 5oak> Yahtzee: </td>
-		<td id=ScoreM> <button onclick="yahtzee()"> Score As Yahtzee</button></td></tr>
+		<td id=ScoreM> <button onclick="yahtzee();"> Score As Yahtzee</button></td><td id = f></td></tr>
 	<tr><td id = chance> Chance:</td>
-		<td id=ScoreN> <button onclick="chance()"> Score As Chance</button></td></tr>
+		<td id=ScoreN> <input type=text name= chances id= chances><button onclick="chance()"> Score As Chance</button></td><td id = g></td></tr>
 	<tr><th id = lsts> Lower Section Total Score:</th>	
-		<td id=ScoreO> <button onclick="Addlower()"> Add Lower Section Score </button></td></tr>
+		<td id=ScoreO> <button onclick="Addlower();"> Add Lower Section Score </button></td><td id = h></td></tr>
 </table>
 
 </table>
 </html>
 <script>
 function full(){
-	var x= document.getElementById("ScoreJ");
+	var x= document.getElementById("c");
 		x.innerHTML = "25";}
 function small(){
-	var x= document.getElementById("ScoreK");
+	var x= document.getElementById("d");
 		x.innerHTML = "30";}
 function large(){
-	var x= document.getElementById("ScoreL");
+	var x= document.getElementById("e");
 		x.innerHTML = "40";}
 function yahtzee(){
-	var x= document.getElementById("ScoreM");
+	var x= document.getElementById("f");
 		x.innerHTML = "50";}
 function showdice(x){
 	document.getElementById(x).innerHTML =
 	Math.floor(Math.random() * 6)+1;}
-//function cleardice(){
-//	var y= document.getElementById("y");
-//	y.innerHTML = "";}
-//							                         CLEAR DICE FUNCTION DOES NOT WORK YET!
-//function Addlower(){
-//	var a= document.getElementById("ScoreK").value;
-//	var b= document.getElementById("ScoreL").value;
-//	var answerspot = document.getElementById("ScoreO");
-//function add(a,b){
-//	answer= a + b;
-//	answerspot.innerHTML = answer;
-//}
+function cleardice(y){
+	var y= document.getElementById(y);
+		y.innerHTML = "";}
+function clearalldice(){
+	for (var i=1; i<6; i++){
+			cleardice("d"+i);
+	}
+}
+function Addlower(){
+	var a = parseInt (document.getElementById("d").value);
+	var b = parseInt (document.getElementById("e").value);
 
-//	add(a,b);
+	var answerspot = document.getElementById("h");
+function add(a,b){
+	answer= a + b;
+	answerspot.innerHTML = answer;
+}
+
+	add(a,b);
+}
+//function ScoreasA(){                                                                                               FIGURE OUT THIS FUNCTION
+//	var c= parseInt(document.getElementbyId("ScoreA").value);             
 //}
 </script>
 

@@ -8,6 +8,7 @@ Roll();
 var d = 0;
 var d1 = [];
 var d2 = [];
+var r = 0;
 function Removetimer(){
 	for(var g = 1; g < 7; g++){
 		var a = document.getElementById("p" + g);
@@ -40,27 +41,33 @@ function Compare(){
 			alert("You have a pair!");
 			console.log(c);
 			console.log(d2);
-	}else{
+			r = 1;
+		}
+	}
+	for(var c = 2; c < 5; c++){
 		if(d2[1] == d2[c]){
 			alert("You have a pair!");
 			console.log(c);
 			console.log(d2);
+			r = 1;
 		}
-	}else{
+	}
+	for(var c = 3; c < 5; c++){
 		if(d2[2] == d2[c]){
 			alert("You have a pair!");
 			console.log(c);
 			console.log(d2);
+			r = 1;
 		}
-	}else{
-		if(d2[3] == d2[4]){
+	}
+	if(d2[3] == d2[4]){
 			alert("You have a pair!");
 			console.log(c);
 			console.log(d2);
-		}
-	}else{
-			alert("You have a straight!");
-		}
+			r = 1;
+	}
+	if(r == 0){
+			alert("You have no pairs!")
 	}
 }
 // x is the number that is rolled for each die

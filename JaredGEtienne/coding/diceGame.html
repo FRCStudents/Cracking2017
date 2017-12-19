@@ -1,77 +1,60 @@
 <html>
 <title> diceGame </title>
 <input type="button" onclick="Randomize()" value = "diceSelect">
-<input type="button" onclick="replace(c)" value = "replace">
 <br>
 <body bgcolor ="red">
-
+  <table>
+    <tr id = "row" border="1"></tr>
+    <tr>
+  </table id = "row2">
 </html>
 <script>
 var c=0;
 var h=0;
-
+var x;
+var a=[];
 
 function Randomize() {
-    var x = Math.floor((Math.random() * 6) + 1);
-    console.log(x);
-  gifLoop();
+gifLoop();
   }
   function gifLoop(){
     for(var i=0; i<5; i++){
-      console.log("I am " + c);
-      var b = document.createElement("img");
-      b.setAttribute("src", "./pictures/dice_gif.gif");
-      b.setAttribute("width", "210");
-      b.setAttribute("height", "210");
-      b.setAttribute("id","a"+c);
-      document.body.appendChild(b);
-      c++;
-    }
+    console.log("I am " + c);
+    var firstrow= document.getElementById("row");
+    var insert= firstrow.insertCell(-1);
+    var b = document.createElement("img");
+          b.setAttribute("src", "./pictures/dice_gif.gif");
+          b.setAttribute("width", "210");
+          b.setAttribute("height", "210");
+          b.setAttribute("id","a"+c);
+          insert.appendChild(b);
+            c++;
+  }
+startDicePicture();
+
+//var secondrow= document.getElementById("row2");
+//  var insert2 = secondrow.insertCell(1);
+//insert2.innerHTML= "hi";
+var z = document.createElement("input");
+z.setAttribute("type","button");
+z.setAttribute("onclick","hi");
+
   }
 
-function replace(p,c,x){
+function replace(p,c,){
+   x = Math.floor((Math.random() * 6) + 1);
   var replace= document.getElementById("a"+h);
   replace.src = ("./pictures/dice" + x + ".png");
+  a[h]=x;
+  console.log(a);
   h++;
 }
-
-// emk comment:
-// remember to remove your tests...
-//startDicePicture();
-startDicePicture();
 function startDicePicture(){
-  alert("hi");
-      myVar = setTimeout(g(), 1000);
+    var  myVar = setTimeout(replace, 1500);
+      var  myVar1 = setTimeout(replace, 2000);
+          var  myVar2 = setTimeout(replace, 2500);
+                var  myVar3 = setTimeout(replace, 3000);
+                    var myVar4 = setTimeout(replace, 3500);
 }
-// emk comment:
-// remember to remove your tests...
-//dicePicture();
 
-function dicePicture(x){
-    alert("hi");
-    var b = document.createElement("img");
-    v = varPicture(x);
-    b.setAttribute("src", v);
-    b.setAttribute("width", "210");
-    b.setAttribute("height", "210");
-    b.setAttribute("id","a"+c);
-    document.body.appendChild(b);
-c++;
-    }
-
-dicePicture();
-function varPicture(x){
-
- var p;
-
-  // emk comment -
-  // var d == x; - doesn't do what you probably want it to do... i think you want var d = x;
-  //
-
-    p="./pictures/dice" + x + ".png";
-alert(p);
-  return p;
-alert("varPicture");
-  }
-// my p return p is not working for some reason idk why
 </script>

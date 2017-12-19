@@ -1,18 +1,18 @@
 <html>
 <title> diceGame </title>
 <input type="button" onclick="Randomize()" value = "diceSelect">
-<input type="button" onclick="replace(c)" value = "replace">
 <br>
 <body bgcolor ="red">
   <table>
     <tr id = "row" border="1"></tr>
     <tr>
-  </table>
+  </table id = "row2">
 </html>
 <script>
 var c=0;
 var h=0;
 var x;
+var a=[];
 
 function Randomize() {
 gifLoop();
@@ -29,26 +29,32 @@ gifLoop();
           b.setAttribute("id","a"+c);
           insert.appendChild(b);
             c++;
-
-    }
+  }
 startDicePicture();
+
+//var secondrow= document.getElementById("row2");
+//  var insert2 = secondrow.insertCell(1);
+//insert2.innerHTML= "hi";
+var z = document.createElement("input");
+z.setAttribute("type","button");
+z.setAttribute("onclick","hi");
+
   }
 
 function replace(p,c,){
    x = Math.floor((Math.random() * 6) + 1);
-   console.log(x);
   var replace= document.getElementById("a"+h);
   replace.src = ("./pictures/dice" + x + ".png");
+  a[h]=x;
+  console.log(a);
   h++;
 }
-
-
 function startDicePicture(){
     var  myVar = setTimeout(replace, 1500);
       var  myVar1 = setTimeout(replace, 2000);
           var  myVar2 = setTimeout(replace, 2500);
                 var  myVar3 = setTimeout(replace, 3000);
                     var myVar4 = setTimeout(replace, 3500);
-
 }
+
 </script>

@@ -1,12 +1,18 @@
 <html>
 <title> diceGame </title>
+<style>
+table, th, td {
+    border: 1px solid black;
+    border-collapse: collapse;
+}
+</style>
 <input type="button" onclick="Randomize()" value = "diceSelect">
 <br>
 <body bgcolor ="red">
-  <table>
-    <tr id = "row" border="1"></tr>
-    <tr>
-  </table id = "row2">
+  <table style = border="125px black"  >
+    <tr id = "row"></tr>
+    <tr id = "row2">
+  </table>
 </html>
 <script>
 var c=0;
@@ -17,7 +23,16 @@ var a=[];
 function Randomize() {
 gifLoop();
   }
-  function gifLoop(){
+  function replace(){
+    x = Math.floor((Math.random() * 6) + 1);
+    var replace= document.getElementById("a"+h);
+    replace.src = ("./pictures/dice" + x + ".png");
+    a[h]=x;
+    console.log(a);
+    h++;
+    return(x);
+  }
+  function gifLoop(x){
     for(var i=0; i<5; i++){
     console.log("I am " + c);
     var firstrow= document.getElementById("row");
@@ -31,24 +46,19 @@ gifLoop();
             c++;
   }
 startDicePicture();
-
-//var secondrow= document.getElementById("row2");
-//  var insert2 = secondrow.insertCell(1);
-//insert2.innerHTML= "hi";
+// I dont want to call the function replace but I dont want this to equal replace either
+var y = "hi";
+for(var k=0; k<5; k++){
+var secondrow= document.getElementById("row2");
+var insert2 = secondrow.insertCell(-1);
 var z = document.createElement("input");
 z.setAttribute("type","button");
 z.setAttribute("onclick","hi");
-
+z.setAttribute("value",y);
+secondrow.appendChild(z);
+}
   }
 
-function replace(p,c,){
-   x = Math.floor((Math.random() * 6) + 1);
-  var replace= document.getElementById("a"+h);
-  replace.src = ("./pictures/dice" + x + ".png");
-  a[h]=x;
-  console.log(a);
-  h++;
-}
 function startDicePicture(){
     var  myVar = setTimeout(replace, 1500);
       var  myVar1 = setTimeout(replace, 2000);
@@ -56,5 +66,9 @@ function startDicePicture(){
                 var  myVar3 = setTimeout(replace, 3000);
                     var myVar4 = setTimeout(replace, 3500);
 }
-
+function pair(){
+var y = replace(x);
+console.log(y);
+}
+pair();
 </script>

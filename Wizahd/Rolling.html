@@ -6,7 +6,6 @@
 <script>
 Roll();
 var d = 0;
-var d1 = [];
 var d2 = [];
 var r = 0;
 function Removetimer(){
@@ -36,6 +35,13 @@ function Yahtzee(){
 	Compare();
 }
 function Compare(){
+	for(var c = 0; c < 3; c ++){
+		d2[c] = 1;
+	}
+	if(d2[0] == d2[1] && d2[0] == d2[2] && d2[0] == d2[3] && d2[0] == d2[4]){
+		alert("Yahtzee!");
+		r++;
+	}
 	if(r == 0){
 		for(var g = -2; g < 3; g++){
 			for(var b = g+1; b < 4; b++){
@@ -56,6 +62,10 @@ function Compare(){
 				for(var c = j+1; c < 5; c++){
 					if(d2[b] == d2[j] && d2[b] == d2[c]){
 						r++;
+						console.log(d2[b], d2[j], d2[c]);
+						var h = d2[b];
+						var y = d2[j];
+						var u = d2[c];
 						d2[b] = "a";
 						d2[j] = "b";
 						d2[c] = "c";
@@ -77,7 +87,10 @@ function Compare(){
 			y++;
 		}
 		if(y == 1){
-				alert("You have a three of a kind!");
+			h += 1;
+			y += 1;
+			u += 1;
+				alert("You have a three of a kind " +  h + " and " + y + " and " + u + " position!");
 			}
 		}
 	if(r == 0){
@@ -85,9 +98,15 @@ function Compare(){
 			for(var c = j+1; c < 5; c++){
 				if(d2[j] == d2[c]){
 					if(u == 1){
-						alert("You have two pairs!")
+						y += 1;
+						h += 1;
+						c += 1;
+						j += 1;
+						alert("You have two pairs! One pair in the " + y + " and the " + h + " position. The other pair is in the " + j + " and the " + c + " postion!");
 						r++;
 					}
+					var y = j;
+					var h = c;
 					var u = 0;
 					u++;
 				}
@@ -98,7 +117,9 @@ function Compare(){
 		for(var j = 0; j < 5; j++){
 			for(var c = j+1; c < 5; c++){
 				if(d2[j] == d2[c]){
-					alert("You have a pair!");
+					c += 1;
+					j += 1;
+					alert("You have a pair in the " + j + " position and the " + c + " position!");
 					r++;
 				}
 			}

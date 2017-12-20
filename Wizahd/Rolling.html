@@ -35,9 +35,6 @@ function Yahtzee(){
 	Compare();
 }
 function Compare(){
-	for(var c = 0; c < 3; c ++){
-		d2[c] = 1;
-	}
 	if(d2[0] == d2[1] && d2[0] == d2[2] && d2[0] == d2[3] && d2[0] == d2[4]){
 		alert("Yahtzee!");
 		r++;
@@ -63,9 +60,9 @@ function Compare(){
 					if(d2[b] == d2[j] && d2[b] == d2[c]){
 						r++;
 						console.log(d2[b], d2[j], d2[c]);
-						var h = d2[b];
-						var y = d2[j];
-						var u = d2[c];
+						var h = b;
+						var t = j;
+						var v = c;
 						d2[b] = "a";
 						d2[j] = "b";
 						d2[c] = "c";
@@ -88,16 +85,16 @@ function Compare(){
 		}
 		if(y == 1){
 			h += 1;
-			y += 1;
-			u += 1;
-				alert("You have a three of a kind " +  h + " and " + y + " and " + u + " position!");
+			t += 1;
+			v += 1;
+				alert("You have a three of a kind in the " + h + " , " + t + " and " + v + " position!");
 			}
 		}
 	if(r == 0){
 		for(var j = 0; j < 5; j++){
 			for(var c = j+1; c < 5; c++){
 				if(d2[j] == d2[c]){
-					if(u == 1){
+					if(g == 1){
 						y += 1;
 						h += 1;
 						c += 1;
@@ -107,7 +104,7 @@ function Compare(){
 					}
 					var y = j;
 					var h = c;
-					var u = 0;
+					var g = 0;
 					u++;
 				}
 			}

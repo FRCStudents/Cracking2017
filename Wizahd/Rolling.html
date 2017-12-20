@@ -36,38 +36,82 @@ function Yahtzee(){
 	Compare();
 }
 function Compare(){
-	for(var c = 1; c < 5; c++){
-		if(d2[0] == d2[c]){
-			alert("You have a pair!");
-			console.log(c);
-			console.log(d2);
-			r = 1;
+	if(r == 0){
+		for(var g = -2; g < 3; g++){
+			for(var b = g+1; b < 4; b++){
+				for(var j = b+1; j < 5; j++){
+					for(var c = j+1; c < 5; c++){
+						if(d2[g] == d2[b] && d2[g] == d2[j] && d2[g] == d2[c]){
+							alert("You have a four of a kind!");
+							r++;
+						}
+					}
+				}
+			}
 		}
-	}
-	for(var c = 2; c < 5; c++){
-		if(d2[1] == d2[c]){
-			alert("You have a pair!");
-			console.log(c);
-			console.log(d2);
-			r = 1;
-		}
-	}
-	for(var c = 3; c < 5; c++){
-		if(d2[2] == d2[c]){
-			alert("You have a pair!");
-			console.log(c);
-			console.log(d2);
-			r = 1;
-		}
-	}
-	if(d2[3] == d2[4]){
-			alert("You have a pair!");
-			console.log(c);
-			console.log(d2);
-			r = 1;
 	}
 	if(r == 0){
-			alert("You have no pairs!")
+		for(var b = -1; b < 4; b++){
+			for(var j = b+1; j < 5; j++){
+				for(var c = j+1; c < 5; c++){
+					if(d2[b] == d2[j] && d2[b] == d2[c]){
+						r++;
+						d2[b] = "a";
+						d2[j] = "b";
+						d2[c] = "c";
+						var y = 0;
+					}
+				}
+			}
+		}
+		if(y == 0){
+			for(var j = 0; j < 5; j++){
+				for(var c = j+1; c < 5; c++){
+					if(d2[j] == d2[c]){
+						alert("You have a full house!");
+						r++;
+						y = -1;
+					}
+				}
+			}
+			y++;
+		}
+		if(y == 1){
+				alert("You have a three of a kind!");
+			}
+		}
+	if(r == 0){
+		for(var j = 0; j < 5; j++){
+			for(var c = j+1; c < 5; c++){
+				if(d2[j] == d2[c]){
+					if(u == 1){
+						alert("You have two pairs!")
+						r++;
+					}
+					var u = 0;
+					u++;
+				}
+			}
+		}
+	}
+	if(r == 0){
+		for(var j = 0; j < 5; j++){
+			for(var c = j+1; c < 5; c++){
+				if(d2[j] == d2[c]){
+					alert("You have a pair!");
+					r++;
+				}
+			}
+		}
+	}
+	if(r == 0){
+		if(d2[0] + d2[1] + d2[2] + d2[3] + d2[4] == 15 || d2[0] + d2[1] + d2[2] + d2[3] + d2[4] == 20){
+			alert("You have a straight!");
+			r++;
+		}
+	}
+	if(r == 0){
+		alert("You have nothing!");
 	}
 }
 // x is the number that is rolled for each die
@@ -75,5 +119,7 @@ function Compare(){
 // v is the variable for the creation of the "rolling" mechanism
 // a removes the dice
 // f and g are used
-// d is to used
+// d is to be used
+// r is to determine if there are pairs
+// c is to determine the number to call inside the array
 </script>

@@ -1,82 +1,74 @@
 <html>
-<input type="button" onclick="Randomize()">
-<body>
-
+<title> diceGame </title>
+<style>
+table, th, td {
+    border: 1px solid black;
+    border-collapse: collapse;
+}
+</style>
+<input type="button" onclick="Randomize()" value = "diceSelect">
+<br>
+<body bgcolor ="red">
+  <table style = border="125px black"  >
+    <tr id = "row"></tr>
+    <tr id = "row2">
+  </table>
 </html>
 <script>
 var c=0;
-function Randomize(x) {
-    var x = Math.floor((Math.random() * 6) + 1);
-    c=0;
-    console.log(x);
-    dice(x);
+var h=0;
+var x;
+var a=[];
+
+function Randomize() {
+gifLoop();
   }
-function dice(x){
-    if(x<2 && x>0){
+  function replace(){
+    x = Math.floor((Math.random() * 6) + 1);
+    var replace= document.getElementById("a"+h);
+    replace.src = ("./pictures/dice" + x + ".png");
+    a[h]=x;
+    console.log(a);
+    h++;
+    return(x);
+  }
+  function gifLoop(x){
+    for(var i=0; i<5; i++){
+    console.log("I am " + c);
+    var firstrow= document.getElementById("row");
+    var insert= firstrow.insertCell(-1);
     var b = document.createElement("img");
-    b.setAttribute("src", "https://upload.wikimedia.org/wikipedia/commons/1/1b/Dice-1-b.svg");
-    b.setAttribute("width", "110");
-    b.setAttribute("height", "110");
-    b.setAttribute("alt", "The Pulpit Rock");
-    b.setAttribute("id",c);
-    c++;
-    document.body.appendChild(b);
-    console.log("a"+c);
-    }
-      if(x<3 && x>1){
-        var b = document.createElement("img");
-        b.setAttribute("src", "https://upload.wikimedia.org/wikipedia/commons/3/34/Dice-2.svg");
-        b.setAttribute("width", "110");
-        b.setAttribute("height", "110");
-        b.setAttribute("alt", "The Pulpit Rock");
-        b.setAttribute("id",c);
-        c ++;
-        document.body.appendChild(b);
-      console.log("a"+c);
-      }
-        if(x<4 & x>2){
-          var b = document.createElement("img");
-          b.setAttribute("src", "https://upload.wikimedia.org/wikipedia/commons/thumb/2/28/Dice-3a.svg/557px-Dice-3a.svg.png");
-          b.setAttribute("width", "110");
-          b.setAttribute("height", "110");
-          b.setAttribute("alt", "The Pulpit Rock");
-          b.setAttribute("id",c);
-          c ++;
-          document.body.appendChild(b);
-        console.log("a"+c);
-        }
-          if(x<5 & x>3){
-            var b = document.createElement("img");
-            b.setAttribute("src", "https://upload.wikimedia.org/wikipedia/commons/thumb/1/16/Dice-4.svg/557px-Dice-4.svg.png");
-            b.setAttribute("width", "110");
-            b.setAttribute("height", "110");
-            b.setAttribute("alt", "The Pulpit Rock");
-            b.setAttribute("id",c);
-            c ++;
-            document.body.appendChild(b);
-          console.log("a"+c);
-          }
-          if(x<6 & x>4){
-            var b = document.createElement("img");
-            b.setAttribute("src", "https://upload.wikimedia.org/wikipedia/commons/thumb/d/dc/Dice-5.svg/600px-Dice-5.svg.png");
-            b.setAttribute("width", "110");
-            b.setAttribute("height", "110");
-            b.setAttribute("alt", "The Pulpit Rock");
-            b.setAttribute("id",c);
-            c ++;
-            document.body.appendChild(b);
-          console.log("a"+c);
+          b.setAttribute("src", "./pictures/dice_gif.gif");
+          b.setAttribute("width", "210");
+          b.setAttribute("height", "210");
+          b.setAttribute("id","a"+c);
+          insert.appendChild(b);
+            c++;
+  }
+startDicePicture();
+// I dont want to call the function replace but I dont want this to equal replace either
+var y = "hi";
+for(var k=0; k<5; k++){
+var secondrow= document.getElementById("row2");
+var insert2 = secondrow.insertCell(-1);
+var z = document.createElement("input");
+z.setAttribute("type","button");
+z.setAttribute("onclick","hi");
+z.setAttribute("value",y);
+secondrow.appendChild(z);
 }
-              if(x<7 & x>5){
-                var b = document.createElement("img");
-                b.setAttribute("src", "https://vignette.wikia.nocookie.net/vsbattles/images/6/6a/Dice.jpg/revision/latest?cb=20171118192121");
-                b.setAttribute("width", "110");
-                b.setAttribute("height", "110");
-                b.setAttribute("alt", "The Pulpit Rock");
-                b.setAttribute("id",c);
-                c ++;
-                document.body.appendChild(b);
-              console.log("a"+c);
-              }
+  }
+
+function startDicePicture(){
+    var  myVar = setTimeout(replace, 1500);
+      var  myVar1 = setTimeout(replace, 2000);
+          var  myVar2 = setTimeout(replace, 2500);
+                var  myVar3 = setTimeout(replace, 3000);
+                    var myVar4 = setTimeout(replace, 3500);
 }
+function pair(){
+var y = replace(x);
+console.log(y);
+}
+pair();
 </script>

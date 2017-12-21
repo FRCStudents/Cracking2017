@@ -1,27 +1,143 @@
 <html>
 <title>Yahtzee!</title>
 <body></body>
-<!-- <input type = "text" id = "number"></input> -->
-<button onclick="Yahtzee();"> Roll! </button> <br>
+<!-- <button onclick="Roll();"> Roll! </button> <br> -->
 </html>	
 <script>
-// function roll(){	
-// 	var x = document.getElementById("number");
-// 	for(var i = 0; i < x.value; i++){
-// 		var dice = Math.floor((Math.random() * 6) + 1);
-// 		alert(dice);
-// 		if(x == 6){
-// 			alert("Welcome to Yahtzee!");
-// 			Yahtzee();
-// 		}
-// 	}
-// }
+Roll();
+var d = 0;
+var d2 = [];
+var r = 0;
+function Removetimer(){
+	for(var g = 1; g < 7; g++){
+		var a = document.getElementById("p" + g);
+		a.removeAttribute("src");
+	}
+	Yahtzee();
+}
+function Roll(){
+	for(var f = 1; f < 7; f++){
+		var v = document.createElement("img");
+		v.setAttribute("src", "./Dice_pictures/Dice_faces/Die_side_" + f + ".png");
+		v.setAttribute("id", "p" + f);
+		document.body.appendChild(v);
+	}
+	myVar = setTimeout(Removetimer, 1500);
+}
 function Yahtzee(){
-	for(var i = 0; i < 6; i++){
-		var d = Math.floor((Math.random() * 6) + 1);
-		var c = document.createElement("img");
-		c.setAttribute("src", "file:///C:/Users/david/Desktop/Coding/Cracking2017/Wizahd/Dice_pictures/Dice_faces/Die_side_" + d + ".png");
-		document.body.appendChild(c);
+	for(var i = 0; i < 5; i++){
+		var x = Math.floor((Math.random() * 6) + 1);
+		var z = document.createElement("img");
+		z.setAttribute("src", "./Dice_pictures/Dice_faces/Die_side_" + x + ".png");
+		document.body.appendChild(z);
+		d2[i] = x;
+	}
+	Compare();
+}
+function Compare(){
+	if(d2[0] == d2[1] && d2[0] == d2[2] && d2[0] == d2[3] && d2[0] == d2[4]){
+		alert("Yahtzee!");
+		r++;
+	}
+	if(r == 0){
+		for(var g = -2; g < 3; g++){
+			for(var b = g+1; b < 4; b++){
+				for(var j = b+1; j < 5; j++){
+					for(var c = j+1; c < 5; c++){
+						if(d2[g] == d2[b] && d2[g] == d2[j] && d2[g] == d2[c]){
+							alert("You have a four of a kind!");
+							r++;
+						}
+					}
+				}
+			}
+		}
+	}
+	if(r == 0){
+		for(var b = -1; b < 4; b++){
+			for(var j = b+1; j < 5; j++){
+				for(var c = j+1; c < 5; c++){
+					if(d2[b] == d2[j] && d2[b] == d2[c]){
+						r++;
+						console.log(d2[b], d2[j], d2[c]);
+						var h = b;
+						var t = j;
+						var v = c;
+						d2[b] = "a";
+						d2[j] = "b";
+						d2[c] = "c";
+						var y = 0;
+					}
+				}
+			}
+		}
+		if(y == 0){
+			for(var j = 0; j < 5; j++){
+				for(var c = j+1; c < 5; c++){
+					if(d2[j] == d2[c]){
+						alert("You have a full house!");
+						r++;
+						y = -1;
+					}
+				}
+			}
+			y++;
+		}
+		if(y == 1){
+			h += 1;
+			t += 1;
+			v += 1;
+				alert("You have a three of a kind in the " + h + " , " + t + " and " + v + " position!");
+			}
+		}
+	if(r == 0){
+		for(var j = 0; j < 5; j++){
+			for(var c = j+1; c < 5; c++){
+				if(d2[j] == d2[c]){
+					if(g == 1){
+						y += 1;
+						h += 1;
+						c += 1;
+						j += 1;
+						alert("You have two pairs! One pair in the " + y + " and the " + h + " position. The other pair is in the " + j + " and the " + c + " postion!");
+						r++;
+					}
+					var y = j;
+					var h = c;
+					var g = 0;
+					u++;
+				}
+			}
+		}
+	}
+	if(r == 0){
+		for(var j = 0; j < 5; j++){
+			for(var c = j+1; c < 5; c++){
+				if(d2[j] == d2[c]){
+					c += 1;
+					j += 1;
+					alert("You have a pair in the " + j + " position and the " + c + " position!");
+					r++;
+				}
+			}
+		}
+	}
+	if(r == 0){
+		if(d2[0] + d2[1] + d2[2] + d2[3] + d2[4] == 15 || d2[0] + d2[1] + d2[2] + d2[3] + d2[4] == 20){
+			alert("You have a straight!");
+			r++;
+		}
+	}
+	if(r == 0){
+		alert("You have nothing!");
 	}
 }
+// x is the number that is rolled for each die
+// z is the variable for the creation of the image
+// v is the variable for the creation of the "rolling" mechanism
+// a removes the dice
+// f and g are used
+// d is to be used
+// r is to determine if there are pairs
+// c is to determine the number to call inside the array
 </script>

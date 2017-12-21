@@ -1,0 +1,69 @@
+<html>
+<input type="button" onclick="dicePicture('1')" value = "diceSelect">
+<br>
+<body bgcolor ="red">
+
+</html>
+<script>
+var c=0;
+var h=0;
+
+
+function Randomize() {
+    var x = Math.floor((Math.random() * 6) + 1);
+    console.log(x);
+    dicePicture(x);
+  }
+  function gifLoop(){
+    for(var i=0; i<5; i++){
+      var b = document.createElement("img");
+      b.setAttribute("src", "./pictures/dice_gif.gif");
+      b.setAttribute("width", "210");
+      b.setAttribute("height", "210");
+      b.setAttribute("id","a"+c);
+      document.body.appendChild(b);
+      c++;
+    }
+  }
+
+  function showForFiveSeconds(c,x){
+   // emk comment:
+   // gifLoop doesn't return anything! What are you trying to do here?
+
+    var start=gifLoop();
+    var end= start + 1500;
+    if(start > end) clearInterval(timer);
+  var myVar = setInterval(function(){ }, 5000);
+}
+
+function replace(p,c){
+  var replace= document.getElementById("a"+c);
+  replace.src = (p);
+  c++;
+}
+
+function startDicePicture(){
+  alert("hi");
+      myVar = setTimeout(replace(), 1000);
+}
+
+function dicePicture(x){
+    alert("hi");
+    var b = document.createElement("img");
+    v = varPicture(x);
+    b.setAttribute("src", v);
+    b.setAttribute("width", "210");
+    b.setAttribute("height", "210");
+    b.setAttribute("id","a"+c);
+    document.body.appendChild(b);
+    }
+
+function varPicture(x){
+  var p;
+
+  var d = x;
+  p="./pictures/dice" + d + ".png";
+  return p;
+  }
+
+</script>

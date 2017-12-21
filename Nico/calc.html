@@ -20,8 +20,6 @@
                
   <td> <button onclick=doit1();>*</button> </td>
   <td> <button onclick=doit2();>/</button> </td>
-  <td> <button onclick=doit3();>%</button> </td>
-
   <td> <button onclick=doit4();>+</button> </td>
   <td> <button onclick=doit5();>-</button> </td>
       
@@ -52,6 +50,33 @@ var b = document.getElementById("2").value
 	answer = x-y;
 	alert(answer);
 }
+var x = 4;
+var y = 5
+var answer = 20;
+function doit1(){
+var a = document.getElementById("1").value
+var b = document.getElementById("2").value
+
+
+	x=parseInt(a);
+	y=parseInt(b)
+	answer = x*y;
+	alert(answer);
+}
+var x = 10;
+var y = 5
+var answer = 2;
+function doit2(){
+var a = document.getElementById("1").value
+var b = document.getElementById("2").value
+
+
+	x=parseInt(a);
+	y=parseInt(b)
+	answer = x/y;
+	alert(answer);
+}
+
 </script>
 </html>
                

@@ -21,7 +21,8 @@
 <script>
 function process (z){
 	if (z == 1){
-		return add(document.getElementById('box1'), document.getElementById('box2'));}
+		alert(add(document.getElementById('box1').value, document.getElementById('box2').value)); 
+		}
 	if (z == 2){
 		return subtract(document.getElementById('box1'), document.getElementById('box2'));}
 	if (z == 3){
@@ -36,7 +37,7 @@ function add (x , y)
 	
 	var answer = parseInt(x) + parseInt(y);
 	
-	alert(answer);
+	return answer;
 
 	}
 

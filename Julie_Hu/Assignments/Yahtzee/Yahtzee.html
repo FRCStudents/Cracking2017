@@ -3,6 +3,7 @@
 <body bgcolor= "#E6E6E6"> <center><font face="Lucida Calligraphy"> <font size="7"> <font color= "#000B7"> <h1> <b>Welcome to Yahtzee!</b> </h1> 	</font> </center> </body>
 <body>
 	<font size= "2">
+		<p> Note: Please open the directions in a new tab so you don't lose your progress during the game</p>
 <a href = "Yahtzeedir.html"> Yahtzee Directions!</a></body>
 <style>
 table, th, td {
@@ -80,12 +81,13 @@ function clearalldice(){
 	}
 }
 function Addlower(){
+	
 	var a = parseInt (document.getElementById("threeofakind").value);
 	var b = parseInt (document.getElementById("fourofakind").value);
 //	var c = parseInt (document.getElementbyId("fullh").value);
 //	var d = parseInt (document.getElementById("smst").value);
-//	var e = parseInt (document.getElementById("lgst").value);
-//	var f = parseInt (document.getElementbyId("fiveofakind").value);
+//	var e = parseInt (document.getElementById("lgst").value);											ONLY ADDING 2 VALUES WORK RIGHT NOW. 
+//	var f = parseInt (document.getElementbyId("fiveofakind").value);									FIGURE OUT HOW TO ADD MORE THAN TWO VALUEs
 //	var g = parseInt (document.getElementbyId("chances").value);
 
 	var answerspot = document.getElementById("h");

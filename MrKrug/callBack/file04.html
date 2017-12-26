@@ -1,0 +1,49 @@
+<!DOCTYPE html>
+<html>
+<style>
+#container {
+  width: 400px;
+  height: 400px;
+  position: relative;
+  background: yellow;
+}
+#animate {
+  width: 50px;
+  height: 50px;
+  position: absolute;
+  background-color: red;
+}
+</style>
+<body>
+<h1>callback functions</h1>
+  setInterval: move across the screen...
+<p>
+<button onclick="myMove()">Click Me</button>
+</p>
+
+<div id ="container">
+  <div id ="animate"></div>
+</div>
+
+<script>
+
+//https://www.w3schools.com/css/css3_animations.asp
+
+function myMove() {
+  var elt = document.getElementById("animate");
+  var pos = 0;
+  var id = setInterval(frame, 5);
+  function frame() {
+    if (pos == 350) {
+      clearInterval(id);
+    } else {
+      pos++;
+      elt.style.top = pos + 'px';
+      elt.style.left = pos + 'px';
+    }
+  }
+}
+</script>
+
+</body>
+</html>

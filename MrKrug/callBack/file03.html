@@ -1,0 +1,44 @@
+<html>
+<head>
+<meta charset="UTF-8">
+<title>Callback</title>
+</head>
+<body>
+<h1>callback functions</h1>
+setInterval vs setTimeout<br>
+once - or continuous...
+<script>
+
+var x = 0;
+var y = 0;
+var intervalHolder;
+
+function doTheFirstThing(){
+  console.log("First thing...");
+  doSomething();
+  everyThree(doSomething);
+  doSomething();
+}
+
+function doSomething(){
+  y++; x++;
+  console.log("[" + y + "] Having waiting for the appropriate time, sips tea. [" + x + "]");
+  if(x > 5){
+    clearInterval(intervalHolder);
+  }
+}
+
+function waitThree(callback){
+     setTimeout(callback, 3000);
+}
+
+function everyThree(callback){
+    x++;
+    intervalHolder = setInterval(callback, 3000);
+}
+
+doTheFirstThing();
+</script>
+
+</body>
+</html>

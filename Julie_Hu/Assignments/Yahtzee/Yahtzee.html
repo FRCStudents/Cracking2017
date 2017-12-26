@@ -81,22 +81,23 @@ function clearalldice(){
 	}
 }
 function Addlower(){
-	
 	var a = parseInt (document.getElementById("threeofakind").value);
 	var b = parseInt (document.getElementById("fourofakind").value);
-//	var c = parseInt (document.getElementbyId("fullh").value);
+ 	var c = parseInt (document.getElementById("fullh").value);
+	alert(c);
 //	var d = parseInt (document.getElementById("smst").value);
 //	var e = parseInt (document.getElementById("lgst").value);											ONLY ADDING 2 VALUES WORK RIGHT NOW. 
 //	var f = parseInt (document.getElementbyId("fiveofakind").value);									FIGURE OUT HOW TO ADD MORE THAN TWO VALUEs
 //	var g = parseInt (document.getElementbyId("chances").value);
 
 	var answerspot = document.getElementById("h");
-function add(a,b){
-	answer= a+b;
+	add(a,b,c);
+}
+
+function add(a,b,c){
+	answer= a+b+c;
 	answerspot.innerHTML = answer;
 }
 
-add(a,b);
-}
 </script>
 

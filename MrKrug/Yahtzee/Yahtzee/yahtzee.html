@@ -1,0 +1,73 @@
+<html>
+<head>
+<title>Yahtzee</title>
+<script src="YahtLogic.js"></script>
+</head>
+<body>
+<style>
+.dice {
+  width: 50px;
+  height: 50px;
+  text-align: center;
+}
+
+#scoreBoard {
+  border: 2px solid red;
+  width: 250px;
+  height: 190px;
+  padding: 25px;
+  text-align: center;
+  background-color: pink;
+  color: blue;
+}
+
+#scoreTally {
+  color: yellow;
+  background-color: black;
+  width: 250px;
+  text-align: center;
+  font-size: 15px;
+  margin: 15px;
+  padding: 2px;
+}
+</style>
+<div id=scoreTally>0</div>
+<div id=scoreBoard>
+  Click what you got...
+  <table border=2  bgcolor="#FFFF00">
+    <tr>
+      <td onclick="markScore(1);"><b>Ones</b></td>
+      <td onclick="markScore(25);"><b>Full House</b></td>
+    </tr>
+
+    <tr><td onclick="markScore(2);"><b>Twos</b></td>
+    <td onclick="markScore(20);"><b>Short Straight</b></td>
+    </tr>
+    <tr><td onclick="markScore(3);"><b>Threes</b></td>
+    <td onclick="markScore(30);"><b>Full Straight</b></td>
+    </tr>
+    <tr><td onclick="markScore(4);"><b>Fours</b></td>
+    <td onclick="markScore(33);"><b>Three of a Kind</b></td>
+    </tr>
+    <tr><td onclick="markScore(5);"><b>Fives</b></td>
+    <td onclick="markScore(44);"><b>Four of a Kind</b></td>
+    </tr>
+    <tr><td onclick="markScore(6);"><b>Sixes</b></td>
+    <td onclick="markScore(55);"><b>Yahtzee!</b></td>
+    </tr>
+  </table>
+</div>
+<hr>
+<table border=1>
+<tr>
+<td id=spot1 class=dice onclick="solidify(1);"></td>
+<td id=spot2 class=dice onclick="solidify(2);"></td>
+<td id=spot3 class=dice onclick="solidify(3);"></td>
+<td id=spot4 class=dice onclick="solidify(4);"></td>
+<td id=spot5 class=dice onclick="solidify(5);"></td>
+</tr>
+</table>
+<button onclick="roll();">Roll</button>
+<button onclick="firstRoll();">Start Turn</button>
+</body>
+</html>

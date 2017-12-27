@@ -2,58 +2,32 @@
 <head>
 <title>Yahtzee</title>
 <script src="YahtLogic.js"></script>
+<link rel="stylesheet" type="text/css" href="yahtzee.css">
 </head>
 <body>
-<style>
-.dice {
-  width: 50px;
-  height: 50px;
-  text-align: center;
-}
-
-#scoreBoard {
-  border: 2px solid red;
-  width: 250px;
-  height: 190px;
-  padding: 25px;
-  text-align: center;
-  background-color: pink;
-  color: blue;
-}
-
-#scoreTally {
-  color: yellow;
-  background-color: black;
-  width: 250px;
-  text-align: center;
-  font-size: 15px;
-  margin: 15px;
-  padding: 2px;
-}
-</style>
 <div id=scoreTally>0</div>
 <div id=scoreBoard>
   Click what you got...
   <table border=2  bgcolor="#FFFF00">
     <tr>
-      <td onclick="markScore(1);"><b>Ones</b></td>
-      <td onclick="markScore(25);"><b>Full House</b></td>
+      <td onclick="markScore(1,true);"><b>Ones</b></td>
+      <td onclick="markScore(25,true);"><b>Full House</b></td>
     </tr>
 
-    <tr><td onclick="markScore(2);"><b>Twos</b></td>
-    <td onclick="markScore(20);"><b>Short Straight</b></td>
+    <tr><td onclick="markScore(2,true);"><b>Twos</b></td>
+    <td onclick="markScore(20,true);"><b>Short Straight</b></td>
     </tr>
-    <tr><td onclick="markScore(3);"><b>Threes</b></td>
-    <td onclick="markScore(30);"><b>Full Straight</b></td>
+    <tr><td onclick="markScore(3,true);"><b>Threes</b></td>
+    <td onclick="markScore(30,true);"><b>Full Straight</b></td>
     </tr>
-    <tr><td onclick="markScore(4);"><b>Fours</b></td>
-    <td onclick="markScore(33);"><b>Three of a Kind</b></td>
+    <tr><td onclick="markScore(4,true);"><b>Fours</b></td>
+    <td onclick="markScore(0,false);"><b>Three of a Kind</b></td>
     </tr>
-    <tr><td onclick="markScore(5);"><b>Fives</b></td>
-    <td onclick="markScore(44);"><b>Four of a Kind</b></td>
+    <tr><td onclick="markScore(5,true);"><b>Fives</b></td>
+    <td onclick="markScore(0, false);"><b>Four of a Kind</b></td>
     </tr>
-    <tr><td onclick="markScore(6);"><b>Sixes</b></td>
-    <td onclick="markScore(55);"><b>Yahtzee!</b></td>
+    <tr><td onclick="markScore(6,true);"><b>Sixes</b></td>
+    <td onclick="markScore(50,true);"><b>Yahtzee!</b></td>
     </tr>
   </table>
 </div>

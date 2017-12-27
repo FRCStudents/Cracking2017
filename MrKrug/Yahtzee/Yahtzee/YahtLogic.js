@@ -3,14 +3,29 @@ var diceTrace = [false, false, false, false, false];
 var rollCount = 0;
 var wholeScore = 0;
 
-function markScore(x){
+/*
+ * this function is fired after the user clicks on
+ * the possible score.
+ * @haveInfo - true if i have enough info to determine score
+ *           - false if I still need to determine what was rolled
+ *
+ */
+function markScore(x, haveInfo){
     var elt = document.getElementById("scoreTally");
-    if(x > 6){
+    if(x > 6 && !haveInfo){
+      //
+      // In these cases I still need to determine which die
+      // is being used - for example - 3 of a kind could be
+      // 3 ones, or 3 fours and I don't know if i am checking
+      // for which face
+      //
       if(!checkDice(x)) return;
     }
     if(x > 6){
         wholeScore += x;
     } else {
+        //getNumber adds up all the x's and returns that score
+        // e.g. 3 rolled fives: then getNumber(5) returns 15
         wholeScore += getNumber(x);
     }
     elt.innerHTML = wholeScore;
@@ -71,6 +86,10 @@ function getFace(num){
 return 0;
 }
 
+//
+// checkDice does all the heavy lifting
+// @param numIn - determines what the user thinks s/he has
+// 02
 function checkDice(numIn){
     var matchedDice = getMatches();
     if((numIn ==  33) && (matchedDice < 3)){

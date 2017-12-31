@@ -4,14 +4,25 @@
 table, th, td {
     border: 1px solid black;
     border-collapse: collapse;
+    color: #AAAAAA;
+    text-align: center;
+    font-size: 250%;
 }
+
+
 </style>
 <input type="button" onclick="Randomize()" value = "diceSelect">
+<input type="button" onclick="replace()" value = "replace">
 <br>
 <body bgcolor ="red">
-  <table style = border="125px black"  >
+  <table style = border="125px black" id = "table">
     <tr id = "row"></tr>
-    <tr id = "row2">
+    <tr>
+        <td id = "row0"></td>
+        <td id = "row1"></td>
+        <td id = "row2"></td>
+        <td id = "row3"></td>
+        <td id = "row4"></td>
   </table>
 </html>
 <script>
@@ -23,16 +34,26 @@ var a=[];
 function Randomize() {
 gifLoop();
   }
-  function replace(){
+function replace(){
     x = Math.floor((Math.random() * 6) + 1);
+    console.log("this is" + h);
     var replace= document.getElementById("a"+h);
-    replace.src = ("./pictures/dice" + x + ".png");
+   	 replace.src = ("./pictures/dice" + x + ".png");
+    	replace.setAttribute("width", "210");
+    	replace.setAttribute("height", "210");
+    	replace.setAttribute("id","a"+h);
+	replace.innerHTML=x;
+    var secondrow= document.getElementById("row"+h);
+    	secondrow.innerHTML=x;
     a[h]=x;
     console.log(a);
     h++;
-    return(x);
+   if(h>4){
+     h=0;
+}
+
   }
-  function gifLoop(x){
+  function gifLoop(){
     for(var i=0; i<5; i++){
     console.log("I am " + c);
     var firstrow= document.getElementById("row");
@@ -46,29 +67,14 @@ gifLoop();
             c++;
   }
 startDicePicture();
-// I dont want to call the function replace but I dont want this to equal replace either
-var y = "hi";
-for(var k=0; k<5; k++){
-var secondrow= document.getElementById("row2");
-var insert2 = secondrow.insertCell(-1);
-var z = document.createElement("input");
-z.setAttribute("type","button");
-z.setAttribute("onclick","hi");
-z.setAttribute("value",y);
-secondrow.appendChild(z);
-}
   }
 
-function startDicePicture(){
+function startDicePicture(h){
     var  myVar = setTimeout(replace, 1500);
       var  myVar1 = setTimeout(replace, 2000);
           var  myVar2 = setTimeout(replace, 2500);
                 var  myVar3 = setTimeout(replace, 3000);
                     var myVar4 = setTimeout(replace, 3500);
 }
-function pair(){
-var y = replace(x);
-console.log(y);
-}
-pair();
+
 </script>

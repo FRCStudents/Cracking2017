@@ -16,14 +16,17 @@ var intervalHolder;
 function doTheFirstThing(){
   console.log("First thing...");
   doSomething();
+  console.log("Do this every three seconds");
   everyThree(doSomething);
+  console.log("Now - do Something! Notice - this is before anything happens from our every three seconds...");
   doSomething();
 }
 
 function doSomething(){
   y++; x++;
-  console.log("[" + y + "] Having waiting for the appropriate time, sips tea. [" + x + "]");
+  console.log(">>[" + y + "] Having waiting for the appropriate time, sips tea. [" + x + "]");
   if(x > 5){
+    console.log("Clearing Interval");
     clearInterval(intervalHolder);
   }
 }

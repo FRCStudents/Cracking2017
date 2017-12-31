@@ -1,14 +1,38 @@
+<!-- --------------------------------------------- -->
+<!-- This is the HTML file for the game of Yahtzee -->
+<!-- There is a score board - which lists all the  -->
+<!-- possible scoring categories.                  -->
+<!-- --------------------------------------------- -->
 <html>
 <head>
 <title>Yahtzee</title>
 <script src="YahtLogic.js"></script>
+<script src="diceImageManipulation.js"></script>
+<script src="diceCalc.js"></script>
 <link rel="stylesheet" type="text/css" href="yahtzee.css">
 </head>
-<body>
-<div id=scoreTally>0</div>
+<body bgcolor=black>
+<!-- tally the score here -->
+<table>
+<tr><td>
+<div class=scoreArea>
+<table bgcolor="#00AAAA">
+<tr><td>Score: </td><td><div id=scoreTally>0</div></td></tr>
+</table>
+</div>
+</td>
+<td>
+<div id=container>
+  <div class=instructions id=animate onclick="showInstructions();">
+      <font color=white>Instructions</font>
+  </div>
+</div>
+</td>
+</tr>
+</table>
 <div id=scoreBoard>
   Click what you got...
-  <table border=2  bgcolor="#FFFF00">
+  <table border=2  bgcolor="#EE9900">
     <tr>
       <td id=box1 onclick="markScore(1, 1,true);"><b>Ones</b></td>
       <td id=box2 onclick="markScore(2, 25, false);"><b>Full House</b></td>
@@ -32,7 +56,7 @@
   </table>
 </div>
 <hr>
-<table border=1>
+<table border=1 id=diceTable>
 <tr>
 <td id=spot1 class=dice onclick="solidify(1);"></td>
 <td id=spot2 class=dice onclick="solidify(2);"></td>
@@ -43,5 +67,14 @@
 </table>
 <button onclick="roll();">Roll</button>
 <button onclick="firstRoll();">Start Turn</button>
+<div id=instructions><font color=white>
+<h3>Welcome to Yahtzee - a land of dice and fun!</h3>
+As it happens, you may not know how to play this game. If that is the
+case - you google the rules - or otherwise - just read what we have
+here and then simply try to do whatever you can.
+
+Good Luck!
+</div>
+</font></div>
 </body>
 </html>

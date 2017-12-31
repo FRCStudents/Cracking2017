@@ -1,0 +1,131 @@
+<!DOCTYPE html>
+<html>
+<style>
+#container {
+  width: 400px;
+  height: 400px;
+  position: relative;
+  background: yellow;
+}
+#animate {
+  width: 50px;
+  height: 50px;
+  position: absolute;
+  background-color: red;
+  visibility: hidden;
+}
+#animate2 {
+  top: 0px;
+  left: 350px;
+  width: 50px;
+  height: 50px;
+  position: absolute;
+  background-color: blue;
+  visibility: hidden;
+}
+
+</style>
+<body>
+<h1>callback functions</h1>
+  <div id=msg>setInterval: move across the screen...</div>
+<p>
+<button onclick="myMove()">Click Me</button>
+</p>
+
+<div id ="container">
+  <div id ="animate"></div>
+  <div id ="animate2"></div>
+</div>
+
+<script>
+
+//https://www.w3schools.com/css/css3_animations.asp
+
+var msg = document.getElementById("msg");
+
+var clickTrack = 0;
+
+function myMove() {
+  msg.innerHTML = "Waiting: ";
+  var elt = document.getElementById("animate");
+  var pos = 0;
+  var turn = 1;
+  var low = 0;
+  var high = 350;
+
+  var elt2 = document.getElementById("animate2");
+  var pos2 = 0;
+  var turn2 = -1;
+  var low2 = 0;
+  var high2 = 350;
+
+  if(clickTrack % 2 < 1){
+  	var id = setInterval(frame, 5);
+  	elt.style.visibility = "visible";
+  } else {
+	var id2 = setInterval(frame2, 5);
+  	elt2.style.visibility = "visible";
+  }
+  clickTrack++;
+
+	  function frame() {
+	    if (pos < low){
+	      low+=7;
+	      turn *= -1;
+	      pos = low;
+	    } else {
+	    if (pos > high) {
+	      high-=7; 
+	      turn *= -1;
+	      pos = high;
+	    } else {
+		if(low == high){
+			clearInterval(id);
+			elt.style.top = 0 + 'px';
+			elt.style.left = 350 + 'px';
+			msg.innerHTML += "[Red is done]";
+		}
+		else {
+			if(turn > 0) pos+=2;
+			else	     pos-=2;
+			elt.style.top = pos + 'px';
+			elt.style.left = pos + 'px';
+	      	     }
+		}
+	    }
+	  }
+
+
+	  function frame2() {
+	    if (pos2 < low2){
+	      low2+=7;
+	      turn2 *= -1;
+	      pos2 = low2;
+	    } else {
+	    if (pos2 > high2) {
+	      high2-=7; 
+	      turn2 *= -1;
+	      pos2 = high2;
+	    } else {
+		if(low2 == high2){
+			clearInterval(id2);
+			elt2.style.top = 350 + 'px';
+			elt2.style.left = 0 + 'px';
+			msg.innerHTML += "[Blue is done]";
+		}
+		else {
+			if(turn2 > 0) pos2+=2;
+			else	     pos2-=2;
+			elt2.style.top = pos2 + 'px';
+			elt2.style.left = pos2 + 'px';
+	      	     }
+		}
+	    }
+	  }
+
+
+}
+</script>
+
+</body>
+</html>

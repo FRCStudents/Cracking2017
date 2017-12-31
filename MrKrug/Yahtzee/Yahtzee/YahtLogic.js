@@ -1,6 +1,5 @@
 // YahtLogic.js:
 var diceTrace = [false, false, false, false, false];
-var rollCount = 0;
 var wholeScore = 0;
 
 /*
@@ -25,7 +24,8 @@ function markScore(boxNumber, x, haveInfo, numOfAKind){
     }
     // only short and long straights...
     if(x > 6){
-        score = scoreStraightSize(getStraightSize());
+        score = (x == scoreStraightSize(getStraightSize()) ? x : 0);
+        //score = scoreStraightSize(getStraightSize());
     } else {
         //getNumber adds up all the x's and returns that score
         // e.g. 3 rolled fives: then getNumber(5) returns 15
@@ -40,44 +40,7 @@ function markScore(boxNumber, x, haveInfo, numOfAKind){
     turnBoxOff(boxNumber);
 }
 
-function turnBoxOff(boxNumber){
-  eltB = document.getElementById("box" + boxNumber);
-  eltB.setAttribute("bgcolor", "black");
-}
 
-function scoreStraightSize(size){
-  if(size == 4) return 20;
-  if(size == 5) return 30;
-  return 0;
-}
-
-function getStraightSize(){
-  var dice = [0,0,0,0,0];
-    for(var i = 0; i < 5; i++){
-      elt = document.getElementById("spot" + (i+1));
-      dice[i] = elt.innerHTML;
-    }
-    dice.sort();
-    count = 1;
-    for(var i=0; i < 4; i++){
-      if(dice[i] == dice[i+1] - 1){
-        count++;
-      }
-    }
-    return count;
-}
-
-function _fullStraight(){
-	vals = [];
-	for(var i=1; i < 6; i++){
-		vals[i-1] = document.getElementById("spot" + i).innerHTML;
-	}
-	vals.sort();
-	for(var j=0; j < 5; j++){
-		if(vals[j] != (j + 1)) return false;
-	}
-	return true;
-}
 
 function fullHouse(){
   var match01 = 1;
@@ -153,7 +116,6 @@ return 0;
 // @side-effect - updates wholeScore
 //
 function checkDice(numIn, numOfAKind, boxNumber){
-    alert("Begin checkDice: " + wholeScore);
     var elt = document.getElementById("scoreTally");
     var matchedDice = getMatches();
     if((numOfAKind ==  3) && (matchedDice < 3)){
@@ -198,89 +160,46 @@ function checkDice(numIn, numOfAKind, boxNumber){
     	  wholeScore += 25;
     	}
     }
-    alert("end checkDice: " + wholeScore);
     elt.innerHTML = wholeScore;
     turnBoxOff(boxNumber);
     return true;
-    //alert("[checkDice(): Whole Score: ]" + wholeScore);
 }
 
-function getMatches(){
-  var mostMatches = 0;
-  var matches = 0;
-  for(var j=0; j< 5; j++){
-    var eltTDj = document.getElementById("spot" + (j + 1));
-    for(var i=j; i<5; i++){
-      var eltTDi = document.getElementById("spot" + (i + 1));
-      if(eltTDi.innerHTML == eltTDj.innerHTML){
-        matches++;
+
+//////////////////////////////////////////////
+
+function showInstructions(){
+  var elt = document.getElementById("animate");
+  elt.style.visibility = "hidden";
+
+  var eltI = document.getElementById("instructions");
+  eltI.style.visibility = "visible";
+  eltI.style.top = '59px';
+  eltI.style.left = '359px';
+
+  var pos = 0;
+  var height = 25;
+  var width = 425;
+  var top = 59;
+  var left = 359;
+
+  var id = setInterval(frame, 5000);
+  function frame() {
+    if (pos == 350){
+      clearInterval();
+      return;
+    } else {
+      if(pos == 2){
+        id = setInterval(frame, 20);
+      } else {
+        pos+=2;
+        top += pos;
+        width += pos;
+        eltI.style.top = top + 'px';
+        eltI.style.left = width + 'px';
+        height += 5;
+        width += 5;
       }
     }
-    if(matches > mostMatches){
-      mostMatches = matches;
-    }
-    matches = 0;
   }
-  //alert("[getMatches()] mostMatches: " + mostMatches);
-  return mostMatches;
-}
-
-function getNumber(x){
-  var score = 0;
-  for(var i=0; i<5; i++){
-    var eltTD = document.getElementById("spot" + (i + 1));
-    if(eltTD.innerHTML == x){
-      score += (x * 1);
-    }
-  }
-  return score;
-}
-
-
-function unsetDiceTrace(i){
-  diceTrace[i-1] = false;
-}
-
-function setDiceTrace(i){
-  diceTrace[i-1] = true;
-}
-
-function rollDie(){
-    return Math.floor((Math.random() * 6) + 1);
-}
-
-function roll(){
-  rollCount++;
-  if(rollCount > 3){
-    alert("Too many rolls!");
-    return;
-  }
-  for(var i=0; i<5; i++){
-    if(diceTrace[i]) continue;
-    var eltTD = document.getElementById("spot" + (i + 1));
-    eltTD.innerHTML = rollDie();
-  }
-}
-
-function firstRoll(){
-  rollCount = 0;
-  //wholeScore = 0;
-  for(var i=0; i<5; i++){
-    diceTrace[i] = false;
-    var eltTD = document.getElementById("spot" + (i + 1));
-    eltTD.innerHTML = "";
-    eltTD.setAttribute("bgcolor", "white");
-  }
-  roll();
-}
-
-function solidify(x){
-    var eltTD = document.getElementById("spot" + x);
-    if(!diceTrace[x - 1]){
-      eltTD.setAttribute("bgcolor", "red");
-      setDiceTrace(x);
-      return;
-    }
-    eltTD.setAttribute("bgcolor", "pink");
-    unsetDiceTrace(x);
 }

@@ -39,20 +39,27 @@ function myMove() {
   var id = setInterval(frame, 5);
   function frame() {
     if (pos < low){
-      low++;
+      low+=7;
       turn *= -1;
       pos = low;
     } else {
     if (pos > high) {
-      high--; 
+      high-=7; 
       turn *= -1;
       pos = high;
     } else {
-	if(turn > 0) pos+=2;
-	else	     pos-=2;
-        elt.style.top = pos + 'px';
-        elt.style.left = pos + 'px';
-      }
+	if(low == high){
+		clearInterval(id);
+		elt.style.top = 0 + 'px';
+		elt.style.left = 350 + 'px';
+	}
+	else {
+		if(turn > 0) pos+=2;
+		else	     pos-=2;
+        	elt.style.top = pos + 'px';
+        	elt.style.left = pos + 'px';
+      	     }
+	}
     }
   }
 }

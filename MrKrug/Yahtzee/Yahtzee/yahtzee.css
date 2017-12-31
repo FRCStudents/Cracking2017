@@ -1,3 +1,10 @@
+
+#diceTable {
+  position: absolute;
+  left: 400px;
+  top: 25px;
+}
+
 .dice {
   width: 50px;
   height: 50px;
@@ -7,7 +14,7 @@
 #scoreBoard {
   border: 2px solid red;
   width: 250px;
-  height: 190px;
+  height: 210px;
   padding: 25px;
   text-align: center;
   background-color: pink;
@@ -17,9 +24,49 @@
 #scoreTally {
   color: yellow;
   background-color: black;
-  width: 250px;
+  width: 50px;
   text-align: center;
   font-size: 15px;
   margin: 15px;
+  padding: 7px;
+}
+
+.scoreArea {
+  color: "#00AAAA";
+  width: 156px;
   padding: 2px;
+  border: 3px solid pink;
+}
+
+#box1, #box2, #box3,
+#box4, #box5, #box6,
+#box7, #box8, #box9,
+#box10, #box11, #box12 {
+    padding: 5px;
+}
+
+#instructions {
+  position: absolute;
+  left: 110px;
+  top: 425px;
+  width:490px;
+  color:pink;
+  visibility: hidden;
+}
+
+.instructions {
+  position: absolute;
+  text-decoration: underline;
+  padding:15px;
+  color:white;
+  visibility: visible;
+  /* hidden; */
+}
+
+#container {
+  position: relative;
+}
+
+#animate {
+  position: absolute;
 }

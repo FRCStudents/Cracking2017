@@ -1,13 +1,19 @@
 <html>
 <title>Yahtzee!</title>
 <body></body>
-<!-- <button onclick="Roll();"> Roll! </button> <br> -->
+<button onclick="Value();"> Value </button> <br>
+<button onclick="it();"> Roll! </button> <br>
 </html>	
 <script>
-Roll();
 var d = 0;
 var d2 = [];
 var r = 0;
+var ad = 0;
+function it(){
+	if(ad == 0){
+		Roll();
+	}
+}
 function Removetimer(){
 	for(var g = 1; g < 7; g++){
 		var a = document.getElementById("p" + g);
@@ -16,6 +22,7 @@ function Removetimer(){
 	Yahtzee();
 }
 function Roll(){
+	ad ++;
 	for(var f = 1; f < 7; f++){
 		var v = document.createElement("img");
 		v.setAttribute("src", "./Dice_pictures/Dice_faces/Die_side_" + f + ".png");
@@ -33,6 +40,13 @@ function Yahtzee(){
 		d2[i] = x;
 	}
 	Compare();
+}
+function Value(){
+	var total = d2[0] + d2[1];
+	for(var c = 2; c < 5; c++){
+		total += d2[c-1];
+	}
+	alert(total);	 
 }
 function Compare(){
 	if(d2[0] == d2[1] && d2[0] == d2[2] && d2[0] == d2[3] && d2[0] == d2[4]){
@@ -105,7 +119,7 @@ function Compare(){
 					var y = j;
 					var h = c;
 					var g = 0;
-					u++;
+					g++;
 				}
 			}
 		}

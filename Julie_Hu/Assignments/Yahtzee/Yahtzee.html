@@ -68,7 +68,7 @@ th, td {
 	<table>
 	<tr><th id="Total"> Calculate Yahtzee Game Total Score:</th>
 		<td>Enter Upper Section Score Below</td><td>Enter Lower Section Score Below</td><td></td><td>Total Score:</td></tr>
-		<tr><td><td><input type="text" name="uppers" id="uppers"></td><td><input type="text" name="lowers" id="lowers"></td></td><td id="TScore"> <button onclick="Addall();"> Add Up Score From Both Sections </button> </td><td id = "TS"></td></tr>
+		<tr><td></td><td id= "cell1" class = "cell"><input type="text" name="uppers" id="uppers"></td><td id= "cell2" class = "cell"><input type="text" name="lowers" id="lowers"></td></td><td id="TScore"> <input type="button" name="button" id="addall" value="Click Here To Get Your Final Score" onclick="Addall();"></td><td id = "TS"></td></tr>
 </table>
 </table>
 </html>
@@ -120,16 +120,16 @@ function add(a,b,c,d,e,f,g){
 
 add(a,b,c,d,e,f,g);
 }
-//function Addall(){
-//	var up = parseInt(document.getElementById("uppers").value);
-//	var low = parseInt(document.getElementById("lowers").value);
+function Addall(){
+	var up = parseInt(document.getElementById("uppers").value);
+	var low = parseInt(document.getElementById("lowers").value);
 
-//	var answerspot2 = document.getElementById("TS");
-//}
-//function add (up,low){
-//	answer= up+low;
-//	answerspot2.innerHTML = answer;
-//}
-//add(up,low);
-//}
+	var answerspot2 = document.getElementById("TS");
+
+function add (up,low){
+	answer = up+low;
+	answerspot2.innerHTML = answer;
+}
+add(up,low);
+}
 </script>

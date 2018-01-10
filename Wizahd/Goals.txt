@@ -1,3 +1,0 @@
-Goal for this week:
--To make a three of a kind and four of a kind detector
--To highlight dice and make them not re-roll

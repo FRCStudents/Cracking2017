@@ -3,12 +3,26 @@
 <body></body>
 <button onclick="Value();"> Value </button> <br>
 <button onclick="it();"> Roll! </button> <br>
-</html>	
+<button onclick="re_roll();"> Re-roll! </button> <br>
+</html>
+<style>
+.v{
+	background-color: "red";
+}
+.c{
+	background-color: "white"; 
+}
+</style>
 <script>
 var d = 0;
+var dice = [];
 var d2 = [];
 var r = 0;
 var ad = 0;
+var x = [];
+for(var i; i < 5; i++){
+	x[i] = false;
+}
 function it(){
 	if(ad == 0){
 		Roll();
@@ -33,11 +47,13 @@ function Roll(){
 }
 function Yahtzee(){
 	for(var i = 0; i < 5; i++){
-		var x = Math.floor((Math.random() * 6) + 1);
+		var p = Math.floor((Math.random() * 6) + 1);
 		var z = document.createElement("img");
-		z.setAttribute("src", "./Dice_pictures/Dice_faces/Die_side_" + x + ".png");
+		z.setAttribute("src", "./Dice_pictures/Dice_faces/Die_side_" + p + ".png");
+		z.setAttribute("id", "die" + i);
+		z.setAttribute("onclick", "get(" + i + ");");
 		document.body.appendChild(z);
-		d2[i] = x;
+		d2[i] = p;
 	}
 	Compare();
 }
@@ -146,12 +162,35 @@ function Compare(){
 		alert("You have nothing!");
 	}
 }
-// x is the number that is rolled for each die
-// z is the variable for the creation of the image
-// v is the variable for the creation of the "rolling" mechanism
-// a removes the dice
-// f and g are used
-// d is to be used
-// r is to determine if there are pairs
-// c is to determine the number to call inside the array
+function get(p){
+	console.log("get" + p);
+	var z = document.getElementById("die" + p);
+	if(x[p]){
+		z.setAttribute("class", "c");
+	}else{
+		z.setAttribute("class", "v");
+	}
+	for(var i = 0; i , 5; i++){
+	dice[i] = x[p];
+	}
+	x[p] = !x[p];
+	console.log(dice[p])
+	document.body.appendChild(z);
+}
+function re_roll(){
+	console.log("re_roll");
+	console.log(dice[1]);
+	for(var i = 0; i < 5; i++){
+		if(dice[i]){
+			var z = document.getElementById("die" + i);
+			z.removeAttribute("src");
+			var p = Math.floor((Math.random() * 6) + 1);
+			var v = document.createElement("img");
+			v.setAttribute("src", "./Dice_pictures/Dice_faces/Die_side_" + p + ".png");
+			v.setAttribute("id", "die" + i);
+			v.setAttribute("onclick", "get(" + i + ");");
+			document.body.appendChild(v);
+		}
+	}
+}
 </script>

@@ -4,25 +4,27 @@
 table, th, td {
     border: 1px solid black;
     border-collapse: collapse;
-    color: #AAAAAA;
+    color: #111111;
     text-align: center;
     font-size: 250%;
 }
 
-
+.fixed {
+	color: red;
+}
 </style>
-<input type="button" onclick="Randomize()" value = "diceSelect">
-<input type="button" onclick="replace()" value = "replace">
+<input type="button" onclick="Randomize()" value = "Start Turn">
+<input type="button" onclick="replace()" value = "roll">
 <br>
 <body bgcolor ="red">
-  <table style = border="125px black" id = "table">
+  <table style = border="125px black" id = "table" bgcolor= "white">
     <tr id = "row"></tr>
     <tr>
-        <td id = "row0"></td>
-        <td id = "row1"></td>
-        <td id = "row2"></td>
-        <td id = "row3"></td>
-        <td id = "row4"></td>
+        <td id = "row0" onclick= "replace();"></td>
+        <td id = "row1" onclick= "addClass();"></td>
+        <td id = "row2" onclick= "addClass()"></td>
+        <td id = "row3" onclick= "addClass()"></td>
+        <td id = "row4" onclick= "addClass()"></td>
   </table>
 </html>
 <script>
@@ -30,28 +32,35 @@ var c=0;
 var h=0;
 var x;
 var a=[];
-
+var q=0;
 function Randomize() {
+  if(q<1){
 gifLoop();
-  }
+}
+}
 function replace(){
     x = Math.floor((Math.random() * 6) + 1);
     console.log("this is" + h);
     var replace= document.getElementById("a"+h);
    	 replace.src = ("./pictures/dice" + x + ".png");
     	replace.setAttribute("width", "210");
-    	replace.setAttribute("height", "210");
+    	replace.setAttribute("height","210");
     	replace.setAttribute("id","a"+h);
-	replace.innerHTML=x;
     var secondrow= document.getElementById("row"+h);
     	secondrow.innerHTML=x;
+
     a[h]=x;
     console.log(a);
     h++;
    if(h>4){
      h=0;
 }
+  }
 
+  function addClass(){
+    alert("hi");
+    //var wowow = document.getElementById(id);
+    //wowow.className += " fixed";
   }
   function gifLoop(){
     for(var i=0; i<5; i++){
@@ -65,6 +74,7 @@ function replace(){
           b.setAttribute("id","a"+c);
           insert.appendChild(b);
             c++;
+            q++;
   }
 startDicePicture();
   }

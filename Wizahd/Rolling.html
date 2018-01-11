@@ -2,14 +2,15 @@
 <title>Yahtzee!</title>
 <body></body>
 <button onclick="it();"> Roll! </button> <br>
-<button onclick="re_roll();"> Re-roll! </button> <br>
+<button onclick="dit();"> Re-roll! </button> <br>
 </html>
 <style>
 .v{
-	background-color: "red";
+	border: solid;
+	border-color: red;
 }
 .c{
-	background-color: "white"; 
+	border-image-color: white; 
 }
 </style>
 <script>
@@ -18,10 +19,16 @@ var dice = [];
 var d2 = [];
 var r = 0;
 var ad = 0;
+var ax = 0;
 var x = [];
 function it(){
 	if(ad == 0){
 		Roll();
+	}
+}
+function dit(){
+	if(ax == 0){
+		re_roll();
 	}
 }
 function Removetimer(){
@@ -164,12 +171,14 @@ function get(p){
 	document.body.appendChild(z);
 }
 function re_roll(){
+	ax++;
 	console.log("re_roll");
 	for(var i = 0; i < 5; i++){
 		if(!x[i]){
 			var z = document.getElementById("die" + i);
-			z.removeAttribute("src");
-			Yahtzee(1);
+			var p = Math.floor((Math.random() * 6) + 1);
+			z.setAttribute("src", "./Dice_pictures/Dice_faces/Die_side_" + p + ".png");
+			document.body.appendChild(z);
 		}
 	}
 	console.log(x[0], x[1], x[2], x[3], x[4])

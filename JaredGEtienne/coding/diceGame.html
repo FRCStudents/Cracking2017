@@ -10,21 +10,26 @@ table, th, td {
 }
 
 .fixed {
-	color: red;
+	 background-color: #AAAAAA;
+}
+.startOver{
+  background-color: white;
 }
 </style>
 <input type="button" onclick="Randomize()" value = "Start Turn">
 <input type="button" onclick="replace()" value = "roll">
+<input type="button" onclick="addClassStartOver()" value = "reselect">
 <br>
 <body bgcolor ="red">
   <table style = border="125px black" id = "table" bgcolor= "white">
     <tr id = "row"></tr>
-    <tr>
-        <td id = "row0" onclick= "replace();"></td>
-        <td id = "row1" onclick= "addClass();"></td>
-        <td id = "row2" onclick= "addClass()"></td>
-        <td id = "row3" onclick= "addClass()"></td>
-        <td id = "row4" onclick= "addClass()"></td>
+    <tr id = "second">
+        <td id = "row0" onclick= "addClass('row0');"></td>
+        <td id = "row1" onclick= "addClass('row1');"></td>
+        <td id = "row2" onclick= "addClass('row2')"></td>
+        <td id = "row3" onclick= "addClass('row3')"></td>
+        <td id = "row4" onclick= "addClass('row4')"></td>
+    </tr>
   </table>
 </html>
 <script>
@@ -57,10 +62,32 @@ function replace(){
 }
   }
 
-  function addClass(){
-    alert("hi");
-    //var wowow = document.getElementById(id);
-    //wowow.className += " fixed";
+  function addClass(id){
+    var c= 0;
+    var j= 1;
+    if(c<1){
+    var wowow = document.getElementById(id);
+    wowow.className = " fixed";
+  c++;
+  }
+  else {
+    alert("Sorry You Can Only Select 3 To Re-Roll");
+  }
+
+
+  console.log("yoyoyoI am "+c);
+  }
+  function addClassStartOver(){
+    var startOver0 = document.getElementById("row0");
+    var startOver1 = document.getElementById("row1");
+    var startOver2 = document.getElementById("row2");
+    var startOver3 = document.getElementById("row3");
+    var startOver4 = document.getElementById("row4");
+    startOver0.className =" startOver";
+    startOver1.className =" startOver";
+    startOver2.className =" startOver";
+    startOver3.className =" startOver";
+    startOver4.className =" startOver";
   }
   function gifLoop(){
     for(var i=0; i<5; i++){

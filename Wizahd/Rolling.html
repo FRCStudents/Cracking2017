@@ -1,7 +1,6 @@
 <html>
 <title>Yahtzee!</title>
 <body></body>
-<button onclick="Value();"> Value </button> <br>
 <button onclick="it();"> Roll! </button> <br>
 <button onclick="re_roll();"> Re-roll! </button> <br>
 </html>
@@ -20,9 +19,6 @@ var d2 = [];
 var r = 0;
 var ad = 0;
 var x = [];
-for(var i; i < 5; i++){
-	x[i] = false;
-}
 function it(){
 	if(ad == 0){
 		Roll();
@@ -33,7 +29,7 @@ function Removetimer(){
 		var a = document.getElementById("p" + g);
 		a.removeAttribute("src");
 	}
-	Yahtzee();
+	Yahtzee(5);
 }
 function Roll(){
 	ad ++;
@@ -45,8 +41,8 @@ function Roll(){
 	}
 	myVar = setTimeout(Removetimer, 1500);
 }
-function Yahtzee(){
-	for(var i = 0; i < 5; i++){
+function Yahtzee(a){
+	for(var i = 0; i < a; i++){
 		var p = Math.floor((Math.random() * 6) + 1);
 		var z = document.createElement("img");
 		z.setAttribute("src", "./Dice_pictures/Dice_faces/Die_side_" + p + ".png");
@@ -56,13 +52,6 @@ function Yahtzee(){
 		d2[i] = p;
 	}
 	Compare();
-}
-function Value(){
-	var total = d2[0] + d2[1];
-	for(var c = 2; c < 5; c++){
-		total += d2[c-1];
-	}
-	alert(total);	 
 }
 function Compare(){
 	if(d2[0] == d2[1] && d2[0] == d2[2] && d2[0] == d2[3] && d2[0] == d2[4]){
@@ -89,7 +78,6 @@ function Compare(){
 				for(var c = j+1; c < 5; c++){
 					if(d2[b] == d2[j] && d2[b] == d2[c]){
 						r++;
-						console.log(d2[b], d2[j], d2[c]);
 						var h = b;
 						var t = j;
 						var v = c;
@@ -166,31 +154,24 @@ function get(p){
 	console.log("get" + p);
 	var z = document.getElementById("die" + p);
 	if(x[p]){
+		console.log("true");
 		z.setAttribute("class", "c");
 	}else{
+		console.log("false");
 		z.setAttribute("class", "v");
 	}
-	for(var i = 0; i , 5; i++){
-	dice[i] = x[p];
-	}
 	x[p] = !x[p];
-	console.log(dice[p])
 	document.body.appendChild(z);
 }
 function re_roll(){
 	console.log("re_roll");
-	console.log(dice[1]);
 	for(var i = 0; i < 5; i++){
-		if(dice[i]){
+		if(!x[i]){
 			var z = document.getElementById("die" + i);
 			z.removeAttribute("src");
-			var p = Math.floor((Math.random() * 6) + 1);
-			var v = document.createElement("img");
-			v.setAttribute("src", "./Dice_pictures/Dice_faces/Die_side_" + p + ".png");
-			v.setAttribute("id", "die" + i);
-			v.setAttribute("onclick", "get(" + i + ");");
-			document.body.appendChild(v);
+			Yahtzee(1);
 		}
 	}
+	console.log(x[0], x[1], x[2], x[3], x[4])
 }
 </script>

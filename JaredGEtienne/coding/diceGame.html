@@ -77,6 +77,7 @@ function replace(){
 
   console.log("yoyoyoI am "+c);
   }
+
   function addClassStartOver(){
     var startOver0 = document.getElementById("row0");
     var startOver1 = document.getElementById("row1");
@@ -89,6 +90,7 @@ function replace(){
     startOver3.className =" startOver";
     startOver4.className =" startOver";
   }
+
   function gifLoop(){
     for(var i=0; i<5; i++){
     console.log("I am " + c);
@@ -116,15 +118,15 @@ function startDicePicture(h){
 
 function reRoll(){
 var reRoll = document.getElementById("row0");
-if(reroll="white"){
+if(reRoll.css('background-color') == "white"){
   x = Math.floor((Math.random() * 6) + 1);
   console.log("this is" + h);
-  var replace= document.getElementById("a1");
+  var replace= document.getElementById("a0");
    replace.src = ("./pictures/dice" + x + ".png");
     replace.setAttribute("width", "210");
     replace.setAttribute("height","210");
     replace.setAttribute("id","a"+h);
-  var secondrow= document.getElementById("row"+h);
+  var secondrow= document.getElementById("row"+0);
     secondrow.innerHTML=x;
 }
 }

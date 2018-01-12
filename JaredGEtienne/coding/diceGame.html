@@ -118,9 +118,8 @@ function startDicePicture(h){
 
 function reRoll(){
 var reRoll = document.getElementById("row0");
-if(reRoll.css('background-color') == "white"){
+if(reRoll.css('background-color') == "rgb(255, 255, 255)"){
   x = Math.floor((Math.random() * 6) + 1);
-  console.log("this is" + h);
   var replace= document.getElementById("a0");
    replace.src = ("./pictures/dice" + x + ".png");
     replace.setAttribute("width", "210");

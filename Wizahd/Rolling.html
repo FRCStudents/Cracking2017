@@ -2,7 +2,7 @@
 <title>Yahtzee!</title>
 <body></body>
 <button onclick="it();"> Roll! </button> <br>
-<button onclick="dit();"> Re-roll! </button> <br>
+<button onclick="yes();"> Re-roll! </button> <br>
 </html>
 <style>
 .v{
@@ -26,8 +26,8 @@ function it(){
 		Roll();
 	}
 }
-function dit(){
-	if(ax == 0){
+function yes(){
+	if(ax < 3){
 		re_roll();
 	}
 }
@@ -59,6 +59,7 @@ function Yahtzee(a){
 		d2[i] = p;
 	}
 	Compare();
+	console.log(d2);
 }
 function Compare(){
 	if(d2[0] == d2[1] && d2[0] == d2[2] && d2[0] == d2[3] && d2[0] == d2[4]){
@@ -88,8 +89,14 @@ function Compare(){
 						var h = b;
 						var t = j;
 						var v = c;
-						d2[b] = "a";
-						d2[j] = "b";
+						var b1 = d2[b]; 
+						var j1 = d2[j]; 
+						var c1 = d2[c];
+						var b2 = b;
+						var j2 = j;
+						var c2 = c; 
+						d2[b] = "s"; 
+						d2[j] = "b"; 
 						d2[c] = "c";
 						var y = 0;
 					}
@@ -114,6 +121,9 @@ function Compare(){
 			v += 1;
 				alert("You have a three of a kind in the " + h + " , " + t + " and " + v + " position!");
 			}
+			d2[b2] = b1;
+			d2[j2] = j1;
+			d2[c2] = c1;
 		}
 	if(r == 0){
 		for(var j = 0; j < 5; j++){
@@ -156,6 +166,7 @@ function Compare(){
 	if(r == 0){
 		alert("You have nothing!");
 	}
+	r = 0;
 }
 function get(p){
 	console.log("get" + p);
@@ -168,19 +179,17 @@ function get(p){
 		z.setAttribute("class", "v");
 	}
 	x[p] = !x[p];
-	document.body.appendChild(z);
 }
 function re_roll(){
 	ax++;
-	console.log("re_roll");
 	for(var i = 0; i < 5; i++){
 		if(!x[i]){
 			var z = document.getElementById("die" + i);
 			var p = Math.floor((Math.random() * 6) + 1);
 			z.setAttribute("src", "./Dice_pictures/Dice_faces/Die_side_" + p + ".png");
-			document.body.appendChild(z);
+			d2[i] = p;
 		}
 	}
-	console.log(x[0], x[1], x[2], x[3], x[4])
+	Compare();
 }
 </script>

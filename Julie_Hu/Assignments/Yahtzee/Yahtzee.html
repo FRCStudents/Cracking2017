@@ -15,6 +15,7 @@ th, td {
     padding: 10px;
 }
 </style>
+<button onclick= "rollalldice()"> Roll All Dice! </button>
 <button onclick= "clearalldice()">Clear Dice!</button>
 <table align="right" border = 2>
 	<tr>
@@ -46,7 +47,7 @@ th, td {
 	<tr><td></td><td></td><td></td></tr>
 </table>
 <table border = 1>
-	<tr><th id = "ls">Lower Section</th><th> Enter Your Scores Here</th><th> Scores</th></tr>
+	<tr><th id = "ls">Lower Section</th><th> Enter Your Scores Here</th><th> Score</th></tr>
 	<tr><td id = "3oak">Three of a Kind:</td>
 		<td id= "ScoreH"> <input type="text" name= "threeofkind" id= "threeofakind"></td><td id = "a"></td></tr>
 	<tr><td id = "4oak">Four of a Kind:</td>
@@ -68,12 +69,22 @@ th, td {
 	<table>
 	<tr><th id="Total"> Calculate Yahtzee Game Total Score:</th>
 		<td>Enter Upper Section Score Below</td><td>Enter Lower Section Score Below</td><td></td><td>Total Score:</td></tr>
-		<tr><td></td><td id= "cell1" class = "cell"><input type="text" name="uppers" id="uppers"></td><td id= "cell2" class = "cell"><input type="text" name="lowers" id="lowers"></td></td><td id="TScore"> <input type="button" name="button" id="addall" value="Click Here To Get Your Final Score" onclick="Addall();"></td><td id = "TS"></td></tr>
+
+		<tr><td></td><td id= "cell1" class = "cell"><input type="text" name="uppers" id="uppers"></td>
+			<td id= "cell2" class = "cell"><input type="text" name="lowers" id="lowers"></td>
+			<td id="TScore"> <input type="button" name="button" id="addall" value="Click Here To Get Your Final Score" onclick="Addall();"></td><td id = "TS"></td></tr>
 </table>
 </table>
 </html>
 <script>
-
+function rollall(z){
+	document.getElementById(z).innerHTML = 
+    Math.floor(Math.random()*6)+1;}
+function rollalldice(){
+	for (var i=1;i<6;i++){
+		rollall("d"+i);
+	}
+}
 function showdice(x){
 	document.getElementById(x).innerHTML =
 	Math.floor(Math.random() * 6)+1;}
@@ -95,6 +106,9 @@ function Addupper(){
 	var f = parseInt (document.getElementById("6").value);
 
 	var answerspot = document.getElementById("tus");
+	//var a = document.getElementById("cell1").innerHTML;
+	//a = answerspot;
+//}
 function add(a,b,c,d,e,f){
 	answer= a+b+c+d+e+f;
 	answerspot.innerHTML = answer;

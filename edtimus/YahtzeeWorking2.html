@@ -1,0 +1,183 @@
+<html>
+
+<BUTTON ONCLICK = "roll()"> ROLL DICE </BUTTON>
+<BUTTON ONCLICK = "reroll()"> REROLL DICE </BUTTON>
+
+
+<table id = dice>
+
+<tr id = column1>
+
+<td id = cell1> Dice 1 </td>
+<td id = cell2> Dice 2 </td>
+<td id = cell3> Dice 3 </td>
+<td id = cell4> Dice 4 </td>
+<td id = cell5> Dice 5 </td>
+</tr>
+
+<tr id = column2>
+<td id = cell6> <BUTTON ONCLICK = "keepdie1()"> KEEP DICE 1 </BUTTON> </td>
+<td id = cell7> <BUTTON ONCLICK = "keepdie2()"> KEEP DICE 2 </BUTTON> </td>
+<td id = cell8> <BUTTON ONCLICK = "keepdie3()"> KEEP DICE 3 </BUTTON> </td>
+<td id = cell9> <BUTTON ONCLICK = "keepdie4()")> KEEP DICE 4 </BUTTON> </td>
+<td id = cell10> <BUTTON ONCLICK = "keepdie5()"> KEEP DICE 5 </BUTTON> </td> 
+</tr>
+</table>
+
+</html>
+
+<script>
+
+var diceTrace = [false, false, false, false, false]
+	var alta = document.getElementById("cell1");
+		alta = diceTrace[0];
+	var alte = document.getElementById("cell2");
+		alte = diceTrace[1];
+	var alti = document.getElementById("cell3");
+		alti = diceTrace[2];
+	var alto = document.getElementById("cell4");
+		alto = diceTrace[3];
+	var altu = document.getElementById("cell5");
+		altu = diceTrace[4];
+
+
+var arr = [0, 0, 0, 0, 0];
+
+function Yahtzee(bottom, top) {
+        return Math.floor( Math.random() * ( 1 + top - bottom ) ) + bottom;
+}
+
+for ( var i = 0; i<5; i++ ) { 
+     arr[i]= Yahtzee(1,6);
+}
+
+
+function roll() {
+	var elta = document.getElementById("cell1");
+		elta.innerHTML = arr[0];
+	var elte = document.getElementById("cell2");
+		elte.innerHTML = arr[1];
+	var elti = document.getElementById("cell3");
+		elti.innerHTML = arr[2];
+	var elto = document.getElementById("cell4");
+		elto.innerHTML = arr[3];
+	var eltu = document.getElementById("cell5");
+		eltu.innerHTML = arr[4];
+}
+
+function keepdie1() {
+	var elta = document.getElementById("cell1");
+    	elta.style.backgroundColor = "yellow";
+	var alta = true;
+}
+function keepdie2() {
+	var elte = document.getElementById("cell2");
+    	elte.style.backgroundColor = "yellow";   
+	var alte = true;
+}
+function keepdie3() {
+	var elti = document.getElementById("cell3");
+    	elti.style.backgroundColor = "yellow";
+	var alti = true;   
+}
+function keepdie4() {
+	var elto = document.getElementById("cell4");
+    	elto.style.backgroundColor = "yellow";   
+	var alto = true;
+}
+function keepdie5() {
+	var eltu = document.getElementById("cell5");
+    	eltu.style.backgroundColor = "yellow";
+	var altu = true;   
+}
+
+var err = [0, 0, 0, 0, 0];
+
+for ( var i = 0; i<5; i++ ) { 
+     err[i]= Yahtzee(1,6);
+}
+
+function reroll () {
+	if (alta = true) {
+		var elta = document.getElementById("cell1");
+		elta.innerHTML = err[0];		
+		}
+	if (alta = false) {
+		var elta = document.getElementById("cell1");
+		elta.innerHTML = arr[0];		
+		}
+	if (alte = true) {
+		var elte = document.getElementById("cell2");
+		elte.innerHTML = err[1];		
+		}
+	if (alte = false) {
+		var elte = document.getElementById("cell2");
+		elte.innerHTML = arr[1];		
+		}
+	if (alti = true) {
+		var elti = document.getElementById("cell3");
+		elti.innerHTML = err[2];		
+		}
+	if (alto = false) {
+		var elti = document.getElementById("cell3");
+		elto.innerHTML = arr[2];		
+		}	
+	if (alto = true) {
+		var elto = document.getElementById("cell4");
+		elto.innerHTML = err[3];		
+		}
+	if (alto = false) {
+		var elto = document.getElementById("cell4");
+		elto.innerHTML = arr[3];		
+		}
+	if (altu = true) {
+		var eltu = document.getElementById("cell5");
+		eltu.innerHTML = err[4];		
+		}
+	if (altu = false) {
+		var eltu = document.getElementById("cell5");
+		eltu.innerHTML = arr[4];		
+		}
+}
+</script>
+
+<style>
+
+#dice {
+  position: absolute;
+  left: 400px;
+  top: 25px;
+  border: 1px solid #999;
+  padding: 0.5rem;
+}
+#cell1 {
+  width: 50px;
+  height: 50px;
+  text-align: center;
+  border: 1px solid #999;
+}
+#cell2 {
+  width: 50px;
+  height: 50px;
+  text-align: center;
+  border: 1px solid #999;
+}
+#cell3 {
+  width: 50px;
+  height: 50px;
+  text-align: center;
+  border: 1px solid #999;
+}
+#cell4 {
+  width: 50px;
+  height: 50px;
+  text-align: center;
+  border: 1px solid #999;
+}
+#cell5 {
+  width: 50px;
+  height: 50px;
+  text-align: center;
+  border: 1px solid #999;
+}	
+</style>

@@ -1,0 +1,94 @@
+<!--
+	This file is parts I and II of Yahtzee.html
+-->
+<html>
+<head>
+<title>Yahtzee</title>
+</head>
+<body>
+<style>
+.die {
+	height: 50px;
+	width: 50px;
+	background-color: blue;
+	padding: 15px;
+}
+
+.buttonHolder {
+	background-color: cyan;
+	height: 45px;
+	border: 2px solid red;
+}
+</style>
+<table id=tbl01>
+<tr><td>
+<table border=1>
+<tr>
+<td id=die01 class=die onclick="keepDie(1);"></td>
+<td id=die02 class=die onclick="keepDie(2);"></td>
+<td id=die03 class=die onclick="keepDie(3);"></td>
+<td id=die04 class=die onclick="keepDie(4);"></td>
+<td id=die05 class=die onclick="keepDie(5);"></td>
+</tr>
+</table>
+</td>
+</tr>
+<tr>
+<td align=center class=buttonHolder>
+<input type=button value="roll" onclick="roll();"/>
+</td>
+</tr>
+<tr>
+<td align=center class=buttonHolder>
+<input type=button value="Start Over" onclick="startOver();"/>
+</td>
+</tr>
+</table>
+<script>
+var FALSE = 0;
+var TRUE = 1;
+
+var rollCount = 0;
+
+var dieArray = [];
+var diceTrace = {FALSE, FALSE, FALSE, FALSE, FALSE, FALSE};
+
+function roll(){
+	if(rollCount > 2){
+		alert("You have rolled more than three times!");
+		return;
+	}
+	rollCount++;
+
+	for(var i=0; i < 5; i++){
+       		dieArray[i] = Math.floor(Math.random() * 6) + 1;
+	}
+
+	for(var i=1; i < 6; i++){
+		var id = "die0" + i;
+		var elt = document.getElementById(id);
+		if(!diceTrace[i-1]){
+			elt.innerHTML = dieArray[i-1];
+		}
+	}
+}
+
+function keepDie(num){
+	var elt = document.getElementById("die0" + num);
+	elt.style.color = "red";
+	diceTrace[num-1] = TRUE;
+}
+
+function startOver(){
+	for(var i=0; i < 5; i++){
+		diceTrace[i] = FALSE;
+		var j = i + 1;
+		var elt = document.getElementById("die0" + j);
+		elt.style.color = "black";
+	}
+	rollCount = 0;
+	roll();
+}
+</script>
+</body>
+</html>

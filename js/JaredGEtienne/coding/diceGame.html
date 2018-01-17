@@ -117,16 +117,27 @@ function startDicePicture(h){
 }
 
 function reRoll(){
-var reRoll = document.getElementById("row0");
-if(reRoll.css('background-color') == "rgb(255, 255, 255)"){
-  x = Math.floor((Math.random() * 6) + 1);
-  var replace= document.getElementById("a0");
-   replace.src = ("./pictures/dice" + x + ".png");
-    replace.setAttribute("width", "210");
-    replace.setAttribute("height","210");
-    replace.setAttribute("id","a"+h);
-  var secondrow= document.getElementById("row"+0);
-    secondrow.innerHTML=x;
-}
+    var reRoll = document.getElementById("row0");
+	// 
+	// i am finding an error that says:
+	//	reRoll.css is not a function
+	// 	it seems then, that this is not
+	// 	a good way to get the background color.
+	//
+	//	Maybe you can find another? Maybe
+	//	this one doesn't work for td cells?
+	//	Maybe there is something else that
+	//	works better?
+	//
+    if(reRoll.css('background-color') == "rgb(255, 255, 255)"){
+  	x = Math.floor((Math.random() * 6) + 1);
+  	var replace= document.getElementById("a0");
+   	replace.src = ("./pictures/dice" + x + ".png");
+    	replace.setAttribute("width", "210");
+    	replace.setAttribute("height","210");
+    	replace.setAttribute("id","a"+h);
+  	var secondrow= document.getElementById("row"+0);
+    	secondrow.innerHTML=x;
+	}
 }
 </script>

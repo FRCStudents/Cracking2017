@@ -100,7 +100,9 @@ for ( var i = 0; i<5; i++ ) {
 }
 
 function reroll (){
+	console.log(diceTrace[5]);
 	if (diceTrace[5] = "reroll") {
+		console.log("past reroll check");
 		var elt = document.getElementById("cell1");
 		elt.innerHTML = err[0];
 		}

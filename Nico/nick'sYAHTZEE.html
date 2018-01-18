@@ -1,27 +1,82 @@
 <html>
+
+<head>
+
+<title>
+
+this game
+
+</title
+
+</head>
+
+
+
+<body>
+
+<table>
+
+<tr>
+
+<td id = die1> 1 </td> 
+
+<td id = die2> 2 </td>
+
+<td id = die3> 3 </td>
+
+<td id = die4> 4 </td>
+
+<td id = die5> 5 </td>
+</tr>
+
+</table>
+
+
+
+<table>
+
+<tr>
+
+<td> <input type="button" name="button" id="button" value="rolling" onclick="rolling();"></input>
+
+<td> <input type="button" name="button" id="button" value="rolling2" onclick="rolling2();"></input>
+
+</table>
+
+</tr>
+
 <script>
-var dice = {
-  sides: 6,
-  roll: function () {
-    var randomNumber = Math.floor(Math.random() * this.sides) + 1;
-    return randomNumber;
-  }
+
+function rolling(){
+
+  	var diceVal = Math.floor((Math.random() * 6) + 1);
+
+  	var elt = document.getElementById("die1");
+
+  	elt.innerHTML = diceVal; 
+
 }
 
-
-
-//Prints dice roll to the page
-
-function printNumber(number) {
-  var placeholder = document.getElementById('placeholder');
-  placeholder.innerHTML = number;
-}
-
-var button = document.getElementById('button');
-
-button.onclick = function() {
-  var result = dice.roll();
-  printNumber(result);
-}
 </script>
-</html>
+
+
+
+<style>
+
+table, th, td {
+
+    border: 1px solid green;
+
+}
+
+th, td {
+
+    padding: 60px;
+
+}
+
+</style>
+
+
+
+<button>Roll</button>

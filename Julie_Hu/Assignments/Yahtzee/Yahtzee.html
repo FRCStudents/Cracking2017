@@ -1,6 +1,6 @@
 <html>
 <title> Yahtzee!</title>
-<body bgcolor= "#E6E6E6"> <center><font face="Lucida Calligraphy"> <font size="7"> <font color= "#000B7"> <h1> <b>Welcome to Yahtzee!</b> </h1> 	</font> </center> </body>
+<body bgcolor= "#F0FFFF"> <center><font face="Lucida Calligraphy"> <font size="7"> <font color= "#000B7"> <h1> <b>Welcome to Yahtzee!</b> </h1> 	</font> </center> </body>
 <body>
 	<font size= "2">
 		<p> Note: Please open the directions in a new tab so you don't lose your progress during the game</p>
@@ -15,6 +15,7 @@ th, td {
     padding: 10px;
 }
 </style>
+<button onclick= "rollalldice()"> Roll All Dice! </button>
 <button onclick= "clearalldice()">Clear Dice!</button>
 <table align="right" border = 2>
 	<tr>
@@ -30,23 +31,23 @@ th, td {
 <table border = 1>
 	<tr><th id = "us"> Upper Section</th><th>Enter Your Scores Here</th><th>Score</th></tr>
 	<tr><td id = "aces"> Ones:</td>
-		<td id="ScoreA"><input type="text" name= "ones" id= "1"><button onclick="ScoreasA()"> Score As Ace </button></td><td id = "s1"></td></tr>
+		<td id="ScoreA"><input type="text" name= "ones" id= "1"></td><td id = "s1"></td></tr>
 	<tr><td id = "twos"> Twos:</td>
-		<td id="ScoreB"><input type="text" name= "twos" id= "2"><button onclick= "Scoreas2()">Score as Twos</button></td><td id = "s2"></td></tr>
+		<td id="ScoreB"><input type="text" name= "twos" id= "2"></td><td id = "s2"></td></tr>
 	<tr><td id = "threes"> Threes:</td>
-		<td id="ScoreC"><input type="text" name= "threes" id= "3"><button onclick="Scoreas3()"> Score As Threes</button></td><td id = "s3"></td></tr>
+		<td id="ScoreC"><input type="text" name= "threes" id= "3"></td><td id = "s3"></td></tr>
 	<tr><td id = "fours"> Fours:</td>
-		<td id="ScoreD"> <input type="text" name= "fours" id= "4"><button onclick="Scoreas4()"> Score As Fours </button></td><td id = "s4"></td></tr>
+		<td id="ScoreD"> <input type="text" name= "fours" id= "4"></td><td id = "s4"></td></tr>
 	<tr><td id = "fives"> Fives:</td>
-		<td id="ScoreE"> <input type="text" name= "fives" id= "5"><button onclick="Scoreas5()"> Score As Fives </button></td><td id = "s5"></td></tr>
+		<td id="ScoreE"> <input type="text" name= "fives" id= "5"></td><td id = "s5"></td></tr>
 	<tr><td id = "sixes"> Sixes:</td>
-		<td id="ScoreF"> <input type="text" name= "sixes" id= "6"><button onclick="Scoreas6()"> Score As Sixes </button></td><td id = "s6"></td></tr>
+		<td id="ScoreF"> <input type="text" name= "sixes" id= "6"></td><td id = "s6"></td></tr>
 	<tr><th id = "usts"> Upper Section Total Score:</th>
 		<td id="ScoreG"> <button onclick="Addupper()"> Add Upper Section Score </button></td><td id = "tus"></td></tr>
-	<tr><td></td></tr>
+	<tr><td></td><td></td><td></td></tr>
 </table>
 <table border = 1>
-	<tr><th id = "ls">Lower Section</th><th> Enter Your Scores Here</th><th> Scores</th></tr>
+	<tr><th id = "ls">Lower Section</th><th> Enter Your Scores Here</th><th> Score</th></tr>
 	<tr><td id = "3oak">Three of a Kind:</td>
 		<td id= "ScoreH"> <input type="text" name= "threeofkind" id= "threeofakind"></td><td id = "a"></td></tr>
 	<tr><td id = "4oak">Four of a Kind:</td>
@@ -63,12 +64,27 @@ th, td {
 		<td id="ScoreN"> <input type="text" name= "chances" id= "chances"></td><td id = "g"></td></tr>
 	<tr><th id = "lsts"> Lower Section Total Score:</th>
 		<td id="ScoreO"> <button onclick="Addlower();"> Add Lower Section Score </button></td><td id = "h"></td></tr>
+		<tr><td></td><td></td><td></td></tr>
+	</table>
+	<table>
+	<tr><th id="Total"> Calculate Yahtzee Game Total Score:</th>
+		<td>Enter Upper Section Score Below</td><td>Enter Lower Section Score Below</td><td></td><td>Total Score:</td></tr>
+
+		<tr><td></td><td id= "cell1" class = "cell"><input type="text" name="uppers" id="uppers"></td>
+			<td id= "cell2" class = "cell"><input type="text" name="lowers" id="lowers"></td>
+			<td id="TScore"> <input type="button" name="button" id="addall" value="Click Here To Get Your Final Score" onclick="Addall();"></td><td id = "TS"></td></tr>
 </table>
 </table>
-<div id="h" class="cell"></div>
 </html>
 <script>
-
+function rollall(z){
+	document.getElementById(z).innerHTML = 
+    Math.floor(Math.random()*6)+1;}
+function rollalldice(){
+	for (var i=1;i<6;i++){
+		rollall("d"+i);
+	}
+}
 function showdice(x){
 	document.getElementById(x).innerHTML =
 	Math.floor(Math.random() * 6)+1;}
@@ -80,6 +96,26 @@ function clearalldice(){
 			cleardice("d"+i);
 	}
 }
+function Addupper(){
+
+	var a = parseInt (document.getElementById("1").value);
+	var b = parseInt (document.getElementById("2").value);
+	var c = parseInt (document.getElementById("3").value);
+	var d = parseInt (document.getElementById("4").value);
+	var e = parseInt (document.getElementById("5").value);
+	var f = parseInt (document.getElementById("6").value);
+
+	var answerspot = document.getElementById("tus");
+	//var a = document.getElementById("cell1").innerHTML;
+	//a = answerspot;
+//}
+function add(a,b,c,d,e,f){
+	answer= a+b+c+d+e+f;
+	answerspot.innerHTML = answer;
+}
+
+add(a,b,c,d,e,f);
+}
 function Addlower(){
 
 	var a = parseInt (document.getElementById("threeofakind").value);
@@ -90,12 +126,24 @@ function Addlower(){
 	var f = parseInt (document.getElementById("fiveofakind").value);
 	var g = parseInt (document.getElementById("chances").value);
 
-	var answerspot = document.getElementById("h");
+	var answerspot1 = document.getElementById("h");
 function add(a,b,c,d,e,f,g){
 	answer= a+b+c+d+e+f+g;
-	answerspot.innerHTML = answer;
+	answerspot1.innerHTML = answer;
 }
 
 add(a,b,c,d,e,f,g);
+}
+function Addall(){
+	var up = parseInt(document.getElementById("uppers").value);
+	var low = parseInt(document.getElementById("lowers").value);
+
+	var answerspot2 = document.getElementById("TS");
+
+function add (up,low){
+	answer = up+low;
+	answerspot2.innerHTML = answer;
+}
+add(up,low);
 }
 </script>

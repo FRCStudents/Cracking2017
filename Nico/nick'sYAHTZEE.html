@@ -1,9 +1,63 @@
 <html>
-<html>
+
+<head>
+
+<title>
+
+this game
+
+</title
+
+</head>
+
+
+
 <body>
 
-<h1>This YAHTZEE GAME</h1>
+<table>
 
+<tr>
+
+<td id = die1> 1 </td> 
+
+<td id = die2> 2 </td>
+
+<td id = die3> 3 </td>
+
+<td id = die4> 4 </td>
+
+<td id = die5> 5 </td>
+</tr>
+
+</table>
+
+
+
+<table>
+
+<tr>
+
+<td> <input type="button" name="button" id="button" value="rolling" onclick="rolling();"></input>
+
+</table>
+
+</tr>
+
+<script>
+
+function rolling(){
+
+  	var diceVal = Math.floor((Math.random() * 6) + 1);
+
+  	var elt = document.getElementById("die1");
+
+  	elt.innerHTML = diceVal; 
+
+}
+
+</script>
+
+<h1>This YAHTZEE GAME</h1>
 
 </body>
 </html>
@@ -50,5 +104,6 @@ th, td {
 </style>
 
 <button> Roll Dice </button>
+
 
 

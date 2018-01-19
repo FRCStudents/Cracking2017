@@ -1,5 +1,5 @@
 <html>
-<title> diceGame </title>
+<title> Dice Roller </title>
 <style>
 table, th, td {
     border: 1px solid black;
@@ -8,27 +8,38 @@ table, th, td {
     text-align: center;
     font-size: 250%;
 }
-
+div{
+  color: #AAAAAA;
+  text-align: left;
+  font-size: 150%;
+}
 .fixed {
-	 background-color: #AAAAAA;
+	 background-color: gray;
 }
 .startOver{
   background-color: white;
 }
 </style>
+<div> Welcome to Dice Selector</div>
+<br>
+<div>start by pressing start turn</div>
+<div>Select a die by pressing it's number, then press reRoll to reRoll that specific die.
+</div>
 <input type="button" onclick="Randomize()" value = "Start Turn">
 <input type="button" onclick="reRoll()" value = "roll">
-<input type="button" onclick="addClassStartOver()" value = "reselect">
 <br>
+
 <body bgcolor ="red">
   <table style = border="125px black" id = "table" bgcolor= "white">
-    <tr id = "row"></tr>
+    <tr id = "row"></ tr>
     <tr id = "second">
-        <td id = "row0" onclick= "addClass('row0');"></td>
-        <td id = "row1" onclick= "addClass('row1');"></td>
-        <td id = "row2" onclick= "addClass('row2')"></td>
-        <td id = "row3" onclick= "addClass('row3')"></td>
-        <td id = "row4" onclick= "addClass('row4')"></td>
+        <td id = "row0" onclick= "addClass('0');" backgroundColor = "white"></td>
+        <td id = "row1" onclick= "addClass('1');"></td>
+        <td id = "row2" onclick= "addClass('2')"></td>
+        <td id = "row3" onclick= "addClass('3')"></td>
+        <td id = "row4" onclick= "addClass('4')"></td>
+    </tr>
+    <tr id="inner">
     </tr>
   </table>
 </html>
@@ -38,9 +49,13 @@ var h=0;
 var x;
 var a=[];
 var q=0;
+var n = 0;
+var l = document.getElementById("inner");
+
 function Randomize() {
   if(q<1){
 gifLoop();
+
 }
 }
 function replace(){
@@ -63,19 +78,25 @@ function replace(){
   }
 
   function addClass(id){
-    var c= 0;
+
     var j= 1;
-    if(c<1){
-    var wowow = document.getElementById(id);
+    var wowow = document.getElementById("row" +id);
+    h= id;
+   if(a[h]){
     wowow.className = " fixed";
-  c++;
-  }
+    console.log("false");
+
+}
+//  }
   else {
-    alert("Sorry You Can Only Select 3 To Re-Roll");
+  //  alert("Sorry You Can Only Select 3 To Re-Roll");
+  wowow.className = " startOver"
+  console.log("true");
   }
 
+a[h] = !a[h];
 
-  console.log("yoyoyoI am "+c);
+  console.log(a);
   }
 
   function addClassStartOver(){
@@ -114,30 +135,42 @@ function startDicePicture(h){
           var  myVar2 = setTimeout(replace, 2500);
                 var  myVar3 = setTimeout(replace, 3000);
                     var myVar4 = setTimeout(replace, 3500);
+
 }
 
 function reRoll(){
-    var reRoll = document.getElementById("row0");
-	// 
-	// i am finding an error that says:
-	//	reRoll.css is not a function
-	// 	it seems then, that this is not
-	// 	a good way to get the background color.
-	//
-	//	Maybe you can find another? Maybe
-	//	this one doesn't work for td cells?
-	//	Maybe there is something else that
-	//	works better?
-	//
-    if(reRoll.css('background-color') == "rgb(255, 255, 255)"){
-  	x = Math.floor((Math.random() * 6) + 1);
-  	var replace= document.getElementById("a0");
-   	replace.src = ("./pictures/dice" + x + ".png");
-    	replace.setAttribute("width", "210");
-    	replace.setAttribute("height","210");
-    	replace.setAttribute("id","a"+h);
-  	var secondrow= document.getElementById("row"+0);
-    	secondrow.innerHTML=x;
-	}
+
+// var RERERoll =reRoll.style.backgroundColor;
+// alert(RERERoll);
+// if(RERERoll = "gray"){
+//   alert("hi");
+//     addClassStartOver();
+//     reRoll.style.backgroundColor = "white";
+// }
+
+for(var i = 0; i < 5; i++){
+		if(!a[i]){
+      if(q<8){
+      var reRoll = document.getElementById("row"+i);
+        x = Math.floor((Math.random() * 6) + 1);
+          var replace= document.getElementById("a"+i);
+            replace.src = ("./pictures/dice" + x + ".png");
+            replace.setAttribute("width", "210");
+            replace.setAttribute("height","210");
+            replace.setAttribute("id","a"+i);
+          var secondrow= document.getElementById("row"+i);
+            secondrow.innerHTML=x;
+
+          }
+        }
+        }
+        if(i>4){
+          i=0;
+        }
+      q++;
+      if(q>8){
+        alert("You rolled too many times");
+      }
+
 }
 </script>

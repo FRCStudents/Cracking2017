@@ -1,64 +1,5 @@
 <html>
-
-<head>
-
-<title>
-
-this game
-
-</title
-
-</head>
-
-
-
-<body>
-
-<table>
-
-<tr>
-
-<td id = die1> 1 </td> 
-
-<td id = die2> 2 </td>
-
-<td id = die3> 3 </td>
-
-<td id = die4> 4 </td>
-
-<td id = die5> 5 </td>
-</tr>
-
-</table>
-
-
-
-<table>
-
-<tr>
-
-<td> <input type="button" name="button" id="button" value="rolling" onclick="rolling();"></input>
-
-</table>
-
-</tr>
-
-<script>
-
-function rolling(){
-
-  	var diceVal = Math.floor((Math.random() * 6) + 1);
-
-  	var elt = document.getElementById("die1");
-
-  	elt.innerHTML = diceVal; 
-
-}
-
-</script>
-
 <h1>This YAHTZEE GAME</h1>
-
 </body>
 </html>
 <head>
@@ -70,8 +11,7 @@ function rolling(){
 	<td class=die id = cell2  onclick="addClass('cell2');"> 2 </td>
 		<td class=die id = cell3  onclick="addClass('cell3');"> 3 </td>
 			<td class=die id = cell4  onclick="addClass('cell4');"> 4 </td>
-				<td class=die id = cell5  onclick="addClass('cell5');"> 5 </td>
-					<td class=die id = cell6  onclick="addClass('cell6');"> 6 </td>
+				<td class=die id = cell5  onclick="addClass('cell5');"> 5 </td>				
 </tr>
 </table>
 
@@ -82,28 +22,43 @@ function rolling(){
 </tr>
 
 <script>
+
 function addClass(id){
 	var elt = document.getElementById(id);
+	elt.style.color = "blue";
 }
 
-function roll(){
-  var diceVal = Math.floor((Math.random() * 6) + 1);
+
+function makeEverythingRed(){
 var elts = document.getElementsByClassName("die");
   for(var i=0; i < 6; i++){
-	elts[i].innerHTML = Math.floor((Math.random() * 6) + 1);
-  }
+	elts[i].style.color = "red";
+
+   }
+}
+
+makeEverythingRed();
+ 
+function roll(){
+  //var diceVal = Math.floor((Math.random() * 6) + 1);
+var elts = document.getElementsByClassName("die");
+  for(var i=0; i < 6; i++){
+	
+	if (elts[i].style.color=="red"){
+		elts[i].innerHTML = Math.floor((Math.random()* 6) + 1);
+		}
+
+   }
 } 
 </script>
 <style>
 table, th, td {
-    border: 1px solid green;
+    border: 4px solid red;
 }
 th, td {
     padding: 50px;
 }
 </style>
 
-<button> Roll Dice </button>
-
-
+<button> Roll Dice </button> 
 

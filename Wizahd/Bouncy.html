@@ -1,0 +1,55 @@
+<!DOCTYPE html>
+<html>
+<style>
+#animate {
+  width: 50px;
+  height: 50px;
+  position: absolute;
+  background-color: red;
+}
+</style>
+<body></body>
+<button onclick="Move()">Click Me</button>
+<div id ="animate"></div>
+<script>
+
+//https://www.w3schools.com/css/css3_animations.asp
+
+function Move() {
+  var elt = document.getElementById("animate");
+  var pos = 0;
+  var turn = 1;
+  var low = 100;
+  var high = 350;
+
+  var id = setInterval(frame, 5);
+  function frame() {
+    if (pos < low){
+      low+=7;
+      turn *= -1;
+      pos = low;
+    } else {
+    if (pos > high) {
+      high-=7; 
+      turn *= -1;
+      pos = high;
+    } else {
+	if(low == high){
+		clearInterval(id);
+		elt.style.top = 0 + 'px';
+		elt.style.left = 350 + 'px';
+	}
+	else {
+		if(turn > 0) pos+=1;
+		else	     pos-=10;
+        	elt.style.top = (pos/2) + 'px';
+        	elt.style.left = pos + 'px';
+      	     }
+	}
+    }
+  }
+}
+</script>
+
+</body>
+</html>

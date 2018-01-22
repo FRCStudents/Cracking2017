@@ -1,0 +1,78 @@
+<html>
+<head>
+<title>
+Yahtzee
+</title
+</head>
+
+<body>
+<table>
+<tr>
+<td id = cell1> 1 </td> 
+<td id = cell2> 2 </td>
+<td id = cell3> 3 </td>
+<td id = cell4> 4 </td>
+<td id = cell5> 5 </td>
+<td id = cell6> 6 </td>
+</tr>
+</table>
+
+<table>
+<tr>
+<td> <input type="button" name="button" id="button" value="roll" onclick="roll();"></input>
+<td> <input type="button" name="button" id="button" value="roll2" onclick="roll2();"></input>
+<td> <input type="button" name="button" id="button" value="roll3" onclick="roll3();"></input>
+<td> <input type="button" name="button" id="button" value="roll4" onclick="roll4();"></input>
+<td> <input type="button" name="button" id="button" value="roll5" onclick="roll5();"></input>
+<td> <input type="button" name="button" id="button" value="roll6" onclick="roll6();"></input>
+</table>
+</tr>
+
+<script>
+function roll(){
+  	var diceVal = Math.floor((Math.random() * 6) + 1);
+  	var elt = document.getElementById("cell1");
+  	elt.innerHTML = diceVal; 
+}
+function roll2(){  
+  var diceVal = Math.floor((Math.random() * 6) + 1);
+var elt = document.getElementById("cell2");
+elt.innerHTML = diceVal; 
+}
+function roll3(){  
+  var diceVal = Math.floor((Math.random() * 6) + 1);
+var elt = document.getElementById("cell3");
+elt.innerHTML = diceVal; 
+}
+function roll4(){  
+  var diceVal = Math.floor((Math.random() * 6) + 1);
+var elt = document.getElementById("cell4");
+elt.innerHTML = diceVal; 
+}
+function roll5(){  
+  var diceVal = Math.floor((Math.random() * 6) + 1);
+var elt = document.getElementById("cell5");
+elt.innerHTML = diceVal; 
+}
+function roll6(){  
+  var diceVal = Math.floor((Math.random() * 6) + 1);
+var elt = document.getElementById("cell6");
+elt.innerHTML = diceVal; 
+}
+</script>
+
+<style>
+table, th, td {
+    border: 1px solid black;
+}
+th, td {
+    padding: 50px;
+}
+</style>
+
+
+
+
+
+
+

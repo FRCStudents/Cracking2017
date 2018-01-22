@@ -1,0 +1,23 @@
+Calculator Code Not Working
+
+function subtract (x , y)
+	
+	{
+	document.getElementById("box1")
+;	
+	document.getElementById("box2")	;
+	
+	var a = box1:value;
+	
+	var b = box2:value;
+	
+	var x = parseInt(a);
+	
+	var y = parseInt(b);
+	
+	var z = return x - y;
+	
+	alert(z);
+	
+	}
+

@@ -1,0 +1,35 @@
+<h1> Make your name look cool! </h1>
+<table>
+	<tr>
+		<td>First: <input type="text" id="fname"></td>
+		<td>Last: <input type="text" id="lname"></td>
+	</tr>
+</table>
+<br>
+<table>
+	<tr>
+		<td id="cell3" class="c"></td>
+	</tr>
+</table>
+
+<button onclick="doit();"> Press this </button>
+
+<script> 
+var fname = document.getElementById("fname");
+var lname = document.getElementById("lname");
+var answer = document.getElementById("cell3");
+
+function doit(){
+answer.innerHTML = fname.value + " " + lname.value;
+}
+</script>
+<style>
+.c {
+  color: #0FFF00;
+  font-size: 250%;
+  text-transform: capitalize;
+  letter-spacing: 3px;
+  word-spacing: 10px;
+  text-shadow: 2px 1px #00FF00;
+}
+</style>

@@ -1,0 +1,89 @@
+
+<html>
+
+
+<input id = "box1">
+<input id = "box2">
+	
+
+<BUTTON ONCLICK = "process(1);"> + </BUTTON>
+
+
+<BUTTON ONCLICK = "process(2);"> - </BUTTON>
+
+
+<BUTTON ONCLICK = "multiply('x, y')";> * </BUTTON>
+
+
+<BUTTON ONCLICK = "divide('x, y')";> / </BUTTON>
+
+
+
+<script>
+function process (x){
+	if (x == 1){
+		alert(add(document.getElementById('box1').value, document.getElementById('box2').value));
+		}
+	if (x == 2){
+		return subtract(document.getElementById('box1').value, document.getElementById('box2').value);
+		}
+	} 
+
+
+function add (x , y)
+	
+	{
+	
+	alert("In add: " + x + ";" + y);	
+	//var a = parseInt(document.getElementById("box1").value);
+	//var b = parseInt(document.getElementById("box2").value);
+	//var answer = a + b;
+	var answer = parseInt(x) + parseInt(y);	
+	return answer;
+
+	}
+
+
+function subtract (x , y)
+	
+	{
+	//	var a = parseInt(document.getElementById("box1").value);
+ 	//	var b = parseInt(document.getElementById("box2").value);
+	//	var answer = a - b;
+	var answer = parseInt(x) - parseInt(y);	
+	alert(answer);
+
+	}
+
+
+function multiply (x , y)
+	
+	{
+
+	alert("in multiply: " + x + ";" + y);
+	var a = parseInt(document.getElementById("box1").value);
+	var b = parseInt(document.getElementById("box2").value);
+	var answer = a * b;
+	
+	alert(answer);
+
+	}
+
+
+function divide (x , y)
+	
+	{
+	
+	var a = parseInt(document.getElementById("box1").value);
+	var b = parseInt(document.getElementById("box2").value);
+	var answer = a / b;
+	
+	alert(answer);
+
+	}
+
+
+
+
+</script>
+</HTML>

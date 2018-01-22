@@ -1,0 +1,58 @@
+<html>
+<title> Something </title>
+<button onclick=doit();> Is x more than y? </button>
+<button onclick=average();> Averages </button>
+<button onclick=int();> Is the number positive or negative? </button>
+<button onclick=yes();> Change! </button>
+<button onclick=changeColor();> Change the change! </button>
+<button onclick=change();> Change the change of the change! </button>
+<table>
+		<td id="words"> </td>
+		<td id="A1"> <input type="text"> </td> <td id="A2"> <input type="text"> </td> <td id="A3"> <input type="text"> </td> <td id="A4"> <input type="text"> </td> <td id="A5"> <input type="text"> </td>
+		<td id="int" input=type>
+</table>
+</html>
+<script>
+var x = 0;
+var y = 0;
+function doit(){
+	random();
+	x++;
+}
+function random(x,y){
+	if(x<y){
+		alert("x is less!");
+	}
+	if(y<x){
+		alert("y is less!");
+	}
+}
+
+function average(){
+var A1 = getElementById("A1");
+var A2 = getElementById("A2");
+var A3 = getElementById("A3");
+var A4 = getElementById("A4");
+var A5 = getElementById("A5");
+answer = A1 + A2 + A3 + A4 + A5;
+answer = answer/2;
+alert(answer);
+}
+
+function int(){
+var B1 = getElementById("int");
+	if(B1 < 0){
+		alert("The number is negative!");
+	}else{
+		alert("The number is positive");
+}
+var words = getElementById("words");
+function yes(){
+	words.innerHTML = "This is oh so very cool";
+}
+function changeColor(){
+	getElementById("words").style.color = "blue";
+}
+function change(){
+	words.innerHTML = "This has changed!";
+}

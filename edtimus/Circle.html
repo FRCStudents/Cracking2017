@@ -1,0 +1,62 @@
+<html>
+<style>
+#container {
+  width: 400px;
+  height: 400px;
+  position: relative;
+  background: black;
+}
+#animate {
+  width: 50px;
+  height: 50px;
+  position: absolute;
+  background-color: white;
+}
+</style>
+<body>
+<h1>callback functions</h1>
+  setInterval: move across the screen...
+<p>
+<button onclick="myMove()">Click Me</button>
+</p>
+
+<div id ="container">
+  <div id ="animate"></div>
+</div>
+
+<script>
+var x = 0;
+var turn = 1;
+
+function myMove() {
+  var elt = document.getElementById("animate");	
+  var id = setInterval(frame, 5);
+  function frame() {
+	if (x == 0) {
+		turn = 1;
+		}
+	if (x == 350) {
+		turn = 2;
+		}
+	if (turn == 1) {
+		x++;
+		var a = (350 * x) - (x ** 2);
+		var b = a ** 0.5;
+		var y = 175 + b;
+		elt.style.top = y + 'px';
+   		elt.style.left = x + 'px';
+		}
+	if (turn == 2) {
+		x--;
+		var a = (350 * x) - (x ** 2);
+		var b = a ** 0.5;
+		var y = 175 - b;
+		elt.style.top = y + 'px';
+  		elt.style.left = x + 'px';
+		}
+	}
+}
+</script>
+
+</body>
+</html>

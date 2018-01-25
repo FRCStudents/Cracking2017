@@ -1,53 +1,62 @@
 <html>
 <head>
-    <button onclick= "myMove()">Activate Purple Square!</button><button onclick= "myMove1()">Activate Blue Square!</button><button onclick= "myMove2()">Activate Green Square!</button>
-      <div id ="animate"></div>
-      <div id ="animate1"></div>
-      <div id ="animate2"></div>
+    <button onclick= "myMove()">Activate Purple Square!</button><button onclick= "myMove1()">Activate Blue Square!</button><button onclick= "myMove2()">Activate Green Square!</button><button onclick= "myMove3()">Activate Orange Square!</button>
+      <div id ="purple"></div>
+      <div id ="blue"></div>
+      <div id ="green"></div>
+      <div id ="orange"></div>
 <style> 
-#animate{
+#purple{
     width: 100px;
     height: 100px;
       background: linear-gradient(to bottom, #9999ff 0%, #ff99cc 100%);
     position: relative;
     animation-name: Movesquare;
 } 
-#animate1{
+#blue{
    width: 100px;
     height: 100px;
-      background: linear-gradient(to bottom, #C2DFFF 0%, #82CAFA 100%);
+      background: linear-gradient(to bottom right, #BDEDFF 0%, #5CB3FF 100%);
     position: relative;
     animation-name: Movesquare; 
 }
-#animate2{
+#green{
    width: 100px;
     height: 100px;
-      background: linear-gradient(to bottom, #B1FB17 0%, #4CC552 100%);
+      background: radial-gradient(circle, #B1FB17 0%, #4CC552 100%);
     position: relative;
     animation-name: Movesquare; 
-}      
+} 
+#orange{
+  width: 100px;
+    height:100px;
+      background: linear-gradient(to bottom left, #FFCBA4 0%, #FF8040 100%);
+      position: relative;
+      animation-name: Movesquare;
+}     
 }
 </style>
 </head>
 <body>
 <script>
     function myMove() {
-  var elt = document.getElementById("animate");
+  var elt = document.getElementById("purple");
   var pos = 0;
   var id = setInterval(frame, 5);
   function frame() {
-    if (pos == 600) {
+    if (pos == 100) {
       clearInterval(id);
     } else {
       pos++;
       elt.style.top = pos + 'px';
       elt.style.bottom = pos + 'px';
+      elt.style.left = pos + 100 +'px';
     }
   }
 }
 
  function myMove1() {
-  var elt = document.getElementById("animate1");
+  var elt = document.getElementById("blue");
   var pos = 0;
   var id = setInterval(frame, 5);
   function frame() {
@@ -61,7 +70,7 @@
   }
 }
 function myMove2() {
-  var elt = document.getElementById("animate2");
+  var elt = document.getElementById("green");
   var pos = 0;
   var id = setInterval(frame, 5);
   function frame() {
@@ -70,6 +79,20 @@ function myMove2() {
     } else {
       pos++;
       elt.style.top = pos + 'px';
+      elt.style.left = pos + 'px';
+    }
+  }
+}
+function myMove3() {
+  var elt = document.getElementById("orange");
+  var pos = 0;
+  var id = setInterval(frame, 5);
+  function frame() {
+    if (pos == 300) {
+      clearInterval(id);
+    } else {
+      pos++;
+      elt.style.bottom = pos + 'px';
       elt.style.left = pos + 'px';
     }
   }

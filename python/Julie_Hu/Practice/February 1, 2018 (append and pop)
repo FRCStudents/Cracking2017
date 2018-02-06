@@ -1,0 +1,33 @@
+//February 1, 2018
+
+>>> arr
+[9, 4, 5, 6, 3, 'this', ['this', 'that', 'other'], (2, 3, 4)]
+>>> del arr[2]														//delete array at index 2
+>>> arr
+[9, 4, 6, 3, 'this', ['this', 'that', 'other'], (2, 3, 4)]
+>>> arr.pop()														//(DEFAULT).pop treats array like a stack, removes last element from array
+(2, 3, 4)
+>>> arr
+[9, 4, 6, 3, 'this', ['this', 'that', 'other']]
+>>> y = arr.pop()													//sets ['this','that','other'] as y
+>>> y
+['this', 'that', 'other']
+>>> arr
+[9, 4, 6, 3, 'this']
+>>> arr.append(y)													//appends y back into the array
+>>> arr
+[9, 4, 6, 3, 'this', ['this', 'that', 'other']]
+>>> y
+['this', 'that', 'other']											//y still equals ['this','that','other']
+
+
+
+arr
+[1, 2, 3, 4, 6, 7]													//arr = [1,2,3,4,6,7]
+>>> d = range (5,-1,-2)												//5 = index value
+>>> for i in d:														//-1 = reverse direction (count from 7 to 1)
+...     print(arr[i])												//-2 = count by 2/ decrease by 2
+... 
+7
+4
+2

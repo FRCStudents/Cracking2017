@@ -1,0 +1,27 @@
+
+
+//////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////
+
+	
+////////////////////////////////////////////////////////////////////////////////////////////////////////////////////
+		
+				February 5, 2018- February 6, 2018
+
+				Python Practice Problems
+
+				1.) Write a python program to create an array of 5 integers and display the list items. Access individual element through indexes
+				2.) write a python program to append a new item to the end of the list
+				3.) Write a python program to reverse the order of the items in the list
+				4.) Write a python program to get the number of occurrences of a specified element in a list
+				5.) Write a python program to append items from a specified list
+				6.) Write a python program to insert a new item before the second element in an existing list
+				7.) Write a python program to remove the third item using the index from a list
+				8.) Write a python program to remove the first occurrence of a specified element from a list
+				9.) Go back and write each of these problems using functions
+				10.) Write a python program to create an array of 10 integers and display every other number
+				11.) Write a python program to display the elements in an array without using an index
+				12.) Write a function called plusOne that adds 1 to each element of an array (pass array as parameter)
+				13.) Write a function called powArray that takes two parameters, an array and an exponent, and raises each member of the array by the exponent
+
+
+

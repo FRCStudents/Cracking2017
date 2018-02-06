@@ -1,0 +1,73 @@
+//python practice with loops and ranges and loops through arrays
+
+def mult(x, y):									//lines 3-8: Correct format for writing function to multiply
+...     return x * y
+... 
+>>> z = mult(9, 2)
+>>> z
+18
+>>> def m():									//lines 9-16: correct but uses local/global variables. THIS IS NOT AS GOOD
+...     return x * y 
+... 
+>>> x = 4
+>>> y = 5
+>>> z = m()
+>>> z
+20
+>>> z = z + 1									//lines 17-22: Increments answer from previous example
+>>> z
+21
+>>> z += 1
+>>> z
+22
+
+>>> range(5)									//lines 24-30: Incrementing last answer from previous question as well (the '5' means five times)
+range(0, 5)
+>>> for x in range(0, 5):
+...     z += 1
+... 
+>>> z
+27
+>>> x = [0,1,2]									//lines 31-44: Loops through arrays???
+>>> x = range(5)
+>>> x
+range(0, 5)
+>>> x = [0,1,2]
+>>> x
+[0, 1, 2]
+>>> for y in x:
+...     print(y)
+... 
+0
+1
+2
+>>> 
+
+
+
+//January 31, 2018
+
+>>> y = [5,3,7,9,3,5]
+>>> y
+[5, 3, 7, 9, 3, 5]
+>>> y[0]
+5
+>>> for z in y:
+...     print(z)
+... 
+5
+3
+7
+9
+3
+5
+>>> for z in range(len(y)):							//"len(y)" = length of array y
+...     print(y[z])									//print values when it is in range of length of y
+... 
+5
+3
+7
+9
+3
+5
+>>> 

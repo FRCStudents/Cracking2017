@@ -1,3 +1,5 @@
+//1.) Write a python program to create an array of 5 integers and display the list items. Access individual element through indexes.
+
 x=[1,2,3,4,5]
 print(x)
 

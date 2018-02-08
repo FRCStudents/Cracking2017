@@ -1,0 +1,38 @@
+
+pieces and concepts:
+1) while loop
+	* while (x is true):
+		do something
+		if (something):
+			x = false
+
+2) input()
+	x = input()
+	y = input("Enter something")
+
+
+3) strings are letters strung together
+   ints are numbers
+   you can not treat a string like an int
+   x = int('1')
+
+4) string has a find method
+	s = "this"
+	x = s.find('i')
+	x is now equal to 2
+
+5) append adds something on to the string
+   x = 'this'
+   x.append('Yo')
+   x is now equal to 'thisYo'
+
+6) Turning an array into a string... 
+	an array is treated like separate items.
+	a string is like one item made up of
+	separate items.
+
+	* separator = '-'
+	* arr = ['a', 'b', 'c']
+	* y = separator.join(arr)
+	* y is now equal to "a-b-c" 
+

@@ -11,7 +11,7 @@ while(response == "yes"):
 	print("Enter a key: ")
 	key = int(input())
 	for i in range(len(sentence)):
-		idx = arr.find(sentence[i])
+		idx = arr.find(sentence[i].lower())
 		idx += key
 		if(idx > 25):
 			idx -= 25 

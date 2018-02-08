@@ -1,8 +1,17 @@
 x = [1]
+print("this is the value of x")
 print(x)
+print("this is the value of x after array with 1 is appended")
 x.append([1])
 print(x)
-x[0].append(1)
+print("this is the value of x after hi is appended")
+x[1].append("hi")
 print(x)
+print("this is the value of x after 1 is appended to the array inside the array")
 x[1].append(1)
+y = [1,2,3,4,5]
+print("this is y")
+print(y)
+print("this is the value of x after the value of y[1] is appended")
+x.append(y[1])
 print(x)

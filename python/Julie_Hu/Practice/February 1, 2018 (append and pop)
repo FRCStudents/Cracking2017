@@ -24,7 +24,7 @@
 
 arr
 [1, 2, 3, 4, 6, 7]													//arr = [1,2,3,4,6,7]
->>> d = range (5,-1,-2)												//5 = index value
+>>> d = range (5,-1,-2)												//5 = index value (starting from index 5)
 >>> for i in d:														//-1 = reverse direction (count from 7 to 1)
 ...     print(arr[i])												//-2 = count by 2/ decrease by 2
 ... 

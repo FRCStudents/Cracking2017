@@ -1,16 +1,6 @@
-def mult():
-    arr = []
-    x = input()
-    arr.append(x)
-    y = input()
-    arr.append(y)
-    z = input()
-    arr.append(z)
-    c = input()
-    arr.append(c)
-    v = input()
-    arr.append(v)
+def plusOne():
+    arr = [1,2,3,4,5,6]
+    for x in range(len(arr)):
+        arr[x] += 1
     print(arr)
-    b = input()
-    print(arr[b])
-mult()
+plusOne()

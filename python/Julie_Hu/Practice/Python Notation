@@ -1,0 +1,12 @@
+NOT IN INTERPRETOR (aka "python3.5")
+		mkdir (enter new directory name here) = make directory(folder)
+		v.i (file name) = text editor (common, linux based)
+			i=	(get into insert mode so you can use it)
+			"esc" button= get out of insert mode
+			:w (enter)= write to disc/ save
+			:q(enter)= get out of v.i
+			:q!(enter)= exit v.i without saving
+			dd(enter)= delete the line
+			(cursor on character)hit "x" to delete the single character
+		cat (enter file name here)= concatinate-- view the file
+		to run the file, type -> python3.5 (file name)

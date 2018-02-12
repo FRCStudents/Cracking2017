@@ -1,10 +1,11 @@
 <html>
 <head>
-    <button onclick= "myMove()">Activate Purple Square!</button><button onclick= "myMove1()">Activate Blue Square!</button><button onclick= "myMove2()">Activate Green Square!</button><button onclick= "myMove3()">Activate Orange Square!</button>
+    <button onclick= "myMove()">Activate Purple Square!</button><button onclick= "myMove1()">Activate Blue Square!</button><button onclick= "myMove2()">Activate Green Square!</button><button onclick= "myMove3()">Activate Orange Square!</button><button onclick="myMove4()"> Activate Red Square!</button><button onclick= "moveall()">Move All Squares!</button>
       <div id ="purple"></div>
       <div id ="blue"></div>
       <div id ="green"></div>
       <div id ="orange"></div>
+      <div id ="red"></div>
 <style> 
 #purple{
     width: 100px;
@@ -33,6 +34,13 @@
       background: linear-gradient(to bottom left, #FFCBA4 0%, #FF8040 100%);
       position: relative;
       animation-name: Movesquare;
+} 
+#red{
+   width: 100px;
+    height: 100px;
+      background: radial-gradient(circle, #E42217 0%, #8C001A 100%);
+    position: relative;
+    animation-name: Movesquare; 
 }     
 }
 </style>
@@ -74,12 +82,12 @@ function myMove2() {
   var pos = 0;
   var id = setInterval(frame, 5);
   function frame() {
-    if (pos == 400) {
+    if (pos == 50) {
       clearInterval(id);
     } else {
       pos++;
-      elt.style.top = pos + 'px';
-      elt.style.left = pos + 'px';
+      elt.style.top = pos -50 + 'px';
+      elt.style.left = pos + 250 + 'px';
     }
   }
 }
@@ -93,6 +101,20 @@ function myMove3() {
     } else {
       pos++;
       elt.style.bottom = pos + 'px';
+      elt.style.left = pos + 'px';
+    }
+  }
+}
+function myMove4() {
+  var elt = document.getElementById("red");
+  var pos = 0;
+  var id = setInterval(frame, 5);
+  function frame() {
+    if (pos == 100) {
+      clearInterval(id);
+    } else {
+      pos++;
+      elt.style.bottom = pos + 100 + 'px';
       elt.style.left = pos + 'px';
     }
   }

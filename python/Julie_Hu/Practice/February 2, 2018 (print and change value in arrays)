@@ -1,0 +1,65 @@
+February 2, 2018
+
+		arr = [1,2,3,4,5]
+
+		for x in arr: 										//lines 5-12:print out array
+		...print (x)
+		...
+		1
+		2
+		3
+		4
+		5
+
+		for x in range(len(arr)):
+		...print (x)
+		...
+		1
+		2
+		3
+		4
+		5
+
+		for x in arr:									//lines 23-32: print out array with different value but doesn't change value of array
+		...print (x+1)
+		... 
+		2
+		3
+		4
+		5
+		6
+		arr
+		[1,2,3,4,5]
+
+		for x in range (len(arr)):						//lines 34-44: changes values in array
+			arr[x]+=1
+			print(arr)
+		... 
+		[2, 2, 3, 4, 5]
+		[2, 3, 3, 4, 5]
+		[2, 3, 4, 4, 5]
+		[2, 3, 4, 5, 5]
+		[2, 3, 4, 5, 6]
+	>>> arr
+		[2, 3, 4, 5, 6]									//final result
+
+
+		arr=[2,4,6,8,10,12,14]						//lines 47-50: REPLACE VALUES IN THE SAME ARRAY
+		>>> arr[0:2] = [99, 100, 101]				//arr[0:2] = array at range 0-2 (aka index 0 and 1)      
+		>>> arr                                     //"[99,100,101]"= replace values in range 0-2 with [99,100,101]
+		[99, 100, 101, 6, 8, 10, 12, 14]			//final result
+
+
+
+		NOT IN INTERPRETOR (aka "python3.5")
+		mkdir (enter new directory name here) = make directory(folder)
+		v.i (file name) = text editor (common, linux based)
+			i=	(get into insert mode so you can use it)
+			"esc" button= get out of insert mode
+			:w (enter)= write to disc/ save
+			:q(enter)= get out of v.i
+			:q!(enter)= exit v.i without saving
+			dd(enter)= delete the line
+			(cursor on character)hit "x" to delete the single character
+		cat (enter file name here)= concatinate-- view the file
+		to run the file, type -> python3.5 (file name)

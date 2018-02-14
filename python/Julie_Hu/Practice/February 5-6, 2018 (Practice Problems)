@@ -43,7 +43,7 @@
 				6.) Write a python program to insert a new item before the second element in an existing list
 				7.) Write a python program to remove the third item using the index from a list
 				8.) Write a python program to remove the first occurrence of a specified element from a list
-				9.) Go back and write each of these problems using functions                                         //Currently file "Problem4"
+				9.) Go back and write each of these problems using functions                                         
 				10.) Write a python program to create an array of 10 integers and display every other number         
 				11.) Write a python program to display the elements in an array without using an index               //in range len(y)
 				12.) Write a function called plusOne that adds 1 to each element of an array (pass array as parameter)
@@ -51,4 +51,4 @@
 
 
 
-Have to do: 4,8,10,11,12,13
+Have to do: 4,11,10,8,12,13

@@ -24,9 +24,9 @@ for x in range(len(Brutus)):
 print("this is the conversion")
 print(b)
 print(Brutus)
+print("this is array 2")
 for y in range(len(b)):
-    for z in range(len(Brutus)):
-        print("["+b[y]+"]" + len(array2[0:z+1]))
+    for z in range(0,25):
         if b[y] == len(array2[0:z+1]):
             print(b)
             b[y] = array2[z]

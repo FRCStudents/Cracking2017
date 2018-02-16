@@ -1,0 +1,8 @@
+import turtle
+
+screen = turtle.Screen()
+
+image = r"https://www.shutterstock.com/image-illustration/illustration-hangman-game-386156509?src=jnHFB7zjhaqDalpUuwdavg-1-0"
+
+screen.addshape(image)
+turtle.shape(image)

@@ -1,0 +1,18 @@
+words = ['apple', 'bannana','cucumber', 'cucumber']
+def guess():
+    print("Put in a word!")
+    x = input()
+    if len(x) > 1:
+        print("That isn't one letter!")
+    else:
+        for v in len(word):
+            if x == word[v]:
+               print("You got it!")
+               return
+        print("That's not it")
+        wrong += 1
+def random:
+    random = 0
+    random.randint(len(words))
+    word = words[random]
+    guess()

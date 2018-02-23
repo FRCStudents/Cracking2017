@@ -1,0 +1,13 @@
+
+import first
+
+def addABunch():
+	for i in range(10):
+		first.addElt(i)
+
+def printFirst():
+	print(getFirst())
+
+
+addABunch()
+printFirst()

@@ -1,0 +1,16 @@
+def mult():
+    arr = []
+    x = input()
+    arr.append(x)
+    y = input()
+    arr.append(y)
+    z = input()
+    arr.append(z)
+    c = input()
+    arr.append(c)
+    v = input()
+    arr.append(v)
+    print(arr)
+    b = input()
+    print(arr[b])
+mult()

@@ -1,0 +1,23 @@
+
+********************************************
+** MVC - Model-View-Controller		  **
+** This is a simple example of separating **
+** code into an organization. This MVC    **
+** organization is very common, in many   **
+** languages. The idea is there are 3     **
+** functional components.                 **
+** M (Model) - is the database access.    **
+** V (View) - is the front end - that is  **
+**		the user's view           **
+** C (Controller) - is the connecting     **
+** 		code - that connects      **
+**		the other two parts       **
+********************************************
+
+This mvc3 is an MVC application (simple, as it is)
+that has a view - a command line menu/prompt system,
+and a model - a sqlite3 database single-table database,
+and a controller - balancing delicately between the 
+two. 
+
+there are no routes... there is no http interface.

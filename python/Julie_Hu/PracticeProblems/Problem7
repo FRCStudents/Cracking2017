@@ -1,3 +1,5 @@
 x = [1,2,3,4,5]
+print (x)
+print("Delete the element at index 2")
 del x[2]
 print (x)

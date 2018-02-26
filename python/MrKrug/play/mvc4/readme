@@ -1,0 +1,8 @@
+
+This mvc3 is an MVC application (simple, as it is)
+that has a view - a command line menu/prompt system,
+and a model - a sqlite3 database single-table database,
+and a controller - balancing delicately between the 
+two. 
+
+there are no routes... there is no http interface.

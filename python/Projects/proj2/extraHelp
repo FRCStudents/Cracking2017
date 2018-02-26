@@ -1,0 +1,23 @@
+
+	1) Create an array of "words" that can be randomly chosen by the 
+	computer
+
+	2) write a function to determine which word (from words) the user
+	is guessing
+
+	3) write a function to determine if the letter guessed in in the 
+	word or not
+
+	4) Create an array or a string to store the letters when they
+	are guessed
+
+	5) Write a function to check to see if a letter was guessed previously
+
+	6) Write a function to show the word the user it trying to guess.
+	This function should show the letters guessed, and also _ for the
+	letters not yet guessed.
+
+	7) Write a loop to play the game
+
+	8) Pull everything together to get it to work
+	 

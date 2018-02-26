@@ -1,0 +1,6 @@
+def mult():
+    arr = [1,2,3,4,5]
+    print(arr)
+    arr.insert(1,"hi")
+    print(arr)
+mult()

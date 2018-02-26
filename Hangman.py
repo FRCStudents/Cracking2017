@@ -1,6 +1,6 @@
 import random
 
-field = ['hydrogen', 'helium', 'lithium','beryllium','boron', 'carbon', 'nitrogen','oxygen','fluorine','neon','sodium','magnesium','aluminum','silicon','phosphorus','sulfur','chlorine','argon'] 
+field = ['hydrogen', 'helium', 'lithium','beryllium','boron', 'carbon', 'nitrogen','oxygen','fluorine','neon','sodium','magnesium','aluminum','silicon','phosphorus','sulfur','chlorine','argon']
 strikes = 0
 word = field[random.randint(0, 17)]
 puzzle = list(word)
@@ -12,7 +12,7 @@ def game():
     x = raw_input("Guess a letter:")
     global strikes
     strikes+=1
-    y = 0 
+    y = 0
     for i in range(0,len(puzzle)):
         if x == puzzle[i]:
             guesses[i] = x

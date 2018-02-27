@@ -1,0 +1,31 @@
+
+********************************************
+** MVC - Model-View-Controller		  **
+** This is a simple example of separating **
+** code into an organization. This MVC    **
+** organization is very common, in many   **
+** languages. The idea is there are 3     **
+** functional components.                 **
+** M (Model) - is the database access.    **
+** V (View) - is the front end - that is  **
+**		the user's view           **
+** C (Controller) - is the connecting     **
+** 		code - that connects      **
+**		the other two parts       **
+********************************************
+
+In this project, the model feeds records
+to the controller/view. These records come
+from files (db2.txt). This file is a text
+file with JSON encoded records.
+
+This is the simplest version of this project.
+The user fires the controller.start routine.
+The controller than fires up the first view,
+and initializes an array with the model 
+(by reading the db2.txt file)
+
+We never write the file. You can ask to see
+everyone in the database one time, the names
+get listed and the program is over.
+

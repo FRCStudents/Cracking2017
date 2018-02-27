@@ -1,6 +1,6 @@
 
 arr = "abcdefghijklmnopqrstuvwxyz"
-newSentence = [] 
+newSentence = []
 
 response = "yes"
 
@@ -14,9 +14,9 @@ while(response == "yes"):
 		idx = arr.find(sentence[i].lower())
 		idx += key
 		if(idx > 25):
-			idx -= 25 
+			idx -= 25
 		newSentence.append(arr[idx])
 	print("Go again?")
 	print(''.join(newSentence))
 	print("Go again? ('no'): ")
-	response = input()	
+	response = input()

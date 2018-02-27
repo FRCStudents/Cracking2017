@@ -1,24 +1,39 @@
 print("this is hangman:the word you have is ")
 v = "hangman"
 print(v)
-i = input()
 b = 0
 print(len(v))
 j = ["h"]
-
+l = []
 #this first part is to find out how many guesses the person should receive based off the least amount of guesses to win the game, and then that added by 2
 for x in range(len(v)):
     for z in range(len(v)):
         for q in range(len(j)):
             if v[x] != j[len(j)-1]:
                 if v[x] != j[q-1]:
-                    b + 1
                     if v[x] == v[z]:
                         if v[x] not in j:
                             j.append(v[x])
 print("These are all the possible letters that can be guessed" + str(j))
 print("this is the lowest amount of guesses you can do to win the game, plus 3 safty's")
-print(len(j) + 3)
+a = len(j) + 3
+print(a)
 
-def match():
-    print(x)
+s = "true"
+for x in range(len(v)):
+    i = input()
+    if i == v[x]:
+        print("good job " + i + " is one of the letters")
+        l.append(i)
+        b + 1
+        if i != v[x]:
+            s = "false"
+            print("false")
+            b = b +1
+            if i == v[x]:
+                s = "true"
+                print("turn x into true")
+    if b == s:
+        print("The game is now over")
+    if a == "false":
+        print("whoops you messed up " + i + " is not one of the letters")           

@@ -1,0 +1,48 @@
+
+January 30, 2018
+
+Step 01: Go onto pythonanywhere
+
+Step 02: Create a directory and clone our repo...
+	a) mkdir code        
+	b) git clone https://github.com/FRCStudents/Cracking2017.git
+	c) git config --global 	user.name "your name"
+	d) git config --global  user.email "email@address"
+
+Step 03:
+	Start up python
+	$ python3.5
+	>>>>
+
+Step 04:
+	try to create some variables -
+	What is a variable name?
+	Can it start with a number?
+	Can it be a whole word?
+	Can it have numbers in it?
+	What about puctuation?
+	 
+Step 05:
+	try to create a function
+	* mult(x,y)
+	* add(x,y)
+	* def mult (x, y):
+		return x * y
+	* then use mult
+	* mult(3,6)
+	* write add(x,y) and sub(x,y) and div(x,y) and mod(x,y)
+	
+Step 06:
+	let's play with loops
+	* range(5)
+	* for x in range(5):
+		print(x)
+	
+
+Step 07:
+	what about a loop with an array?
+	* x = [1,2,3,4]
+	* for y in x:
+		print(y)
+
+	

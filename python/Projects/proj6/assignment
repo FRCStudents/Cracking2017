@@ -1,0 +1,28 @@
+For this exercise, we will keep track of when our friend’s birthdays are, 
+and be able to find that information based on their name. Create a 
+dictionary (in your file) of names and birthdays. When you run your program 
+it should ask the user to enter a name, and return the birthday of that 
+person back to them. The interaction should look something like this:
+
+>>> Welcome to the birthday dictionary. We know the birthdays of:
+Albert Einstein
+Benjamin Franklin
+Ada Lovelace
+>>> Who's birthday do you want to look up?
+Benjamin Franklin
+>>> Benjamin Franklin's birthday is 01/17/1706...
+
+
+This exercise is Part 2 of 4 of the birthday data exercise series. 
+The other exercises are: Part 1, Part 3, and Part 4.
+
+In the previous exercise we created a dictionary of famous scientists’ 
+birthdays. In this exercise, modify your program from Part 1 to load 
+the birthday dictionary from a JSON file on disk, rather than having 
+the dictionary defined in the program.
+
+Bonus: Ask the user for another scientist’s name and birthday to add 
+To the dictionary, and update the JSON file you have on disk with the 
+scientist’s name. If you run the program multiple times and keep adding 
+new names, your JSON file should keep getting bigger and bigger.
+

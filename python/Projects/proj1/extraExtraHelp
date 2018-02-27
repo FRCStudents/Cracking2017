@@ -1,0 +1,38 @@
+4)      Display the character after the character in 
+        the string - that is - if the string is "ab" 
+        you display "bc"
+                * if you need extra,extra help - see
+                the extraExtraHelp file
+
+There are two ways to identify the 'next char' - one is
+in data, and one is functional.
+
+For example, if I want to use the 'data' approach, I can
+create another array with the alphabet, find the letter
+I have, add my offset to the index, and retrieve that 
+offset letter.
+
+alpha = "abcdefghijklmnopqrstuvwxyz"
+
+i have a string "apple" and an offset-key 3.
+
+Steps:
+	examine the first letter ("a")
+	find "a" in my alphabet array: index = 0
+	add my offset to the index (0 + 3 = 3)
+	and return the value in that offset position
+	alpha[3] which is 'd'
+
+note: 
+	1) there is a find function on a string you can 
+	use like this:
+
+		a = "haPPyisTHEman"
+		i = a.find('y')
+		print(i)	<-- prints 4 because a[4] is the 
+				first occurrence of 'y'
+
+	2) there is a lower function on a string you can
+	use like this:
+		s = a.lower()
+		print(s[2]) 	<== prints 'p' (lower case)

@@ -1,0 +1,29 @@
+
+In this assignment, you are working on coding 
+a string of characters, or a message.
+
+The idea is an ancient coding technique - transposing
+each letter in the message to the next one in the
+alphabet (a becames b, b becomes c etc)
+
+In this way, "apple" becomes "bqqmf"
+
+The assignment is for you to write a loop that:
+	1) accepts a string from the user
+	2) accepts a key from the user
+	3) transposes the first string based on the key
+
+	The key is simply an int that tells the code
+	how many letters to move. 
+
+	e.g. if the key is 3, then 'a' becomes 'd'
+	     if the key is 4, then 'a' becomes 'e', etc 
+
+	4) the loop will then display the new string, and
+	start over - accepting a string from the user
+
+	5) you may ask the user if they want to quit with
+	each iteration.
+
+good luck!
+

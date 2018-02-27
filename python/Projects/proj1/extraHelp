@@ -1,0 +1,49 @@
+Question 1 to think about:
+        Given any letter in the alphabet, how can I
+	determine the letter that comes after that?
+	What do I do with 'z'? 
+
+Question 2 to think about:
+	How can I determine the letter that comes 
+	i places after the first letter - if i is
+	an int variable?
+
+Question 3 to think about:
+	Are there any boundaries on i?
+
+===================================================
+
+You can figure out how to do all the following
+steps in the interpreter.
+
+As you get each step working - you can put the
+code into a script and keep it.
+
+1)	Write code to accept a string from a user
+	* Can you prompt the user for the string?
+
+2)	Display that string
+
+3) 	Display that string character by character
+		* this should be in a loop
+
+4)	Display the character after the character in 
+	the string - that is - if the string is "ab" 
+	you display "bc"
+		* if you need extra,extra help - see
+		the extraExtraHelp file
+
+5)	Write a function to display step 4 above
+
+6)	The function takes an int parameter
+
+7)	Now change the function so it uses the parameter
+	as the offset.
+
+8)	Put it together:
+		Accept the string
+		Accept the offset
+		Display the string
+		Display the offset string
+
+

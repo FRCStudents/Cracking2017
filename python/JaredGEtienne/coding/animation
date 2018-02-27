@@ -1,0 +1,60 @@
+<html>
+<style>
+#container {
+  width: 500px;
+  height: 500px;
+  position: relative;
+  background: yellow;
+}
+#animate {
+  width: 50px;
+  height: 50px;
+  position: absolute;
+  background-color: red;
+}
+</style>
+<body>
+<h1>callback functions</h1>
+  setInterval: move across the screen...
+<p>
+<button onclick="myMove()">Click Me</button>
+</p>
+
+<div id ="container">
+  <div id ="animate" <img src ="./pictures/dice_gif.gif"></div>
+</div>
+
+<script>
+//
+//https://www.w3schools.com/css/css3_animations.asp
+//
+// Notice: you can also code this as two separate functions
+// if you move elt, pos, and id out of the functions into
+// global space
+//
+// Notice: you can also code 'frame' as an 'anonymous'
+// function - like this:
+//	... setInterval(function(){ if(pos == 450)... }, 5);
+//	the function body is between the {}'s, and then there
+//	is the '5' - the second parameter to function setInterval!
+//
+// So many ways to do so many things! Cool!
+//
+function myMove() {
+  var elt = document.getElementById("animate");
+  var pos = 0;
+  var id = setInterval(frame, 5);
+  function frame() {
+    if (pos == 450) {
+      clearInterval(id);
+    } else {
+      pos++;
+      elt.style.top = pos + 'px';
+      elt.style.left = pos + 'px';
+    }
+  }
+}
+</script>
+
+</body>
+</html>

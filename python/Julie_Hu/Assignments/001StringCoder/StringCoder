@@ -1,0 +1,15 @@
+plainText = input ("What is your plaintext?")
+shift = int(input("What is your shift?"))
+ 
+def StringCoder(plainText, key):
+	NewStringCoder = ""
+	for x in plainText:
+		if x.isalpha():
+			stayInAlphabet = ord(ch) + key
+			if stayInAlphabet > ord('z'):
+				stayInAlphabet -= 26
+			finalLetter = chr(stayInAlphabet)
+		NewStringCoder += finalLetter
+	print("Your New Coded Text is: ", NewStringCoder)
+	return NewStringCoder
+StringCoder(plainText, key) 

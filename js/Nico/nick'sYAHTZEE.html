@@ -1,0 +1,64 @@
+<html>
+<h1>This YAHTZEE GAME</h1>
+</body>
+</html>
+<head>
+<body>
+</style>
+<table>
+<tr>
+<td class=die id = cell1 onclick="addClass('cell1');"> 1 </td> 
+	<td class=die id = cell2  onclick="addClass('cell2');"> 2 </td>
+		<td class=die id = cell3  onclick="addClass('cell3');"> 3 </td>
+			<td class=die id = cell4  onclick="addClass('cell4');"> 4 </td>
+				<td class=die id = cell5  onclick="addClass('cell5');"> 5 </td>				
+</tr>
+</table>
+
+<table>
+<tr>
+<td> <input type="button" name="button" id="button" value="roll die" onclick="roll();"></input>
+</table>
+</tr>
+
+<script>
+
+function addClass(id){
+	var elt = document.getElementById(id);
+	elt.style.color = "blue";
+}
+
+
+function makeEverythingRed(){
+var elts = document.getElementsByClassName("die");
+  for(var i=0; i < 6; i++){
+	elts[i].style.color = "red";
+
+   }
+}
+
+makeEverythingRed();
+ 
+function roll(){
+  //var diceVal = Math.floor((Math.random() * 6) + 1);
+var elts = document.getElementsByClassName("die");
+  for(var i=0; i < 6; i++){
+	
+	if (elts[i].style.color=="red"){
+		elts[i].innerHTML = Math.floor((Math.random()* 6) + 1);
+		}
+
+   }
+} 
+</script>
+<style>
+table, th, td {
+    border: 4px solid red;
+}
+th, td {
+    padding: 50px;
+}
+</style>
+
+<button> Roll Dice </button> 
+

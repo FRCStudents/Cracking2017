@@ -1,0 +1,26 @@
+
+Yahtzee.html
+
+Create a yahtzee game (a five dice game). The game is normally played:
+
+Roll the five dice
+Determine which dice to continue rolling
+You can roll up to 3 times.
+
+Your goal is to fill out the score card, including:
+groups of 1-6's
+poker hands such as:
+     short straight
+     long straight
+     full house
+     three of a kind
+     four of a kind
+     yahtzee (5 of a kind)
+     chance (whatever is on the dice)
+
+Timeing/Shapes
+Use setTimeout and setInterval (any way you like) to move a shape within another
+shape - knock yourself out! have fun!
+
+And look at my files for some examples (but that is what i did!):
+

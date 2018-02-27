@@ -1,0 +1,43 @@
+<html>
+<head>
+    <button onclick= "myMove()"> Click Me!</button>
+      <div id ="animate"></div>
+<style> 
+#animate{
+    width: 100px;
+    height: 100px;
+      background-color:red;
+      background-color:orange;
+      background-color:yellow;
+      background-color:lightgreen;
+      background-color:green;
+      background-color:lightblue;
+      background-color:blue;
+      background-color:lavender;
+    position: absolute;
+    animation-name: Movesquare;
+}    
+}
+</style>
+</head>
+<body>
+<script>
+    function myMove() {
+  var elt = document.getElementById("animate");
+  var pos = 0;
+  var id = setInterval(frame, 5);
+  function frame() {
+    if (pos == 600) {
+      clearInterval(id);
+    } else {
+      pos++;
+      elt.style.top = pos + 'px';
+      elt.style.left = pos + 'px';
+    }
+  }
+}
+</script>
+<div></div>
+
+</body>
+</html>

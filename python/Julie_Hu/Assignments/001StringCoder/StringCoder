@@ -1,28 +1,15 @@
-<<<<<<< HEAD
-plainText = input ("What is your plaintext?")
-shift = int(input("What is your shift?"))
-=======
 plainText = input ("What is your plaintext?") 
 key = int(input("What is your shift?"))
->>>>>>> bc29059c9e441a2d9a5c506831ca0dc1a64e95dd
  
 def StringCoder(plainText, key):
 	NewStringCoder = ""
 	for x in plainText:
 		if x.isalpha():
-<<<<<<< HEAD
-			stayInAlphabet = ord(ch) + key
-=======
 			stayInAlphabet = ord(x) + key
->>>>>>> bc29059c9e441a2d9a5c506831ca0dc1a64e95dd
 			if stayInAlphabet > ord('z'):
 				stayInAlphabet -= 26
 			finalLetter = chr(stayInAlphabet)
 		NewStringCoder += finalLetter
 	print("Your New Coded Text is: ", NewStringCoder)
 	return NewStringCoder
-<<<<<<< HEAD
 StringCoder(plainText, key) 
-=======
-StringCoder(plainText, key) 
->>>>>>> bc29059c9e441a2d9a5c506831ca0dc1a64e95dd

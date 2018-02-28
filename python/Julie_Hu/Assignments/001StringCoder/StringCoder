@@ -1,11 +1,11 @@
-plainText = input ("What is your plaintext?")
-shift = int(input("What is your shift?"))
+plainText = input ("What is your plaintext?") 
+key = int(input("What is your shift?"))
  
 def StringCoder(plainText, key):
 	NewStringCoder = ""
 	for x in plainText:
 		if x.isalpha():
-			stayInAlphabet = ord(ch) + key
+			stayInAlphabet = ord(x) + key
 			if stayInAlphabet > ord('z'):
 				stayInAlphabet -= 26
 			finalLetter = chr(stayInAlphabet)

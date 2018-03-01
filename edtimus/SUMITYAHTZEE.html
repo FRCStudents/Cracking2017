@@ -1,0 +1,937 @@
+<html>
+
+<p> If you score at least 63 in the Upper Section, you will get a 35 point bonus! </p>
+
+<input type="button" onclick="roll()" value = "ROLL DICE">
+
+<table id = "dice">
+
+<tr>
+<td id = "cell1" onclick = "keepdie1()"> Die 1 </td> 
+<td id = "cell2" onclick = "keepdie2()"> Die 2 </td>
+<td id = "cell3" onclick = "keepdie3()"> Die 3 </td>
+<td id = "cell4" onclick = "keepdie4()"> Die 4 </td>
+<td id = "cell5" onclick = "keepdie5()"> Die 5 </td>
+</tr>
+
+</table>
+
+<table id = "points">
+<tr> <td id = "title1"> SCORECARD </td> </tr>
+<tr></tr>
+<tr></tr>
+<tr></tr>
+<tr> <td> Upper Section </td></tr>
+<tr><td id = "stylish1" onclick = "Ones()"> ONES </td><td id = "score1"> 0 </td> </tr>
+<tr><td id = "stylish2" onclick = "Twos()"> TWOS </td><td id = "score2"> 0 </td> </tr>
+<tr><td id = "stylish3" onclick = "Threes()"> THREES </td><td id = "score3"> 0 </td> </tr>
+<tr><td id = "stylish4" onclick = "Fours()"> FOURS </td><td id = "score4"> 0 </td> </tr>
+<tr><td id = "stylish5" onclick = "Fives()"> FIVES </td><td id = "score5"> 0 </td> </tr>
+<tr><td id = "stylish6" onclick = "Sixes()"> SIXES </td><td id = "score6"> 0 </td> </tr>
+<tr> <td> Lower Section </td></tr>
+<tr><td id = "stylish7" onclick = "Yahtzee()"> YAHTZEE </td><td id = "score7"> 0 </td> </tr>
+<tr><td id = "stylish8" onclick = "FourOfAKind()"> FOUR OF A KIND </td><td id = "score8"> 0 </td> </tr>
+<tr><td id = "stylish9" onclick = "ThreeOfAKind()"> THREE OF A KIND </td><td id = "score9"> 0 </td> </tr>
+<tr><td id = "stylish10" onclick = "FullHouse()"> FULL HOUSE </td><td id = "score10"> 0 </td> </tr>
+<tr><td id = "stylish11" onclick = "SmallStraight()"> SMALL STRAIGHT </td><td id = "score11"> 0 </td> </tr>
+<tr><td id = "stylish12" onclick = "LargeStraight()"> LARGE STRAIGHT </td><td id = "score12"> 0 </td> </tr>
+<tr><td id = "stylish13" onclick = "Chance()"> CHANCE </td><td id = "score13"> 0 </td> </tr>
+
+</table>
+
+<table id = "leaderboard">
+
+<tr> <td id = "title2"> LEADERBOARD </td> </tr>
+<tr> <td id = "topscore1"> </td> </tr>
+<tr> <td id = "topscore2"> </td> </tr>
+<tr> <td id = "topscore3"> </td> </tr>
+<tr> <td id = "topscore4"> </td> </tr>
+<tr> <td id = "topscore5"> </td> </tr>
+
+</table>
+
+</html>
+
+<script>
+
+var rolls = 0;
+var turns = 0;
+var game = 0;
+var loophole = 0;
+
+var diceTrace = ["reroll", "reroll", "reroll", "reroll", "reroll"]; 
+
+function roll() {
+	if (rolls == 3) {
+		alert("You have used all your rolls");
+		}
+	if (rolls == 2) {
+		rolls = 3;
+		if (diceTrace[0] == "reroll") {
+			document.getElementById("cell1").innerHTML = Math.floor(Math.random() * 6) + 1 ;
+			}
+		if (diceTrace[1] == "reroll") {
+			document.getElementById("cell2").innerHTML = Math.floor(Math.random() * 6) + 1 ;
+			}
+		if (diceTrace[2] == "reroll") {
+			document.getElementById("cell3").innerHTML = Math.floor(Math.random() * 6) + 1 ;
+			}
+		if (diceTrace[3] == "reroll") {
+			document.getElementById("cell4").innerHTML = Math.floor(Math.random() * 6) + 1 ;
+			}
+		if (diceTrace[4] == "reroll") {
+			document.getElementById("cell5").innerHTML = Math.floor(Math.random() * 6) + 1 ;
+			}
+		}
+	if (rolls == 1) {
+		rolls = 2;
+		if (diceTrace[0] == "reroll") {
+			document.getElementById("cell1").innerHTML = Math.floor(Math.random() * 6) + 1 ;
+			}
+		if (diceTrace[1] == "reroll") {
+			document.getElementById("cell2").innerHTML = Math.floor(Math.random() * 6) + 1 ;
+			}
+		if (diceTrace[2] == "reroll") {
+			document.getElementById("cell3").innerHTML = Math.floor(Math.random() * 6) + 1 ;
+			}
+		if (diceTrace[3] == "reroll") {
+			document.getElementById("cell4").innerHTML = Math.floor(Math.random() * 6) + 1 ;
+			}
+		if (diceTrace[4] == "reroll") {
+			document.getElementById("cell5").innerHTML = Math.floor(Math.random() * 6) + 1 ;
+			}		
+		}
+	if (rolls == 0) {
+		rolls = 1;
+		loophole = 1;
+		turns++;
+		document.getElementById("cell1").innerHTML = Math.floor(Math.random() * 6) + 1 ;
+		document.getElementById("cell2").innerHTML = Math.floor(Math.random() * 6) + 1 ;
+		document.getElementById("cell3").innerHTML = Math.floor(Math.random() * 6) + 1 ;
+		document.getElementById("cell4").innerHTML = Math.floor(Math.random() * 6) + 1 ;
+		document.getElementById("cell5").innerHTML = Math.floor(Math.random() * 6) + 1 ;
+		if (turns == 14) {
+			score();
+			restart();
+			}
+	}	
+}
+
+var a = 0;
+var b = 0;
+var c = 0;
+var d = 0;
+var e = 0;
+
+function keepdie1 (){
+	if (a == 0) {
+	document.getElementById("cell1").style.backgroundColor = "yellow";
+	diceTrace[0] = "keep";
+	a = 1;
+	}
+	else {
+	document.getElementById("cell1").style.backgroundColor = "white";
+	diceTrace[0] = "reroll";
+	a = 0;
+	}
+	}
+function keepdie2 (){
+	if (b == 0) {
+	document.getElementById("cell2").style.backgroundColor = "yellow";
+	diceTrace[1] = "keep";
+	b = 1;
+	}
+	else {
+	document.getElementById("cell2").style.backgroundColor = "white";
+	diceTrace[1] = "reroll";
+	b = 0;
+	}
+	}
+function keepdie3 (){
+	if (c == 0) {
+	document.getElementById("cell3").style.backgroundColor = "yellow";
+	diceTrace[2] = "keep";
+	c = 1;
+	}
+	else {
+	document.getElementById("cell3").style.backgroundColor = "white";
+	diceTrace[2] = "reroll";
+	c = 0;
+	}
+	}
+function keepdie4 (){
+	if (d == 0) {
+	document.getElementById("cell4").style.backgroundColor = "yellow";
+	diceTrace[3] = "keep";
+	d = 1;
+	}
+	else {
+	document.getElementById("cell4").style.backgroundColor = "white";
+	diceTrace[3] = "reroll";
+	d = 0;
+	}
+	}
+function keepdie5 (){
+	if (e == 0) {
+	document.getElementById("cell5").style.backgroundColor = "yellow";
+	diceTrace[4] = "keep";
+	e = 1;
+	}
+	else {
+	document.getElementById("cell5").style.backgroundColor = "white";
+	diceTrace[5] = "reroll";
+	e = 0;
+	}
+	}
+
+function Ones() {
+	if (loophole == 1) {	
+		if (document.getElementById("cell1").innerHTML == "1") {
+			var a = 1;
+		}
+		else {
+			var a = 0;
+		}
+		if (document.getElementById("cell2").innerHTML == "1") {
+			var b = 1;
+		}
+		else {
+			var b = 0;
+		}
+		if (document.getElementById("cell3").innerHTML == "1") {
+			var c = 1;
+		}
+		else {
+			var c = 0;
+		}
+		if (document.getElementById("cell4").innerHTML == "1") {
+			var d = 1;
+		}
+		else {
+			var d = 0;
+		}
+		if (document.getElementById("cell5").innerHTML == "1") {
+			var e = 1;
+		}
+		else {
+			var e = 0;
+		}
+	
+	var result = parseInt(a) + parseInt(b) + parseInt(c) + parseInt(d) + parseInt(e);
+	document.getElementById("score1").innerHTML = result;
+	document.getElementById("score1").style.backgroundColor = "yellow";
+	reset();
+	}
+	}
+function Twos() {
+	if (loophole == 1) {
+		if (document.getElementById("cell1").innerHTML == "2") {
+			var a = 2;
+		}
+		else {
+			var a = 0;
+		}
+		if (document.getElementById("cell2").innerHTML == "2") {
+			var b = 2;
+		}
+		else {
+			var b = 0;
+		}
+		if (document.getElementById("cell3").innerHTML == "2") {
+			var c = 2;
+		}
+		else {
+			var c = 0;
+		}
+		if (document.getElementById("cell4").innerHTML == "2") {
+			var d = 2;
+		}
+		else {
+			var d = 0;
+		}
+		if (document.getElementById("cell5").innerHTML == "2") {
+			var e = 2;
+		}
+		else {
+			var e = 0;
+		}
+	var result = parseInt(a) + parseInt(b) + parseInt(c) + parseInt(d) + parseInt(e);
+	document.getElementById("score2").innerHTML = result;
+	document.getElementById("score2").style.backgroundColor = "yellow";
+	reset();
+	}
+	}
+function Threes() {
+	if (loophole == 1) {
+		if (document.getElementById("cell1").innerHTML == "3") {
+			var a = 3;
+		}
+		else {
+			var a = 0;
+		}
+		if (document.getElementById("cell2").innerHTML == "3") {
+			var b = 3;
+		}
+		else {
+			var b = 0;
+		}
+		if (document.getElementById("cell3").innerHTML == "3") {
+			var c = 3;
+		}
+		else {
+			var c = 0;
+		}
+		if (document.getElementById("cell4").innerHTML == "3") {
+			var d = 3;
+		}
+		else {
+			var d = 0;
+		}
+		if (document.getElementById("cell5").innerHTML == "3") {
+			var e = 3;
+		}
+		else {
+			var e = 0;
+		}
+	var result = parseInt(a) + parseInt(b) + parseInt(c) + parseInt(d) + parseInt(e);
+	document.getElementById("score3").innerHTML = result;
+	document.getElementById("score3").style.backgroundColor = "yellow";
+	reset();
+	}
+	}
+function Fours() {
+	if (loophole == 1) {
+		if (document.getElementById("cell1").innerHTML == "4") {
+			var a = 4;
+		}
+		else {
+			var a = 0;
+		}
+		if (document.getElementById("cell2").innerHTML == "4") {
+			var b = 4;
+		}
+		else {
+			var b = 0;
+		}
+		if (document.getElementById("cell3").innerHTML == "4") {
+			var c = 4;
+		}
+		else {
+			var c = 0;
+		}
+		if (document.getElementById("cell4").innerHTML == "4") {
+			var d = 4;
+		}
+		else {
+			var d = 0;
+		}
+		if (document.getElementById("cell5").innerHTML == "4") {
+			var e = 4;
+		}
+		else {
+			var e = 0;
+		}
+	var result = parseInt(a) + parseInt(b) + parseInt(c) + parseInt(d) + parseInt(e);
+	document.getElementById("score4").innerHTML = result;
+	document.getElementById("score4").style.backgroundColor = "yellow";
+	reset();
+	}
+	}
+function Fives() {
+	if (loophole == 1) {
+		if (document.getElementById("cell1").innerHTML == "5") {
+			var a = 5;
+		}
+		else {
+			var a = 0;
+		}
+		if (document.getElementById("cell2").innerHTML == "5") {
+			var b = 5;
+		}
+		else {
+			var b = 0;
+		}
+		if (document.getElementById("cell3").innerHTML == "5") {
+			var c = 5;
+		}
+		else {
+			var c = 0;
+		}
+		if (document.getElementById("cell4").innerHTML == "5") {
+			var d = 5;
+		}
+		else {
+			var d = 0;
+		}
+		if (document.getElementById("cell5").innerHTML == "5") {
+			var e = 5;
+		}
+		else {
+			var e = 0;
+		}
+	var result = parseInt(a) + parseInt(b) + parseInt(c) + parseInt(d) + parseInt(e);
+	document.getElementById("score5").innerHTML = result;
+	document.getElementById("score5").style.backgroundColor = "yellow";
+	reset();
+	}
+	}
+function Sixes() {
+	if (loophole == 1) {
+		if (document.getElementById("cell1").innerHTML == "6") {
+			var a = 6;
+		}
+		else {
+			var a = 0;
+		}
+		if (document.getElementById("cell2").innerHTML == "6") {
+			var b = 6;
+		}
+		else {
+			var b = 0;
+		}
+		if (document.getElementById("cell3").innerHTML == "6") {
+			var c = 6;
+		}
+		else {
+			var c = 0;
+		}
+		if (document.getElementById("cell4").innerHTML == "6") {
+			var d = 6;
+		}
+		else {
+			var d = 0;
+		}
+		if (document.getElementById("cell5").innerHTML == "6") {
+			var e = 6;
+		}
+		else {
+			var e = 0;
+		}
+	var result = parseInt(a) + parseInt(b) + parseInt(c) + parseInt(d) + parseInt(e);
+	document.getElementById("score6").innerHTML = result;
+	document.getElementById("score6").style.backgroundColor = "yellow";
+	reset();
+	}
+	}
+function Yahtzee() {
+	if (loophole == 1) {
+	var a = document.getElementById("cell1").innerHTML;
+	var b = document.getElementById("cell2").innerHTML;
+	var c = document.getElementById("cell3").innerHTML;
+	var d = document.getElementById("cell4").innerHTML;
+	var e = document.getElementById("cell5").innerHTML;
+	var result = 0;
+	if (a == b && a == c && a == d && a == e) {
+		var result = 50;
+		}
+	document.getElementById("score7").innerHTML = result;
+	document.getElementById("score7").style.backgroundColor = "yellow";
+	reset();
+	}
+}
+function FourOfAKind() {
+	if (loophole == 1) {
+	var a = document.getElementById("cell1").innerHTML;
+	var b = document.getElementById("cell2").innerHTML;
+	var c = document.getElementById("cell3").innerHTML;
+	var d = document.getElementById("cell4").innerHTML;
+	var e = document.getElementById("cell5").innerHTML;
+	var result = 0;
+	if (a == b && a == c && a == d) {
+		result = parseInt(a) * 4 + parseInt(e);
+		}
+	if (a == e && a == c && a == d) {
+		result = parseInt(a) * 4 + parseInt(b);
+		}
+	if (a == b && a == e && a == d) {
+		result = parseInt(a) * 4 + parseInt(c);
+		}
+	if (a == b && a == c && a == e) {
+		result = parseInt(a) * 4 + parseInt(d);
+		}
+	if (e == b && e == c && e == d) {
+		result = parseInt(e) * 4 + parseInt(a);
+		}	
+	document.getElementById("score8").innerHTML = result;
+	document.getElementById("score8").style.backgroundColor = "yellow";
+	reset();
+	}
+}
+function ThreeOfAKind() {
+	if (loophole == 1) {
+	var a = document.getElementById("cell1").innerHTML;
+	var b = document.getElementById("cell2").innerHTML;
+	var c = document.getElementById("cell3").innerHTML;
+	var d = document.getElementById("cell4").innerHTML;
+	var e = document.getElementById("cell5").innerHTML;
+	var result = 0;
+	if (a == b && a == c) {
+		result = parseInt(a) * 3 + parseInt(d) + parseInt(e);
+		}
+	if (a == b && a == d) {
+		result = parseInt(a) * 3 + parseInt(c) + parseInt(e);
+		}
+	if (a == b && a == e) {
+		result = parseInt(a) * 3 + parseInt(c) + parseInt(d);
+		}
+	if (a == c && a == d) {
+		result = parseInt(a) * 3 + parseInt(b) + parseInt(e);
+		}
+	if (a == c && a == e) {
+		result = parseInt(a) * 3 + parseInt(b) + parseInt(d);
+		}
+	if (a == d && a == e) {
+		result = parseInt(a) * 3 + parseInt(b) + parseInt(c);
+		}
+	if (b == c && b == d) {
+		result = parseInt(b) * 3 + parseInt(a) + parseInt(e);
+		}
+	if (b == c && b == e) {
+		result = parseInt(b) * 3 + parseInt(a) + parseInt(d);
+		}
+	if (b == d && b == e) {
+		result = parseInt(b) * 3 + parseInt(a) + parseInt(c);
+		}
+	if (c == d && c == e) {
+		result = parseInt(c) * 3 + parseInt(a) + parseInt(b);
+		}
+	document.getElementById("score9").innerHTML = result;
+	document.getElementById("score9").style.backgroundColor = "yellow";
+	reset();
+	}
+}
+function FullHouse() {
+	if (loophole == 1) {
+	var a = document.getElementById("cell1").innerHTML;
+	var b = document.getElementById("cell2").innerHTML;
+	var c = document.getElementById("cell3").innerHTML;
+	var d = document.getElementById("cell4").innerHTML;
+	var e = document.getElementById("cell5").innerHTML;
+	var result = 0;
+	if (a == b && a == c && d == e) {
+		result = 25;
+		}
+	if (a == b && a == d && c == e) {
+		result = 25;
+		}
+	if (a == b && a == e && c == d) {
+		result = 25;
+		}
+	if (a == c && a == d && b == e) {
+		result = 25;
+		}
+	if (a == c && a == e && b == d) {
+		result = 25;
+		}
+	if (a == d && a == e && b == c) {
+		result = 25;
+		}
+	if (b == c && b == d && a == e) {
+		result = 25;
+		}
+	if (b == c && b == e && a == d) {
+		result = 25;
+		}
+	if (b == d && b == e && a == c) {
+		result = 25;
+		}
+	if (c == d && c == e && a == b) {
+		result = 25;
+		}
+	document.getElementById("score10").innerHTML = result;
+	document.getElementById("score10").style.backgroundColor = "yellow";
+	reset();
+	}
+}
+function SmallStraight(){
+	if (loophole == 1) {
+	var result = 0;
+	var arr = [0, 0, 0, 0, 0]
+	arr[0] = document.getElementById("cell1").innerHTML;
+	arr[1] = document.getElementById("cell2").innerHTML;
+	arr[2] = document.getElementById("cell3").innerHTML;
+	arr[3] = document.getElementById("cell4").innerHTML;
+	arr[4] = document.getElementById("cell5").innerHTML;
+	arr.sort();
+	if (arr[0] == arr[1]) {
+		arr.splice(0, 1);
+	}
+	if (arr[1] == arr[2]) {
+		arr.splice(1, 1);
+	}
+	if (arr[2] == arr[3]) {
+		arr.splice(2, 1);
+	}
+	if (arr[3] == arr[4]) {
+		arr.splice(3, 1);
+	}
+	if (arr[0] == 1 && arr[1] == 2 && arr[2] == 3 && arr[3] == 4) {
+		result = 30;
+	}
+	if (arr[0] == 2 && arr[1] == 3 && arr[2] == 4 && arr[3] == 5) {
+		result = 30;
+	}
+	if (arr[0] == 3 && arr[1] == 4 && arr[2] == 5 && arr[3] == 6) {
+		result = 30;
+	}
+	document.getElementById("score11").innerHTML = result;
+	document.getElementById("score11").style.backgroundColor = "yellow";
+	reset();
+	}
+}
+function LargeStraight(){
+	if (loophole == 1) {
+	var result = 0;
+	var arr = [0, 0, 0, 0, 0]
+	arr[0] = document.getElementById("cell1").innerHTML;
+	arr[1] = document.getElementById("cell2").innerHTML;
+	arr[2] = document.getElementById("cell3").innerHTML;
+	arr[3] = document.getElementById("cell4").innerHTML;
+	arr[4] = document.getElementById("cell5").innerHTML;
+	arr.sort();
+	if (arr[0] == 1 && arr[1] == 2 && arr[2] == 3 && arr[3] == 4 && arr[4] == 5) {
+		result = 40;
+	}
+	if (arr[0] == 2 && arr[1] == 3 && arr[2] == 4 && arr[3] == 5 && arr[4] == 6) {
+		result = 40;
+	}
+	document.getElementById("score12").innerHTML = result;
+	document.getElementById("score12").style.backgroundColor = "yellow";
+	reset();
+	}
+}
+function Chance() {
+	if (loophole == 1) {
+	var result = parseInt(document.getElementById("cell1").innerHTML) + parseInt(document.getElementById("cell2").innerHTML) + parseInt(document.getElementById("cell3").innerHTML) + parseInt(document.getElementById("cell4").innerHTML) + parseInt(document.getElementById("cell5").innerHTML); 
+	document.getElementById("score13").innerHTML = result;
+	document.getElementById("score13").style.backgroundColor = "yellow";
+	reset();
+	}
+	}
+function reset() {
+	a = 0;
+	b = 0;
+	c = 0;
+	d = 0;
+	e = 0;
+	rolls = 0;
+	loophole = 0;
+	diceTrace = ["reroll", "reroll", "reroll", "reroll", "reroll"];
+	var elt = document.getElementById("cell1");
+		elt.innerHTML = "Die 1";
+		elt.style.backgroundColor = "white";
+	var elt = document.getElementById("cell2");
+		elt.innerHTML = "Die 2";
+		elt.style.backgroundColor = "white";
+	var elt = document.getElementById("cell3");
+		elt.innerHTML = "Die 3";
+		elt.style.backgroundColor = "white";
+	var elt = document.getElementById("cell4");
+		elt.innerHTML = "Die 4";
+		elt.style.backgroundColor = "white";
+	var elt = document.getElementById("cell5");
+		elt.innerHTML = "Die 5";
+		elt.style.backgroundColor = "white";
+	}
+	
+var scores = []; 
+
+function score() {
+	var finalscore = parseInt(document.getElementById("score1").innerHTML) + parseInt(document.getElementById("score2").innerHTML) + parseInt(document.getElementById("score3").innerHTML) + parseInt(document.getElementById("score4").innerHTML) + parseInt(document.getElementById("score5").innerHTML) + parseInt(document.getElementById("score6").innerHTML) + parseInt(document.getElementById("score7").innerHTML) + parseInt(document.getElementById("score8").innerHTML) + parseInt(document.getElementById("score9").innerHTML) + parseInt(document.getElementById("score10").innerHTML) + parseInt(document.getElementById("score11").innerHTML) + parseInt(document.getElementById("score12").innerHTML) + parseInt(document.getElementById("score13").innerHTML); 
+	var lower = parseInt(document.getElementById("score1").innerHTML) + parseInt(document.getElementById("score2").innerHTML) + parseInt(document.getElementById("score3").innerHTML) + parseInt(document.getElementById("score4").innerHTML) + parseInt(document.getElementById("score5").innerHTML) + parseInt(document.getElementById("score6").innerHTML); 
+	if (lower >= 63) {
+		finalscore = parseInt(document.getElementById("score1").innerHTML) + parseInt(document.getElementById("score2").innerHTML) + parseInt(document.getElementById("score3").innerHTML) + parseInt(document.getElementById("score4").innerHTML) + parseInt(document.getElementById("score5").innerHTML) + parseInt(document.getElementById("score6").innerHTML) + parseInt(document.getElementById("score7").innerHTML) + parseInt(document.getElementById("score8").innerHTML) + parseInt(document.getElementById("score9").innerHTML) + parseInt(document.getElementById("score10").innerHTML) + parseInt(document.getElementById("score11").innerHTML) + parseInt(document.getElementById("score12").innerHTML) + parseInt(document.getElementById("score13").innerHTML) + 35;
+	}
+	alert("Congratulations! You have finished the game of Yahtzee!");
+	alert("Your final score is " + finalscore);
+	scores.splice(game, 0, finalscore);
+	scores.sort(function(a, b){return b - a});
+	document.getElementById("topscore1").innerHTML = scores[0];
+	document.getElementById("topscore2").innerHTML = scores[1];
+	document.getElementById("topscore3").innerHTML = scores[2];
+	document.getElementById("topscore4").innerHTML = scores[3];
+	document.getElementById("topscore5").innerHTML = scores[4];	
+	}
+
+function restart() {
+	a = 0;
+	b = 0;
+	c = 0;
+	d = 0;
+	e = 0;
+	rolls = 0;
+	turns = 0;
+	game++;
+	diceTrace = ["reroll", "reroll", "reroll", "reroll", "reroll"];
+	var elt = document.getElementById("cell1");
+		elt.innerHTML = "Die 1";
+		elt.style.backgroundColor = "white";
+	var elt = document.getElementById("cell2");
+		elt.innerHTML = "Die 2";
+		elt.style.backgroundColor = "white";
+	var elt = document.getElementById("cell3");
+		elt.innerHTML = "Die 3";
+		elt.style.backgroundColor = "white";
+	var elt = document.getElementById("cell4");
+		elt.innerHTML = "Die 4";
+		elt.style.backgroundColor = "white";
+	var elt = document.getElementById("cell5");
+		elt.innerHTML = "Die 5";
+		elt.style.backgroundColor = "white";
+	var elt = document.getElementById("score1");
+		elt.innerHTML = "0";
+		elt.style.backgroundColor = "white";
+	var elt = document.getElementById("score2");
+		elt.innerHTML = "0";
+		elt.style.backgroundColor = "white";
+	var elt = document.getElementById("score3");
+		elt.innerHTML = "0";
+		elt.style.backgroundColor = "white";
+	var elt = document.getElementById("score4");
+		elt.innerHTML = "0";
+		elt.style.backgroundColor = "white";
+	var elt = document.getElementById("score5");
+		elt.innerHTML = "0";
+		elt.style.backgroundColor = "white";
+	var elt = document.getElementById("score6");
+		elt.innerHTML = "0";
+		elt.style.backgroundColor = "white";
+	var elt = document.getElementById("score7");
+		elt.innerHTML = "0";
+		elt.style.backgroundColor = "white";
+	var elt = document.getElementById("score8");
+		elt.innerHTML = "0";
+		elt.style.backgroundColor = "white";
+	var elt = document.getElementById("score9");
+		elt.innerHTML = "0";
+		elt.style.backgroundColor = "white";
+	var elt = document.getElementById("score10");
+		elt.innerHTML = "0";
+		elt.style.backgroundColor = "white";
+	var elt = document.getElementById("score11");
+		elt.innerHTML = "0";
+		elt.style.backgroundColor = "white";	
+	var elt = document.getElementById("score12");
+		elt.innerHTML = "0";
+		elt.style.backgroundColor = "white";
+	var elt = document.getElementById("score13");
+		elt.innerHTML = "0";
+		elt.style.backgroundColor = "white";
+	}	
+
+
+</script>
+
+
+<style>
+#dice {
+  position: absolute;
+  left: 500px;
+  top: 100px;
+  border: 1px solid #999;
+  padding: 1rem;
+}
+#cell1 {
+  width: 50px;
+  height: 50px;
+  text-align: center;
+  border: 1px solid #999;
+}
+#cell2 {
+  width: 50px;
+  height: 50px;
+  text-align: center;
+  border: 1px solid #999;
+}
+#cell3 {
+  width: 50px;
+  height: 50px;
+  text-align: center;
+  border: 1px solid #999;
+}
+#cell4 {
+  width: 50px;
+  height: 50px;
+  text-align: center;
+  border: 1px solid #999;
+}
+#cell5 {
+  width: 50px;
+  height: 50px;
+  text-align: center;
+  border: 1px solid #999;
+}
+#points {
+  border: 1px solid #999;
+  padding: 1rem;
+  position: absolute;
+  left: 10px;
+  top: 75px;
+  }	
+#title1 {
+  text-align: left;
+}
+#stylish1 {
+  width: 200px;
+  height: 20px;
+  text-align: center;
+  border: 1px solid #999;
+}
+#stylish2 {
+  width: 100px;
+  height: 20px;
+  text-align: center;
+  border: 1px solid #999;
+}
+#stylish3 {
+  width: 100px;
+  height: 20px;
+  text-align: center;
+  border: 1px solid #999;
+}
+#stylish4 {
+  width: 100px;
+  height: 20px;
+  text-align: center;
+  border: 1px solid #999;
+}
+#stylish5 {
+  width: 100px;
+  height: 20px;
+  text-align: center;
+  border: 1px solid #999;
+}
+#stylish6 {
+  width: 100px;
+  height: 20px;
+  text-align: center;
+  border: 1px solid #999;
+}
+#stylish7 {
+  width: 100px;
+  height: 20px;
+  text-align: center;
+  border: 1px solid #999;
+}
+#stylish8 {
+  width: 100px;
+  height: 20px;
+  text-align: center;
+  border: 1px solid #999;
+}
+#stylish9 {
+  width: 100px;
+  height: 20px;
+  text-align: center;
+  border: 1px solid #999;
+}
+#stylish10 {
+  width: 100px;
+  height: 20px;
+  text-align: center;
+  border: 1px solid #999;
+}
+#stylish11 {
+  width: 100px;
+  height: 20px;
+  text-align: center;
+  border: 1px solid #999;
+}
+#stylish12 {
+  width: 100px;
+  height: 20px;
+  text-align: center;
+  border: 1px solid #999;
+}
+#stylish13 {
+  width: 100px;
+  height: 20px;
+  text-align: center;
+  border: 1px solid #999;
+}
+#score1 {
+  width: 50px;
+  height: 20px;
+  text-align: center;
+  border: 1px solid #999;
+}
+#score2 {
+  width: 20px;
+  height: 20px;
+  text-align: center;
+  border: 1px solid #999;
+}
+#score3 {
+  width: 20px;
+  height: 20px;
+  text-align: center;
+  border: 1px solid #999;
+}
+#score4 {
+  width: 20px;
+  height: 20px;
+  text-align: center;
+  border: 1px solid #999;
+}
+#score5 {
+  width: 20px;
+  height: 20px;
+  text-align: center;
+  border: 1px solid #999;
+}
+#score6 {
+  width: 20px;
+  height: 20px;
+  text-align: center;
+  border: 1px solid #999;
+}
+#score7 {
+  width: 20px;
+  height: 20px;
+  text-align: center;
+  border: 1px solid #999;
+}
+#score8 {
+  width: 20px;
+  height: 20px;
+  text-align: center;
+  border: 1px solid #999;
+}
+#score9 {
+  width: 20px;
+  height: 20px;
+  text-align: center;
+  border: 1px solid #999;
+}
+#score10 {
+  width: 20px;
+  height: 20px;
+  text-align: center;
+  border: 1px solid #999;
+}
+#score11 {
+  width: 20px;
+  height: 20px;
+  text-align: center;
+  border: 1px solid #999;
+}
+#score12 {
+  width: 20px;
+  height: 20px;
+  text-align: center;
+  border: 1px solid #999;
+}
+#score13 {
+  width: 20px;
+  height: 20px;
+  text-align: center;
+  border: 1px solid #999;
+}
+#leaderboard {
+  border: 1px solid #999;
+  padding: 1rem;
+  position: absolute;
+  left: 1150px;
+  top: 350px;
+  }	
+</style>
